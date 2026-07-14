@@ -1,0 +1,9 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# macOS
+.DS_Store
+
+# Claude Code local settings (contains machine-local secrets / permissions)
+.claude/settings.local.json

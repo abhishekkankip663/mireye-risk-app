@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mireye Field Risk Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<style>
+  :root {
+    --paper: #E7DFC9;
+    --paper-dark: #DCD2B6;
+    --ink: #2B241C;
+    --ink-soft: #5A4E3F;
+    --topsoil: #4A3527;
+    --subsoil: #8B5A3C;
+    --silt: #C7A56B;
+    --moss: #5C7A52;
+    --amber: #C98A2C;
+    --rust: #A63D1F;
+    --rule: rgba(43, 36, 28, 0.18);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(43,36,28,0.035) 40px);
+  }
+
+  .wrap {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 56px 24px 80px;
+  }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 22px;
+    height: 1px;
+    background: var(--rust);
+    display: inline-block;
+  }
+
+  h1 {
+    font-family: 'Zilla Slab', serif;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 1.08;
+    margin: 10px 0 8px;
+    letter-spacing: -0.01em;
+  }
+
+  .sub {
+    color: var(--ink-soft);
+    font-size: 15px;
+    max-width: 560px;
+    line-height: 1.5;
+    margin-bottom: 36px;
+  }
+
+  .intake {
+    background: var(--paper-dark);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 24px;
+    position: relative;
+  }
+  .intake::before {
+    content: "FIELD INTAKE";
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background: var(--paper);
+    padding: 0 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+  }
+
+  .row { display: flex; gap: 14px; flex-wrap: wrap; align-items: flex-end; }
+
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+  }
+  .field input {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 15px;
+    padding: 9px 10px;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    background: var(--paper);
+    color: var(--ink);
+    width: 150px;
+  }
+  .field input:focus-visible {
+    outline: 2px solid var(--rust);
+    outline-offset: 1px;
+  }
+
+  button.run {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    border-radius: 3px;
+    padding: 11px 20px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  button.run:hover { background: var(--topsoil); }
+  button.run:focus-visible { outline: 2px solid var(--rust); outline-offset: 2px; }
+  button.run:disabled { opacity: 0.5; cursor: wait; }
+
+  .presets {
+    margin-top: 16px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .chip {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    background: transparent;
+    border: 1px solid var(--rule);
+    color: var(--ink-soft);
+    padding: 6px 11px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  .chip:hover { border-color: var(--ink-soft); color: var(--ink); }
+
+  .status {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 18px;
+    min-height: 18px;
+  }
+  .status.error { color: var(--rust); }
+
+  /* Results */
+  #results { display: none; margin-top: 48px; }
+  #results.show { display: block; }
+
+  .report-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 10px;
+    margin-bottom: 28px;
+  }
+  .report-head .coords {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  .core-panel {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 32px;
+    align-items: stretch;
+    margin-bottom: 36px;
+  }
+
+  .core {
+    background: linear-gradient(180deg, var(--silt), var(--subsoil) 60%, var(--topsoil));
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    min-height: 220px;
+    border: 1px solid var(--rule);
+  }
+  .core-band {
+    position: absolute;
+    left: 0; right: 0;
+    border-top: 1px dashed rgba(255,255,255,0.35);
+  }
+  .core-band.high { background: rgba(166, 61, 31, 0.55); }
+  .core-band.moderate { background: rgba(201, 138, 44, 0.5); }
+  .core-band.low { background: rgba(92, 122, 82, 0.35); }
+
+  .verdict {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+  .verdict .level {
+    font-family: 'Zilla Slab', serif;
+    font-weight: 700;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+  }
+  .level.low { color: var(--moss); }
+  .level.moderate { color: var(--amber); }
+  .level.high { color: var(--rust); }
+
+  .score-line {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  .factors { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+  .factor-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+  }
+  .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .dot.low { background: var(--moss); }
+  .dot.moderate { background: var(--amber); }
+  .dot.high { background: var(--rust); }
+  .factor-row .fname { font-weight: 500; }
+  .factor-row .fdetail { color: var(--ink-soft); font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; }
+
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 32px 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  table.fields {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  table.fields th {
+    text-align: left;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding: 6px 10px;
+    border-bottom: 1px solid var(--ink);
+  }
+  table.fields td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  table.fields td.val { font-family: 'IBM Plex Mono', monospace; }
+  table.fields a { color: var(--ink-soft); }
+  table.fields tr:hover td { background: rgba(43,36,28,0.03); }
+
+  .chart-wrap {
+    background: var(--paper-dark);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 20px;
+    margin-top: 12px;
+  }
+
+  .gfw-note {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--rust);
+    margin-top: 10px;
+  }
+
+  footer {
+    margin-top: 60px;
+    border-top: 1px solid var(--rule);
+    padding-top: 16px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 30px; }
+    .core-panel { grid-template-columns: 60px 1fr; gap: 18px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .core-band { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="eyebrow">Mireye Earth · field risk report</div>
+  <h1>Erosion &amp; deforestation<br/>risk assessment</h1>
+  <p class="sub">
+    Enter any U.S. coordinate. This report combines Mireye's cited terrain
+    and hazard data with Global Forest Watch's historical tree-cover-loss
+    record to flag compounding risk — steep, unstable ground that has also
+    recently lost the vegetation that was holding it together.
+  </p>
+
+  <div class="intake">
+    <div class="row">
+      <div class="field">
+        <label for="lat">Latitude</label>
+        <input id="lat" type="text" value="34.1478" />
+      </div>
+      <div class="field">
+        <label for="lng">Longitude</label>
+        <input id="lng" type="text" value="-118.1445" />
+      </div>
+      <button class="run" id="runBtn">Run assessment</button>
+    </div>
+    <div class="presets">
+      <button class="chip" data-lat="34.1478" data-lng="-118.1445">Angeles National Forest, CA</button>
+      <button class="chip" data-lat="35.6009" data-lng="-83.5089">Great Smoky Mountains, TN</button>
+      <button class="chip" data-lat="40.7128" data-lng="-74.0060">Lower Manhattan, NY</button>
+    </div>
+    <div class="status" id="status"></div>
+  </div>
+
+  <div id="results">
+    <div class="report-head">
+      <div class="eyebrow" style="margin:0">Report</div>
+      <div class="coords" id="coordsLabel"></div>
+    </div>
+
+    <div class="core-panel">
+      <div class="core" id="core"></div>
+      <div class="verdict">
+        <div class="level" id="level">—</div>
+        <div class="score-line" id="scoreLine"></div>
+        <div class="factors" id="factors"></div>
+      </div>
+    </div>
+
+    <div class="section-label">Cited field data — Mireye Earth</div>
+    <table class="fields">
+      <thead><tr><th>Field</th><th>Value</th><th>Source</th></tr></thead>
+      <tbody id="fieldsBody"></tbody>
+    </table>
+
+    <div class="section-label">Tree cover loss by year — Global Forest Watch</div>
+    <div class="chart-wrap">
+      <canvas id="lossChart" height="90"></canvas>
+      <div class="gfw-note" id="gfwNote"></div>
+    </div>
+
+    <footer>
+      Elevation, slope, seismic, wildfire, flood, and landslide data via Mireye Earth
+      (api.mireye.com), sourced from USGS, FEMA, NOAA, USACE, and NRCS.
+      Tree-cover-loss history via Global Forest Watch (World Resources Institute).
+      This report is a screening tool, not a substitute for a licensed geotechnical
+      or environmental survey.
+    </footer>
+  </div>
+
+</div>
+
+<script>
+  const $ = (id) => document.getElementById(id);
+  let chart = null;
+
+  document.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      $('lat').value = chip.dataset.lat;
+      $('lng').value = chip.dataset.lng;
+      runAssessment();
+    });
+  });
+
+  $('runBtn').addEventListener('click', runAssessment);
+
+  async function runAssessment() {
+    const lat = parseFloat($('lat').value);
+    const lng = parseFloat($('lng').value);
+    const statusEl = $('status');
+    const btn = $('runBtn');
+
+    if (isNaN(lat) || isNaN(lng)) {
+      statusEl.textContent = 'Enter valid decimal coordinates.';
+      statusEl.className = 'status error';
+      return;
+    }
+
+    btn.disabled = true;
+    statusEl.className = 'status';
+    statusEl.textContent = 'Querying Mireye Earth and Global Forest Watch…';
+
+    try {
+      const res = await fetch(`/api/risk?lat=${lat}&lng=${lng}`);
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.detail || `Request failed (${res.status})`);
+      }
+      const data = await res.json();
+      renderResults(data);
+      statusEl.textContent = 'Assessment complete.';
+    } catch (err) {
+      statusEl.className = 'status error';
+      statusEl.textContent = `Error: ${err.message}`;
+    } finally {
+      btn.disabled = false;
+    }
+  }
+
+  function renderResults(data) {
+    $('results').classList.add('show');
+    $('coordsLabel').textContent = `${data.location.lat}, ${data.location.lng}`;
+
+    const level = data.risk.level;
+    const levelEl = $('level');
+    levelEl.textContent = level + ' risk';
+    levelEl.className = 'level ' + level;
+    $('scoreLine').textContent = `composite score: ${data.risk.score}`;
+
+    // Core sample visual — stack bands sized by factor count, colored by severity
+    const core = $('core');
+    core.innerHTML = '';
+    const factors = data.risk.factors;
+    const bandHeight = 100 / Math.max(factors.length, 1);
+    factors.forEach((f, i) => {
+      const band = document.createElement('div');
+      band.className = 'core-band ' + f.severity;
+      band.style.top = (i * bandHeight) + '%';
+      band.style.height = bandHeight + '%';
+      core.appendChild(band);
+    });
+
+    // Factor list
+    const factorsEl = $('factors');
+    factorsEl.innerHTML = '';
+    factors.forEach(f => {
+      const row = document.createElement('div');
+      row.className = 'factor-row';
+      row.innerHTML = `<span class="dot ${f.severity}"></span>
+        <span class="fname">${f.label}</span>
+        <span class="fdetail">${f.detail}</span>`;
+      factorsEl.appendChild(row);
+    });
+
+    // Field data table
+    const tbody = $('fieldsBody');
+    tbody.innerHTML = '';
+    Object.entries(data.mireye_fields).forEach(([key, f]) => {
+      const tr = document.createElement('tr');
+      const val = f.unit ? `${f.value} ${f.unit}` : `${f.value}`;
+      tr.innerHTML = `<td>${key.replace(/_/g, ' ')}</td>
+        <td class="val">${val}</td>
+        <td><a href="${f.source_url}" target="_blank" rel="noopener">${f.source}</a></td>`;
+      tbody.appendChild(tr);
+    });
+
+    // Tree cover loss chart
+    const gfwNote = $('gfwNote');
+    const ctx = document.getElementById('lossChart').getContext('2d');
+    if (chart) chart.destroy();
+
+    if (data.gfw_error) {
+      gfwNote.textContent = `Global Forest Watch data unavailable: ${data.gfw_error}`;
+      chart = new Chart(ctx, { type: 'bar', data: { labels: [], datasets: [] } });
+    } else {
+      gfwNote.textContent = '';
+      const rows = [...data.tree_cover_loss_by_year].sort(
+        (a, b) => a.umd_tree_cover_loss__year - b.umd_tree_cover_loss__year
+      );
+      chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: rows.map(r => r.umd_tree_cover_loss__year),
+          datasets: [{
+            label: 'Hectares lost',
+            data: rows.map(r => r.area_ha),
+            backgroundColor: '#A63D1F',
+            borderRadius: 2,
+          }],
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { grid: { display: false } },
+            y: { grid: { color: 'rgba(43,36,28,0.08)' } },
+          },
+        },
+      });
+    }
+  }
+</script>
+</body>
+</html>
