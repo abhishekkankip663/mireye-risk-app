@@ -118,6 +118,41 @@
     outline: 2px solid var(--rust);
     outline-offset: 1px;
   }
+  .field select {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    padding: 9px 10px;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    background: var(--paper);
+    color: var(--ink);
+    min-width: 170px;
+  }
+  .field select:focus-visible {
+    outline: 2px solid var(--rust);
+    outline-offset: 1px;
+  }
+
+  .tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .tab-btn {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--ink-soft);
+    padding: 10px 4px;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  .tab-btn:hover { color: var(--ink); }
+  .tab-btn.active { color: var(--ink); border-bottom-color: var(--rust); }
 
   button.run {
     font-family: 'IBM Plex Sans', sans-serif;
@@ -318,9 +353,24 @@
     vertical-align: top;
   }
   table.fields td.val { font-family: 'IBM Plex Mono', monospace; }
+  table.fields td.val.na { color: var(--ink-soft); font-style: italic; }
   table.fields tr.failed td { color: var(--rust); font-style: italic; }
   table.fields a { color: var(--ink-soft); }
   table.fields tr:hover td { background: rgba(43,36,28,0.03); }
+  table.fields th.sortable { cursor: pointer; user-select: none; }
+  table.fields th.sortable:hover { color: var(--ink); }
+  table.fields th.sortable::after { content: " \21C5"; font-size: 10px; opacity: 0.5; }
+
+  .risk-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+  }
+  .risk-tag.low { color: var(--moss); }
+  .risk-tag.moderate { color: var(--amber); }
+  .risk-tag.high { color: var(--rust); }
 
   .chart-wrap {
     background: var(--paper-dark);
@@ -365,71 +415,178 @@
     the one layer of extra granularity it doesn't natively provide.
   </p>
 
-  <div class="intake">
-    <div class="row">
-      <div class="field">
-        <label for="lat">Latitude</label>
-        <input id="lat" type="text" value="34.1478" />
-      </div>
-      <div class="field">
-        <label for="lng">Longitude</label>
-        <input id="lng" type="text" value="-118.1445" />
-      </div>
-      <button class="run" id="runBtn">Run assessment</button>
-    </div>
-    <div class="presets">
-      <button class="chip" data-lat="34.1478" data-lng="-118.1445">Angeles National Forest, CA</button>
-      <button class="chip" data-lat="35.6009" data-lng="-83.5089">Great Smoky Mountains, TN</button>
-      <button class="chip" data-lat="40.7128" data-lng="-74.0060">Lower Manhattan, NY</button>
-    </div>
-    <div class="status" id="status"></div>
+  <div class="tabs">
+    <button class="tab-btn active" id="tabLookup" type="button">Look Up a Point</button>
+    <button class="tab-btn" id="tabRankings" type="button">Most At-Risk Areas</button>
   </div>
 
-  <div id="results">
-    <div class="report-head">
-      <div class="eyebrow" style="margin:0">Report</div>
-      <div class="coords" id="coordsLabel"></div>
-    </div>
-
-    <div class="section-label">RUSLE-lite erosion index — real K-factor from Mireye</div>
-    <div class="rusle-panel" id="ruslePanel"></div>
-
-    <div class="core-panel">
-      <div class="core" id="core"></div>
-      <div class="verdict">
-        <div class="level" id="level">—</div>
-        <div class="score-line" id="scoreLine"></div>
-        <div class="factors" id="factors"></div>
+  <div id="lookupView">
+    <div class="intake">
+      <div class="row">
+        <div class="field">
+          <label for="lat">Latitude</label>
+          <input id="lat" type="text" value="34.1478" />
+        </div>
+        <div class="field">
+          <label for="lng">Longitude</label>
+          <input id="lng" type="text" value="-118.1445" />
+        </div>
+        <button class="run" id="runBtn">Run assessment</button>
       </div>
+      <div class="presets">
+        <button class="chip" data-lat="34.1478" data-lng="-118.1445">Angeles National Forest, CA</button>
+        <button class="chip" data-lat="35.6009" data-lng="-83.5089">Great Smoky Mountains, TN</button>
+        <button class="chip" data-lat="40.7128" data-lng="-74.0060">Lower Manhattan, NY</button>
+      </div>
+      <div class="status" id="status"></div>
     </div>
 
-    <div class="section-label">Mireye's own summary — /v1/ask</div>
-    <div class="ask-panel">
-      <span class="ask-label">Natural-language answer, cited</span>
-      <span id="askSummary"></span>
+    <div id="results">
+      <div class="report-head">
+        <div class="eyebrow" style="margin:0">Report</div>
+        <div class="coords" id="coordsLabel"></div>
+      </div>
+
+      <div class="section-label" id="rusleSectionLabel">RUSLE-lite erosion index — real K-factor from Mireye</div>
+      <div class="rusle-panel" id="ruslePanel"></div>
+
+      <div class="core-panel">
+        <div class="core" id="core"></div>
+        <div class="verdict">
+          <div class="level" id="level">—</div>
+          <div class="score-line" id="scoreLine"></div>
+          <div class="factors" id="factors"></div>
+        </div>
+      </div>
+
+      <div class="section-label" id="askSectionLabel">Mireye's own summary</div>
+      <div class="ask-panel" id="askPanel">
+        <span class="ask-label">Natural-language answer, cited</span>
+        <span id="askSummary"></span>
+      </div>
+
+      <div class="section-label" id="fieldsSectionLabel">Cited field data — Mireye Earth</div>
+      <table class="fields" id="fieldsTable">
+        <thead><tr><th>Field</th><th>Value</th><th>Source</th></tr></thead>
+        <tbody id="fieldsBody"></tbody>
+      </table>
+
+      <div class="section-label" id="gfwSectionLabel">Tree cover loss by year — Global Forest Watch</div>
+      <div class="chart-wrap" id="gfwChartWrap">
+        <canvas id="lossChart" height="90"></canvas>
+      </div>
+
+      <footer>
+        Elevation, slope, seismic, wildfire, flood, landslide, soil, and
+        vegetation-trend data via Mireye Earth (api.mireye.com), sourced from
+        USGS, FEMA, NOAA, USACE, USDA/NRCS, and Sentinel-2.
+        Tree-cover-loss history via Global Forest Watch (World Resources
+        Institute). This report is a screening tool, not a substitute for a
+        licensed geotechnical or environmental survey.
+      </footer>
+    </div>
+  </div>
+
+  <div id="rankingsView" style="display:none">
+    <div class="intake">
+      <div class="row">
+        <div class="field">
+          <label for="rankByFilter">Rank by</label>
+          <select id="rankByFilter">
+            <option value="us">Entire US</option>
+            <option value="state">State</option>
+            <option value="region">Region</option>
+          </select>
+        </div>
+        <div class="field" id="stateFilterField" style="display:none">
+          <label for="stateFilter">State</label>
+          <select id="stateFilter">
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+            <option value="CA">California</option>
+            <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option>
+            <option value="DE">Delaware</option>
+            <option value="DC">District of Columbia</option>
+            <option value="FL">Florida</option>
+            <option value="GA">Georgia</option>
+            <option value="HI">Hawaii</option>
+            <option value="ID">Idaho</option>
+            <option value="IL">Illinois</option>
+            <option value="IN">Indiana</option>
+            <option value="IA">Iowa</option>
+            <option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option>
+            <option value="ME">Maine</option>
+            <option value="MD">Maryland</option>
+            <option value="MA">Massachusetts</option>
+            <option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option>
+            <option value="MS">Mississippi</option>
+            <option value="MO">Missouri</option>
+            <option value="MT">Montana</option>
+            <option value="NE">Nebraska</option>
+            <option value="NV">Nevada</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+            <option value="NY">New York</option>
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option>
+            <option value="TX">Texas</option>
+            <option value="UT">Utah</option>
+            <option value="VT">Vermont</option>
+            <option value="VA">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WY">Wyoming</option>
+          </select>
+        </div>
+        <div class="field" id="regionFilterField" style="display:none">
+          <label for="regionFilter">Region</label>
+          <select id="regionFilter">
+            <option value="Northeast">Northeast</option>
+            <option value="Midwest">Midwest</option>
+            <option value="South">South</option>
+            <option value="West">West</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="rankLimit">How many results</label>
+          <input id="rankLimit" type="number" min="1" step="1" value="10" />
+        </div>
+        <button class="run" id="rankingsRunBtn">Show rankings</button>
+      </div>
+      <div class="status" id="rankingsStatus"></div>
     </div>
 
-    <div class="section-label">Cited field data — Mireye Earth /v1/fetch</div>
-    <table class="fields">
-      <thead><tr><th>Field</th><th>Value</th><th>Source</th></tr></thead>
-      <tbody id="fieldsBody"></tbody>
-    </table>
-    <div class="gap-note" id="gapNote"></div>
-
-    <div class="section-label">Tree cover loss by year — Global Forest Watch</div>
-    <div class="chart-wrap">
-      <canvas id="lossChart" height="90"></canvas>
-      <div class="gfw-note" id="gfwNote"></div>
+    <div id="rankingsResults" style="display:none">
+      <div class="section-label" id="rankingsSectionLabel">Ranked by composite risk score</div>
+      <table class="fields" id="rankingsTable">
+        <thead><tr>
+          <th>#</th>
+          <th class="sortable" data-sort-key="county">County</th>
+          <th class="sortable" data-sort-key="state">State</th>
+          <th>Region</th>
+          <th class="sortable" data-sort-key="level">Risk level</th>
+          <th class="sortable" data-sort-key="score">Score</th>
+        </tr></thead>
+        <tbody id="rankingsBody"></tbody>
+      </table>
+      <div class="gap-note" id="rankingsFailedNote"></div>
     </div>
-
-    <footer>
-      Elevation, slope, seismic, wildfire, flood, landslide, soil, and
-      vegetation-trend data via Mireye Earth (api.mireye.com), sourced from
-      USGS, FEMA, NOAA, USACE, USDA/NRCS, and Sentinel-2.
-      Tree-cover-loss history via Global Forest Watch (World Resources
-      Institute). This report is a screening tool, not a substitute for a
-      licensed geotechnical or environmental survey.
-    </footer>
   </div>
 
 </div>
@@ -448,6 +605,130 @@
 
   $('runBtn').addEventListener('click', runAssessment);
 
+  $('tabLookup').addEventListener('click', () => switchTab('lookup'));
+  $('tabRankings').addEventListener('click', () => switchTab('rankings'));
+
+  function switchTab(tab) {
+    const isLookup = tab === 'lookup';
+    $('tabLookup').classList.toggle('active', isLookup);
+    $('tabRankings').classList.toggle('active', !isLookup);
+    $('lookupView').style.display = isLookup ? '' : 'none';
+    $('rankingsView').style.display = isLookup ? 'none' : '';
+  }
+
+  $('rankingsRunBtn').addEventListener('click', loadRankings);
+  document.querySelectorAll('#rankingsTable th.sortable').forEach(th => {
+    th.addEventListener('click', () => sortRankings(th.dataset.sortKey));
+  });
+
+  $('rankByFilter').addEventListener('change', updateRankByFieldVisibility);
+  updateRankByFieldVisibility();
+
+  function updateRankByFieldVisibility() {
+    const mode = $('rankByFilter').value;
+    $('stateFilterField').style.display = mode === 'state' ? '' : 'none';
+    $('regionFilterField').style.display = mode === 'region' ? '' : 'none';
+  }
+
+  let currentRankingsResults = [];
+  let rankingsSortState = { key: 'score', dir: 'desc' };
+
+  async function loadRankings() {
+    const mode = $('rankByFilter').value;
+    const statusEl = $('rankingsStatus');
+    const btn = $('rankingsRunBtn');
+
+    btn.disabled = true;
+    statusEl.className = 'status';
+    statusEl.textContent = 'Loading rankings…';
+
+    const params = new URLSearchParams();
+    if (mode === 'state') params.set('state', $('stateFilter').value);
+    if (mode === 'region') params.set('region', $('regionFilter').value);
+    const parsedLimit = parseInt($('rankLimit').value, 10);
+    const limit = (!isNaN(parsedLimit) && parsedLimit > 0) ? parsedLimit : 10;
+    params.set('limit', limit);
+
+    try {
+      const res = await fetch(`/api/rankings?${params.toString()}`);
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.detail || `Request failed (${res.status})`);
+      }
+      const data = await res.json();
+      renderRankings(data);
+      if (!data.data_available) {
+        statusEl.className = 'status error';
+        statusEl.textContent = data.message || 'No rankings data available yet.';
+      } else if (data.results.length === 0) {
+        statusEl.textContent = 'No areas match this filter.';
+      } else {
+        const computed = data.computed_at ? new Date(data.computed_at).toLocaleString() : 'unknown time';
+        statusEl.textContent = `${data.results.length} area(s) shown — computed ${computed}.`;
+      }
+    } catch (err) {
+      statusEl.className = 'status error';
+      statusEl.textContent = `Error: ${err.message}`;
+      $('rankingsResults').style.display = 'none';
+    } finally {
+      btn.disabled = false;
+    }
+  }
+
+  function renderRankings(data) {
+    const resultsEl = $('rankingsResults');
+    const results = data.results || [];
+
+    if (!data.data_available || results.length === 0) {
+      resultsEl.style.display = 'none';
+      return;
+    }
+    resultsEl.style.display = '';
+    currentRankingsResults = results;
+    rankingsSortState = { key: 'score', dir: 'desc' };
+    renderRankingsTable();
+
+    const failedEl = $('rankingsFailedNote');
+    const failed = data.failed || [];
+    failedEl.textContent = failed.length
+      ? `${failed.length} area(s) could not be computed and are excluded from this ranking.`
+      : '';
+  }
+
+  function sortRankings(key) {
+    if (rankingsSortState.key === key) {
+      rankingsSortState.dir = rankingsSortState.dir === 'desc' ? 'asc' : 'desc';
+    } else {
+      rankingsSortState = { key, dir: key === 'score' ? 'desc' : 'asc' };
+    }
+    renderRankingsTable();
+  }
+
+  function renderRankingsTable() {
+    const tbody = $('rankingsBody');
+    tbody.innerHTML = '';
+    const { key, dir } = rankingsSortState;
+    const sorted = [...currentRankingsResults].sort((a, b) => {
+      const av = a[key], bv = b[key];
+      if (typeof av === 'number' && typeof bv === 'number') {
+        return dir === 'asc' ? av - bv : bv - av;
+      }
+      return dir === 'asc'
+        ? String(av).localeCompare(String(bv))
+        : String(bv).localeCompare(String(av));
+    });
+    sorted.forEach((r, i) => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>${i + 1}</td>
+        <td>${r.county}</td>
+        <td>${r.state}</td>
+        <td>${r.region}</td>
+        <td><span class="risk-tag ${r.level}">${r.level}</span></td>
+        <td>${r.score}</td>`;
+      tbody.appendChild(tr);
+    });
+  }
+
   async function runAssessment() {
     const lat = parseFloat($('lat').value);
     const lng = parseFloat($('lng').value);
@@ -462,7 +743,7 @@
 
     btn.disabled = true;
     statusEl.className = 'status';
-    statusEl.textContent = 'Querying Mireye Earth (/v1/fetch + /v1/ask) and Global Forest Watch…';
+    statusEl.textContent = 'Querying Mireye Earth and Global Forest Watch…';
 
     try {
       const res = await fetch(`/api/risk?lat=${lat}&lng=${lng}`);
@@ -495,18 +776,33 @@
     const rusleEl = $('ruslePanel');
     const r = data.risk.rusle_lite;
     if (r) {
+      const hasAbs = r.annual_soil_loss_tons_per_acre != null && r.r_factor != null;
+      const headline = hasAbs
+        ? `Estimated soil loss &nbsp;A = R × K × LS × C&nbsp; → &nbsp;<strong>${r.annual_soil_loss_tons_per_acre} tons/acre/yr</strong>`
+        : `Relative erosion index = K × LS × C &nbsp;(R-factor unresolved — not tons/acre/year)`;
       rusleEl.innerHTML = `
-        <div class="rusle-formula">Relative erosion index = K × LS × C &nbsp;(R-factor unavailable — not tons/acre/year)</div>
+        <div class="rusle-formula">${headline}</div>
         <div class="rusle-terms">
+          ${hasAbs ? `<div class="rusle-term"><span class="tname">R — rainfall erosivity</span><span class="tval">${r.r_factor}</span></div>` : ''}
           <div class="rusle-term"><span class="tname">K — soil erodibility</span><span class="tval">${r.k_factor}</span></div>
           <div class="rusle-term"><span class="tname">LS — slope length-steepness</span><span class="tval">${r.ls_factor}</span></div>
           <div class="rusle-term"><span class="tname">C — cover-management</span><span class="tval">${r.c_factor}</span></div>
           <div class="rusle-term"><span class="tname">Relative index</span><span class="tval">${r.relative_index}</span></div>
         </div>
-        <div class="rusle-note">Assumes a ${r.assumed_slope_length_m}m reference slope length (Mireye has no real flow-length field). Screening index, not a certified engineering estimate.</div>
+        <div class="rusle-note">${(() => {
+          const slopeLenPhrase = r.slope_length_estimated_from_canopy
+            ? `${r.assumed_slope_length_m} m slope length, estimated from canopy cover and slope steepness`
+            : `${r.assumed_slope_length_m} m reference slope length (no canopy data at this point to refine it)`;
+          return hasAbs
+            ? `R estimated from ${r.mean_annual_precip_mm} mm mean annual precipitation (Renard–Freimund 1994); P assumed 1; ${slopeLenPhrase}. Screening estimate, not a certified engineering figure.`
+            : `${slopeLenPhrase} (Mireye has no real flow-length field). Screening index, not a certified engineering estimate.`;
+        })()}</div>
       `;
+      $('rusleSectionLabel').style.display = '';
+      rusleEl.style.display = '';
     } else {
-      rusleEl.innerHTML = `<div class="rusle-note">Unavailable — slope or soil erodibility data missing at this point.</div>`;
+      $('rusleSectionLabel').style.display = 'none';
+      rusleEl.style.display = 'none';
     }
 
     // Core sample visual
@@ -534,44 +830,45 @@
       factorsEl.appendChild(row);
     });
 
-    // /v1/ask natural-language summary
+    // Natural-language summary
     const askEl = $('askSummary');
     if (data.mireye_ask_summary) {
       askEl.textContent = data.mireye_ask_summary;
+      $('askSectionLabel').style.display = '';
+      $('askPanel').style.display = '';
     } else {
-      askEl.textContent = `Unavailable (${data.mireye_ask_error || 'no response'}).`;
+      $('askSectionLabel').style.display = 'none';
+      $('askPanel').style.display = 'none';
     }
 
-    // Field data table — respects per-field status
+    // Field data table — only render fields with actual values
     const tbody = $('fieldsBody');
     tbody.innerHTML = '';
     Object.entries(data.mireye_fields).forEach(([key, f]) => {
+      if (f.status === 'failed' || f.value == null) return;
       const tr = document.createElement('tr');
-      const failed = f.status === 'failed';
-      if (failed) tr.className = 'failed';
-      const val = failed ? 'unavailable at this point' : (f.unit ? `${f.value} ${f.unit}` : `${f.value}`);
+      const val = f.unit ? `${f.value} ${f.unit}` : `${f.value}`;
       tr.innerHTML = `<td>${key.replace(/_/g, ' ')}</td>
         <td class="val">${val}</td>
         <td>${f.source_url ? `<a href="${f.source_url}" target="_blank" rel="noopener">${f.source}</a>` : (f.source || '—')}</td>`;
       tbody.appendChild(tr);
     });
 
-    const gapEl = $('gapNote');
-    const gaps = data.mireye_partial_failures || [];
-    gapEl.textContent = gaps.length
-      ? `${gaps.length} field(s) unavailable at this exact point: ${gaps.map(g => g.field).join(', ')}.`
-      : '';
+    const hasFields = tbody.children.length > 0;
+    $('fieldsSectionLabel').style.display = hasFields ? '' : 'none';
+    $('fieldsTable').style.display = hasFields ? '' : 'none';
 
     // Tree cover loss chart
-    const gfwNote = $('gfwNote');
     const ctx = document.getElementById('lossChart').getContext('2d');
     if (chart) chart.destroy();
 
-    if (data.gfw_error) {
-      gfwNote.textContent = `Global Forest Watch data unavailable: ${data.gfw_error}`;
-      chart = new Chart(ctx, { type: 'bar', data: { labels: [], datasets: [] } });
+    const hasGfw = !data.gfw_error && data.tree_cover_loss_by_year && data.tree_cover_loss_by_year.length > 0;
+    $('gfwSectionLabel').style.display = hasGfw ? '' : 'none';
+    $('gfwChartWrap').style.display = hasGfw ? '' : 'none';
+
+    if (!hasGfw) {
+      chart = null;
     } else {
-      gfwNote.textContent = '';
       const rows = [...data.tree_cover_loss_by_year].sort(
         (a, b) => a.umd_tree_cover_loss__year - b.umd_tree_cover_loss__year
       );

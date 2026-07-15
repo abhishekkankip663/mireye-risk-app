@@ -1,0 +1,52 @@
+county,state,state_abbr,region,lat,lng
+Jefferson County (Birmingham),Alabama,AL,South,33.5207,-86.8025
+Anchorage Municipality,Alaska,AK,West,61.2181,-149.9003
+Maricopa County (Phoenix),Arizona,AZ,West,33.4484,-112.0740
+Pulaski County (Little Rock),Arkansas,AR,South,34.7465,-92.2896
+Los Angeles County,California,CA,West,34.0522,-118.2437
+Denver County,Colorado,CO,West,39.7392,-104.9903
+Fairfield County (Bridgeport),Connecticut,CT,Northeast,41.1792,-73.1894
+New Castle County (Wilmington),Delaware,DE,South,39.7391,-75.5398
+District of Columbia,District of Columbia,DC,South,38.9072,-77.0369
+Miami-Dade County,Florida,FL,South,25.7617,-80.1918
+Fulton County (Atlanta),Georgia,GA,South,33.7490,-84.3880
+Honolulu County,Hawaii,HI,West,21.3069,-157.8583
+Ada County (Boise),Idaho,ID,West,43.6150,-116.2023
+Cook County (Chicago),Illinois,IL,Midwest,41.8781,-87.6298
+Marion County (Indianapolis),Indiana,IN,Midwest,39.7684,-86.1581
+Polk County (Des Moines),Iowa,IA,Midwest,41.5868,-93.6250
+Sedgwick County (Wichita),Kansas,KS,Midwest,37.6872,-97.3301
+Jefferson County (Louisville),Kentucky,KY,South,38.2527,-85.7585
+Orleans Parish (New Orleans),Louisiana,LA,South,29.9511,-90.0715
+Cumberland County (Portland),Maine,ME,Northeast,43.6591,-70.2568
+Baltimore City,Maryland,MD,South,39.2904,-76.6122
+Suffolk County (Boston),Massachusetts,MA,Northeast,42.3601,-71.0589
+Wayne County (Detroit),Michigan,MI,Midwest,42.3314,-83.0458
+Hennepin County (Minneapolis),Minnesota,MN,Midwest,44.9778,-93.2650
+Hinds County (Jackson),Mississippi,MS,South,32.2988,-90.1848
+Jackson County (Kansas City),Missouri,MO,Midwest,39.0997,-94.5786
+Yellowstone County (Billings),Montana,MT,West,45.7833,-108.5007
+Douglas County (Omaha),Nebraska,NE,Midwest,41.2565,-95.9345
+Clark County (Las Vegas),Nevada,NV,West,36.1699,-115.1398
+Hillsborough County (Manchester),New Hampshire,NH,Northeast,42.9956,-71.4548
+Bergen County,New Jersey,NJ,Northeast,40.9262,-74.0776
+Bernalillo County (Albuquerque),New Mexico,NM,West,35.0844,-106.6504
+Kings County (Brooklyn),New York,NY,Northeast,40.6782,-73.9442
+Mecklenburg County (Charlotte),North Carolina,NC,South,35.2271,-80.8431
+Cass County (Fargo),North Dakota,ND,Midwest,46.8772,-96.7898
+Franklin County (Columbus),Ohio,OH,Midwest,39.9612,-82.9988
+Oklahoma County (Oklahoma City),Oklahoma,OK,South,35.4676,-97.5164
+Multnomah County (Portland),Oregon,OR,West,45.5152,-122.6784
+Philadelphia County,Pennsylvania,PA,Northeast,39.9526,-75.1652
+Providence County,Rhode Island,RI,Northeast,41.8240,-71.4128
+Greenville County,South Carolina,SC,South,34.8526,-82.3940
+Minnehaha County (Sioux Falls),South Dakota,SD,Midwest,43.5460,-96.7313
+Shelby County (Memphis),Tennessee,TN,South,35.1495,-90.0490
+Harris County (Houston),Texas,TX,South,29.7604,-95.3698
+Salt Lake County,Utah,UT,West,40.7608,-111.8910
+Chittenden County (Burlington),Vermont,VT,Northeast,44.4759,-73.2121
+Fairfax County,Virginia,VA,South,38.8462,-77.3064
+King County (Seattle),Washington,WA,West,47.6062,-122.3321
+Kanawha County (Charleston),West Virginia,WV,South,38.3498,-81.6326
+Milwaukee County,Wisconsin,WI,Midwest,43.0389,-87.9065
+Laramie County (Cheyenne),Wyoming,WY,West,41.1400,-104.8202

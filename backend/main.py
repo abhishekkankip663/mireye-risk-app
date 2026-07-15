@@ -70,6 +70,26 @@ EXTRA_FIELDS = [
     "prime_farmland_classification",
 ]
 
+# Every field above except two now has a live fallback for when Mireye's own
+# value is null (see the USDA SDA / USGS 3DEP / FEMA NFHL / USFWS NWI / MRLC
+# NLCD sections below). The two without one:
+#
+#   - landslide_susceptibility_index: no free, no-auth, nationwide,
+#     point-queryable dataset exists. USGS has only published regional
+#     landslide susceptibility studies (patchy coverage, inconsistent
+#     scales/methodologies) and a point-feature landslide INVENTORY (past
+#     events), not a continuous susceptibility index comparable to Mireye's.
+#     Filling this from a mismatched source would misrepresent confidence
+#     rather than genuinely reduce the gap.
+#   - ndvi_change_5y: computing a real 5-year NDVI trend requires a
+#     multi-date satellite imagery time series (e.g. via Google Earth Engine
+#     or NASA AppEEARS), both of which need an authenticated account/API key
+#     and non-trivial per-point processing — out of scope for a same-shape
+#     drop-in fallback like the others here.
+#
+# Both are left as genuine gaps (hidden in the UI per the missing-data
+# behavior, not fabricated) rather than backed by a low-quality proxy.
+
 app = FastAPI(title="Mireye Field Risk Report")
 app.add_middleware(
     CORSMiddleware,
@@ -159,7 +179,7 @@ def get_gfw_latest_version(api_key: str) -> str:
         timeout=30,
     )
     resp.raise_for_status()
-    versions = resp.json().get("data", {}).get("versions", [])
+    versions = (resp.json().get("data") or {}).get("versions", [])
     if not versions:
         raise RuntimeError("Could not determine umd_tree_cover_loss dataset version from GFW.")
     return versions[-1]
@@ -180,7 +200,7 @@ def fetch_gfw_tree_cover_loss(lat: float, lng: float) -> list:
         timeout=60,
     )
     resp.raise_for_status()
-    return resp.json().get("data", [])
+    return resp.json().get("data") or []
 
 
 # ---------------------------------------------------------------------------
@@ -223,10 +243,13 @@ def _shrink_swell_class_from_lep(lep):
 def fetch_ssurgo_live_fallback(lat: float, lng: float) -> dict:
     point_wkt = f"point({lng} {lat})"
     sql = f"""
-        SELECT TOP 1 co.hydgrp, ch.kwfact, ch.lep_r, mu.muname
+        SELECT TOP 1 co.hydgrp, ch.kwfact, ch.lep_r, mu.muname, ma.pondfreqprs,
+               co.farmlndcl, cr.reskind, cr.resdept_r
         FROM mapunit mu
         INNER JOIN component co ON co.mukey = mu.mukey AND co.majcompflag = 'Yes'
         INNER JOIN chorizon ch ON ch.cokey = co.cokey
+        LEFT JOIN muaggatt ma ON ma.mukey = mu.mukey
+        LEFT JOIN corestrictions cr ON cr.cokey = co.cokey
         WHERE mu.mukey IN (SELECT mukey FROM SDA_Get_Mukey_from_intersection_with_WktWgs84('{point_wkt}'))
         ORDER BY co.comppct_r DESC, ch.hzdept_r ASC
     """
@@ -241,11 +264,19 @@ def fetch_ssurgo_live_fallback(lat: float, lng: float) -> dict:
         kwfact = float(row[1]) if row[1] not in (None, "") else None
     except (TypeError, ValueError):
         kwfact = None
+    try:
+        resdept_cm = float(row[7]) if len(row) > 7 and row[7] not in (None, "") else None
+    except (TypeError, ValueError):
+        resdept_cm = None
     return {
         "hydgrp": row[0],
         "kwfact": kwfact,
         "shrink_swell": _shrink_swell_class_from_lep(row[2]),
         "muname": row[3],
+        "pondfreq": row[4] if len(row) > 4 else None,
+        "farmland_class": row[5] if len(row) > 5 else None,
+        "restrictive_kind": row[6] if len(row) > 6 else None,
+        "restrictive_depth_cm": resdept_cm,
     }
 
 
@@ -258,7 +289,12 @@ def patch_nulls_with_live_ssurgo(lat: float, lng: float, fields: dict) -> dict:
     k_missing = field_value(fields, "soil_erodibility_k_factor") is None
     hydgrp_missing = field_value(fields, "soil_hydrologic_group") is None
     ss_missing = field_value(fields, "soil_shrink_swell_class") is None
-    if not (k_missing or hydgrp_missing or ss_missing):
+    pond_missing = field_value(fields, "soil_ponding_frequency_class") is None
+    farmland_missing = field_value(fields, "prime_farmland_classification") is None
+    res_kind_missing = field_value(fields, "soil_restrictive_layer_kind") is None
+    res_depth_missing = field_value(fields, "soil_restrictive_layer_depth_cm") is None
+    if not (k_missing or hydgrp_missing or ss_missing or pond_missing
+            or farmland_missing or res_kind_missing or res_depth_missing):
         return fields
 
     try:
@@ -267,6 +303,46 @@ def patch_nulls_with_live_ssurgo(lat: float, lng: float, fields: dict) -> dict:
         fields.setdefault("_ssurgo_live_fallback_error", {"status": "failed", "error": str(e)})
         return fields
 
+    if farmland_missing and live.get("farmland_class") is not None:
+        fields["prime_farmland_classification"] = {
+            "value": live["farmland_class"],
+            "unit": None,
+            "source": "USDA_SDA_LIVE",
+            "source_url": "https://sdmdataaccess.nrcs.usda.gov/",
+            "confidence": "medium",
+            "notes": f"Live SDA fallback from component.farmlndcl (Mireye's cached raster was null at this pixel). Map unit: {live.get('muname', 'unknown')}.",
+            "status": "ok",
+        }
+    if res_kind_missing and live.get("restrictive_kind") is not None:
+        fields["soil_restrictive_layer_kind"] = {
+            "value": live["restrictive_kind"],
+            "unit": None,
+            "source": "USDA_SDA_LIVE",
+            "source_url": "https://sdmdataaccess.nrcs.usda.gov/",
+            "confidence": "medium",
+            "notes": f"Live SDA fallback from corestrictions.reskind (Mireye's cached raster was null at this pixel). Map unit: {live.get('muname', 'unknown')}.",
+            "status": "ok",
+        }
+    if res_depth_missing and live.get("restrictive_depth_cm") is not None:
+        fields["soil_restrictive_layer_depth_cm"] = {
+            "value": live["restrictive_depth_cm"],
+            "unit": "cm",
+            "source": "USDA_SDA_LIVE",
+            "source_url": "https://sdmdataaccess.nrcs.usda.gov/",
+            "confidence": "medium",
+            "notes": f"Live SDA fallback from corestrictions.resdept_r (Mireye's cached raster was null at this pixel). Map unit: {live.get('muname', 'unknown')}.",
+            "status": "ok",
+        }
+    if pond_missing and live.get("pondfreq") is not None:
+        fields["soil_ponding_frequency_class"] = {
+            "value": live["pondfreq"],
+            "unit": None,
+            "source": "USDA_SDA_LIVE",
+            "source_url": "https://sdmdataaccess.nrcs.usda.gov/",
+            "confidence": "medium",
+            "notes": f"Live SDA fallback from muaggatt.pondfreqprs (Mireye's cached raster was null at this pixel). Map unit: {live.get('muname', 'unknown')}.",
+            "status": "ok",
+        }
     if k_missing and live.get("kwfact") is not None:
         fields["soil_erodibility_k_factor"] = {
             "value": live["kwfact"],
@@ -301,10 +377,422 @@ def patch_nulls_with_live_ssurgo(lat: float, lng: float, fields: dict) -> dict:
 
 
 # ---------------------------------------------------------------------------
+# USGS 3DEP Elevation Point Query Service — live fallback for slope_degrees
+# ---------------------------------------------------------------------------
+#
+# Mireye sometimes has no slope_degrees value at a point. Slope isn't
+# published directly by USGS either, but elevation is (3DEP, no key
+# required), so we derive slope from a small central-difference stencil:
+# sample elevation ~30m N/S/E/W of the point and compute the gradient.
+# This is a screening-grade slope estimate, not a substitute for a real
+# hydro-flattened DEM analysis.
+#
+# NOTE: like the SDA fallback above, this environment's network allowlist
+# doesn't include epqs.nationalmap.gov, so the exact response shape is
+# built from USGS's documented EPQS v1 contract but hasn't been
+# live-tested end-to-end here. If the response shape differs on your
+# first real run, it'll raise (and get logged as a fallback error)
+# rather than fail silently.
+
+EPQS_URL = "https://epqs.nationalmap.gov/v1/json"
+DEM_SAMPLE_OFFSET_M = 30.0  # roughly matches 1-arcsecond (~30m) 3DEP resolution
+
+
+def fetch_elevation_m(lat: float, lng: float) -> float:
+    resp = requests.get(
+        EPQS_URL,
+        params={"x": lng, "y": lat, "units": "Meters", "wkid": 4326, "includeDate": "false"},
+        timeout=15,
+    )
+    resp.raise_for_status()
+    data = resp.json()
+    value = data.get("value")
+    if value is None:
+        raise RuntimeError(f"EPQS returned no elevation value: {data}")
+    return float(value)
+
+
+def fetch_slope_from_dem(lat: float, lng: float) -> float:
+    """Central-difference slope estimate (degrees) from four elevation
+    samples offset ~DEM_SAMPLE_OFFSET_M north/south/east/west of the point."""
+    if abs(lat) > 89.9:
+        # cos(lat) -> 0 near the poles blows up the east/west sample offset
+        # into a nonsensical longitude delta; no real field/parcel is here.
+        raise RuntimeError(f"DEM slope fallback not supported this close to a pole (lat={lat}).")
+    lat_rad = math.radians(lat)
+    dlat = DEM_SAMPLE_OFFSET_M / 111_320.0
+    dlng = DEM_SAMPLE_OFFSET_M / (111_320.0 * math.cos(lat_rad))
+
+    elev_n = fetch_elevation_m(lat + dlat, lng)
+    elev_s = fetch_elevation_m(lat - dlat, lng)
+    elev_e = fetch_elevation_m(lat, lng + dlng)
+    elev_w = fetch_elevation_m(lat, lng - dlng)
+
+    dz_dy = (elev_n - elev_s) / (2 * DEM_SAMPLE_OFFSET_M)
+    dz_dx = (elev_e - elev_w) / (2 * DEM_SAMPLE_OFFSET_M)
+    rise_over_run = math.sqrt(dz_dx ** 2 + dz_dy ** 2)
+    return math.degrees(math.atan(rise_over_run))
+
+
+def patch_null_slope_with_dem(lat: float, lng: float, fields: dict) -> dict:
+    """If Mireye has no slope_degrees at this point, derive one from live
+    USGS 3DEP elevation samples. Only fills a genuinely missing value, and
+    tags the result as a derived DEM estimate rather than a Mireye field."""
+    if field_value(fields, "slope_degrees") is not None:
+        return fields
+
+    try:
+        slope = fetch_slope_from_dem(lat, lng)
+    except Exception as e:
+        fields.setdefault("_dem_slope_fallback_error", {"status": "failed", "error": str(e)})
+        return fields
+
+    fields["slope_degrees"] = {
+        "value": round(slope, 2),
+        "unit": "degrees",
+        "source": "USGS_3DEP_EPQS",
+        "source_url": "https://epqs.nationalmap.gov/v1/json",
+        "confidence": "medium",
+        "notes": (
+            f"Live DEM-derived slope fallback (Mireye had no slope value at this point). "
+            f"Central-difference gradient from elevation samples ~{DEM_SAMPLE_OFFSET_M:.0f}m "
+            "N/S/E/W via USGS 3DEP Elevation Point Query Service — screening estimate, "
+            "not a hydro-flattened DEM analysis."
+        ),
+        "status": "ok",
+    }
+    return fields
+
+
+# ---------------------------------------------------------------------------
+# FEMA National Flood Hazard Layer — live fallback for flood fields
+# ---------------------------------------------------------------------------
+#
+# Free public ArcGIS REST service, no key required. Layer 28 of the NFHL
+# MapServer is S_Fld_Haz_Ar (the flood hazard zone polygons) — querying a
+# point against it returns the real zone code (AE, VE, X, ...), the zone
+# subtype (used to flag coastal V-zones), and the base flood elevation.
+# within_floodplain_polygon is then derived from the zone code rather than
+# queried separately, since "does the real zone start with A or V" already
+# answers that question.
+#
+# NOTE: same caveat as the other live fallbacks — this sandbox's network
+# allowlist doesn't include hazards.fema.gov, so the query shape is built
+# from FEMA's documented NFHL REST/data-dictionary conventions but hasn't
+# been live-tested end-to-end here. STATIC_BFE uses -9999 as FEMA's sentinel
+# for "not applicable"; that's converted to None rather than reported as
+# a real elevation.
+
+FEMA_NFHL_FLOOD_ZONES_URL = "https://hazards.fema.gov/gis/nfhl/rest/services/public/NFHL/MapServer/28/query"
+
+
+def fetch_fema_flood_zone(lat: float, lng: float) -> dict:
+    resp = requests.get(
+        FEMA_NFHL_FLOOD_ZONES_URL,
+        params={
+            "geometry": f"{lng},{lat}",
+            "geometryType": "esriGeometryPoint",
+            "inSR": 4326,
+            "spatialRel": "esriSpatialRelIntersects",
+            "outFields": "FLD_ZONE,ZONE_SUBTY,STATIC_BFE,SFHA_TF",
+            "returnGeometry": "false",
+            "f": "json",
+        },
+        timeout=30,
+    )
+    resp.raise_for_status()
+    data = resp.json()
+    if data.get("error"):
+        raise RuntimeError(f"FEMA NFHL query error: {data['error']}")
+    features = data.get("features") or []
+    if not features:
+        return {}
+
+    attrs = features[0].get("attributes", {})
+    bfe = attrs.get("STATIC_BFE")
+    try:
+        bfe = float(bfe) if bfe is not None else None
+    except (TypeError, ValueError):
+        bfe = None
+    if bfe is not None and bfe <= -9000:  # FEMA's "not applicable" sentinel
+        bfe = None
+
+    zone = attrs.get("FLD_ZONE")
+    zone_subty = (attrs.get("ZONE_SUBTY") or "").upper()
+    coastal = bool(zone) and (str(zone).upper().startswith("V") or "COASTAL" in zone_subty)
+
+    return {"fld_zone": zone, "coastal": coastal, "bfe": bfe}
+
+
+def patch_nulls_with_fema_nfhl(lat: float, lng: float, fields: dict) -> dict:
+    """If Mireye has no flood-hazard data at this point, query FEMA's NFHL
+    directly. Only fills genuinely missing fields, tagged as a secondary
+    source rather than pretending it came from Mireye."""
+    zone_missing = field_value(fields, "fema_flood_zone") is None
+    coastal_missing = field_value(fields, "coastal_high_hazard") is None
+    bfe_missing = field_value(fields, "fema_base_flood_elevation") is None
+    floodplain_missing = field_value(fields, "within_floodplain_polygon") is None
+    if not (zone_missing or coastal_missing or bfe_missing or floodplain_missing):
+        return fields
+
+    try:
+        live = fetch_fema_flood_zone(lat, lng)
+    except Exception as e:
+        fields.setdefault("_fema_nfhl_fallback_error", {"status": "failed", "error": str(e)})
+        return fields
+    if not live or live.get("fld_zone") is None:
+        return fields
+
+    zone = live["fld_zone"]
+    source_note_base = f"Live FEMA National Flood Hazard Layer fallback (Mireye had no value at this point). Zone: {zone}."
+
+    if zone_missing:
+        fields["fema_flood_zone"] = {
+            "value": zone,
+            "unit": None,
+            "source": "FEMA_NFHL_LIVE",
+            "source_url": "https://hazards.fema.gov/gis/nfhl/rest/services/public/NFHL/MapServer/28",
+            "confidence": "medium",
+            "notes": source_note_base,
+            "status": "ok",
+        }
+    if coastal_missing:
+        fields["coastal_high_hazard"] = {
+            "value": live["coastal"],
+            "unit": None,
+            "source": "FEMA_NFHL_LIVE",
+            "source_url": "https://hazards.fema.gov/gis/nfhl/rest/services/public/NFHL/MapServer/28",
+            "confidence": "medium",
+            "notes": f"Derived from NFHL zone code/subtype. {source_note_base}",
+            "status": "ok",
+        }
+    if bfe_missing and live.get("bfe") is not None:
+        fields["fema_base_flood_elevation"] = {
+            "value": live["bfe"],
+            "unit": "feet",
+            "source": "FEMA_NFHL_LIVE",
+            "source_url": "https://hazards.fema.gov/gis/nfhl/rest/services/public/NFHL/MapServer/28",
+            "confidence": "medium",
+            "notes": source_note_base,
+            "status": "ok",
+        }
+    if floodplain_missing:
+        fields["within_floodplain_polygon"] = {
+            "value": str(zone).upper().startswith(("A", "V")),
+            "unit": None,
+            "source": "FEMA_NFHL_LIVE",
+            "source_url": "https://hazards.fema.gov/gis/nfhl/rest/services/public/NFHL/MapServer/28",
+            "confidence": "medium",
+            "notes": f"Derived from NFHL zone code. {source_note_base}",
+            "status": "ok",
+        }
+    return fields
+
+
+# ---------------------------------------------------------------------------
+# USFWS National Wetlands Inventory — live fallback for wetland fields
+# ---------------------------------------------------------------------------
+#
+# Free public ArcGIS REST service, no key required. Unlike the other
+# fallbacks, this one is a rougher proxy by nature: Mireye's fields are
+# defined at the PARCEL level, but neither Mireye nor this app has real
+# parcel-boundary geometry to work with — only a lat/lng point. So we
+# query NWI wetland polygons intersecting a small buffer square around the
+# point (same style of buffer already used for the GFW tree-loss query)
+# and estimate a share from that, capped at the buffer's own area, using
+# each wetland polygon's own reported acreage rather than a true clipped
+# intersection (which would need real geometry-clipping, e.g. shapely).
+# That means it can overstate the true on-parcel share when a wetland
+# polygon only partially overlaps the buffer — flagged as "low" confidence
+# and spelled out in the notes rather than presented as exact.
+#
+# NOTE: same live-untested caveat as the other fallbacks — this sandbox's
+# network allowlist doesn't include the NWI host, so this is built from
+# USFWS's documented NWI REST service conventions, not verified end-to-end.
+
+NWI_WETLANDS_URL = "https://fwsprimary.wim.usgs.gov/server/rest/services/Wetlands/MapServer/0/query"
+WETLAND_BUFFER_DEG = 0.001  # small stand-in for "parcel" — no real parcel geometry available
+
+
+def _buffer_acres(lat: float, buffer_deg: float) -> float:
+    """Approximate area (acres) of the lat/lng-degree buffer square."""
+    lat_rad = math.radians(lat)
+    height_m = 2 * buffer_deg * 111_320.0
+    width_m = 2 * buffer_deg * 111_320.0 * math.cos(lat_rad)
+    area_m2 = height_m * width_m
+    return area_m2 / 4046.856  # square meters per acre
+
+
+def fetch_nwi_wetlands(lat: float, lng: float) -> list:
+    geometry = make_point_buffer_geojson(lat, lng, buffer_deg=WETLAND_BUFFER_DEG)
+    resp = requests.get(
+        NWI_WETLANDS_URL,
+        params={
+            "geometry": json.dumps({"rings": geometry["coordinates"], "spatialReference": {"wkid": 4326}}),
+            "geometryType": "esriGeometryPolygon",
+            "inSR": 4326,
+            "spatialRel": "esriSpatialRelIntersects",
+            "outFields": "WETLAND_TYPE,ACRES",
+            "returnGeometry": "false",
+            "f": "json",
+        },
+        timeout=30,
+    )
+    resp.raise_for_status()
+    data = resp.json()
+    if data.get("error"):
+        raise RuntimeError(f"NWI query error: {data['error']}")
+    out = []
+    for feat in data.get("features") or []:
+        attrs = feat.get("attributes", {})
+        try:
+            acres = float(attrs["ACRES"]) if attrs.get("ACRES") is not None else None
+        except (TypeError, ValueError):
+            acres = None
+        out.append({"wetland_type": attrs.get("WETLAND_TYPE"), "acres": acres})
+    return out
+
+
+def patch_nulls_with_nwi_wetlands(lat: float, lng: float, fields: dict) -> dict:
+    """If Mireye has no wetland-share data at this point, query USFWS NWI
+    directly against a small point-buffer stand-in for the parcel."""
+    frac_missing = field_value(fields, "wetland_fraction_of_parcel") is None
+    acres_missing = field_value(fields, "wetland_acres_on_parcel") is None
+    if not (frac_missing or acres_missing):
+        return fields
+
+    try:
+        wetlands = fetch_nwi_wetlands(lat, lng)
+    except Exception as e:
+        fields.setdefault("_nwi_wetlands_fallback_error", {"status": "failed", "error": str(e)})
+        return fields
+
+    buffer_acres = _buffer_acres(lat, WETLAND_BUFFER_DEG)
+    total_acres = sum(w["acres"] for w in wetlands if w.get("acres") is not None)
+    capped_acres = min(total_acres, buffer_acres) if buffer_acres > 0 else 0.0
+    fraction = round(min(1.0, capped_acres / buffer_acres), 4) if buffer_acres > 0 else 0.0
+
+    note = (
+        f"Live USFWS National Wetlands Inventory fallback (Mireye had no value at this "
+        f"point). Estimated against a small ~{buffer_acres:.1f}-acre buffer around the "
+        "point, NOT the real parcel boundary (no parcel geometry available), from "
+        "whole-polygon wetland acreage rather than a true clipped intersection — "
+        "treat as a coarse presence/rough-share signal, not an exact figure."
+    )
+
+    if frac_missing:
+        fields["wetland_fraction_of_parcel"] = {
+            "value": fraction,
+            "unit": None,
+            "source": "USFWS_NWI_LIVE",
+            "source_url": "https://www.fws.gov/program/national-wetlands-inventory",
+            "confidence": "low",
+            "notes": note,
+            "status": "ok",
+        }
+    if acres_missing:
+        fields["wetland_acres_on_parcel"] = {
+            "value": round(capped_acres, 3),
+            "unit": "acres",
+            "source": "USFWS_NWI_LIVE",
+            "source_url": "https://www.fws.gov/program/national-wetlands-inventory",
+            "confidence": "low",
+            "notes": note,
+            "status": "ok",
+        }
+    return fields
+
+
+# ---------------------------------------------------------------------------
+# NLCD Tree Canopy Cover (MRLC) — live fallback for tree_canopy_pct
+# ---------------------------------------------------------------------------
+#
+# Free public WMS service, no key required. This is the LOWEST-confidence
+# fallback in this file — unlike SDA/EPQS/NFHL/NWI (well-established REST
+# contracts), the exact GeoServer layer name and GetFeatureInfo response
+# field for MRLC's tree-canopy coverage have NOT been confirmed against a
+# live response in this sandbox (no network access to mrlc.gov here either).
+# WMS 1.1.1 is used deliberately instead of 1.3.0 to sidestep the
+# lat/lng-vs-lng/lat axis-order footgun in the newer spec. If the layer name
+# or response shape is wrong, this fails closed: the exception is caught and
+# logged as a fallback error, same as every other fallback here — it will
+# NOT report a wrong canopy value silently.
+
+MRLC_WMS_URL = "https://www.mrlc.gov/geoserver/mrlc_display/wms"
+NLCD_CANOPY_LAYER = "NLCD_2021_Tree_Canopy_L48"
+
+
+def fetch_nlcd_tree_canopy_pct(lat: float, lng: float) -> float:
+    eps = 0.0001  # tiny bbox around the point for a single-pixel WMS query
+    resp = requests.get(
+        MRLC_WMS_URL,
+        params={
+            "service": "WMS",
+            "version": "1.1.1",
+            "request": "GetFeatureInfo",
+            "layers": NLCD_CANOPY_LAYER,
+            "query_layers": NLCD_CANOPY_LAYER,
+            "srs": "EPSG:4326",
+            "bbox": f"{lng - eps},{lat - eps},{lng + eps},{lat + eps}",
+            "width": 3,
+            "height": 3,
+            "x": 1,
+            "y": 1,
+            "info_format": "application/json",
+            "feature_count": 1,
+        },
+        timeout=30,
+    )
+    resp.raise_for_status()
+    data = resp.json()
+    features = data.get("features") or []
+    if not features:
+        raise RuntimeError(f"NLCD WMS GetFeatureInfo returned no features: {data}")
+    props = features[0].get("properties", {})
+    value = props.get("GRAY_INDEX")
+    if value is None:
+        raise RuntimeError(f"NLCD WMS GetFeatureInfo response missing GRAY_INDEX: {props}")
+    value = float(value)
+    if value >= 254:  # common raster no-data / water sentinel values
+        raise RuntimeError(f"NLCD returned a no-data sentinel value ({value})")
+    return value
+
+
+def patch_null_canopy_with_nlcd(lat: float, lng: float, fields: dict) -> dict:
+    """If Mireye has no tree_canopy_pct at this point, query MRLC's NLCD
+    Tree Canopy Cover WMS directly."""
+    if field_value(fields, "tree_canopy_pct") is not None:
+        return fields
+
+    try:
+        canopy = fetch_nlcd_tree_canopy_pct(lat, lng)
+    except Exception as e:
+        fields.setdefault("_nlcd_canopy_fallback_error", {"status": "failed", "error": str(e)})
+        return fields
+
+    fields["tree_canopy_pct"] = {
+        "value": round(canopy, 1),
+        "unit": "percent",
+        "source": "NLCD_TCC_LIVE",
+        "source_url": "https://www.mrlc.gov/data/nlcd-tree-canopy-cover",
+        "confidence": "low",
+        "notes": (
+            "Live NLCD Tree Canopy Cover fallback via MRLC's WMS pixel query "
+            "(Mireye had no canopy value at this point). Lowest-confidence "
+            "fallback in this app — the exact layer name/response field hasn't "
+            "been verified against a live response in this environment; treat "
+            "with extra skepticism until confirmed against a real request."
+        ),
+        "status": "ok",
+    }
+    return fields
+
+
+# ---------------------------------------------------------------------------
 # RUSLE-lite erosion index
 # ---------------------------------------------------------------------------
 
-ASSUMED_SLOPE_LENGTH_M = 100.0  # Mireye has no real slope-length field — flagged assumption
+DEFAULT_SLOPE_LENGTH_M = 100.0  # used only when tree_canopy_pct is unavailable
 
 
 def field_value(fields: dict, name: str):
@@ -314,18 +802,46 @@ def field_value(fields: dict, name: str):
     return entry.get("value")
 
 
-def compute_ls_factor(slope_degrees: float) -> float:
-    """McCool et al. slope-length-steepness approximation.
-    Real RUSLE needs actual measured slope length; we assume a 100m
-    reference length since Mireye doesn't provide flow-length data.
+def estimate_slope_length_m(slope_pct: float, tree_canopy_pct) -> float:
+    """Slope length isn't a queryable field anywhere (real RUSLE derives it
+    by tracing flow paths across a DEM) — this is still an assumption, not
+    measured flow-length data. But instead of one flat 100m for every point,
+    lean on signals we do have: denser canopy means more roughness elements
+    (undergrowth, downed wood, microtopography) that break up overland flow
+    sooner, so assume a shorter run; open/bare ground is more likely tilled
+    or graded into long unbroken slopes, so assume a longer one. Steeper
+    slopes also tend to concentrate flow into a defined channel sooner than
+    gentle ones, which spread and travel farther before channelizing.
     """
+    if tree_canopy_pct is None:
+        base = DEFAULT_SLOPE_LENGTH_M
+    elif tree_canopy_pct >= 60:
+        base = 40.0
+    elif tree_canopy_pct >= 30:
+        base = 70.0
+    else:
+        base = 130.0
+
+    if slope_pct > 15:
+        base *= 0.7
+    elif slope_pct < 3:
+        base *= 1.3
+
+    return round(base, 1)
+
+
+def compute_ls_factor(slope_degrees: float, tree_canopy_pct) -> tuple:
+    """McCool et al. slope-length-steepness approximation. Returns
+    (ls_factor, slope_length_m_used) since the slope length is now derived
+    per-point rather than a single constant."""
     theta = math.radians(slope_degrees)
     slope_pct = math.tan(theta) * 100
+    slope_length_m = estimate_slope_length_m(slope_pct, tree_canopy_pct)
     m = 0.5 if slope_pct >= 5 else (0.4 if slope_pct >= 3 else (0.3 if slope_pct >= 1 else 0.2))
-    ls = ((ASSUMED_SLOPE_LENGTH_M / 22.13) ** m) * (
+    ls = ((slope_length_m / 22.13) ** m) * (
         65.41 * math.sin(theta) ** 2 + 4.56 * math.sin(theta) + 0.065
     )
-    return ls
+    return ls, slope_length_m
 
 
 def compute_c_factor(tree_canopy_pct, ndvi_change_5y) -> float:
@@ -408,7 +924,7 @@ def score_erosion_risk(fields: dict, loss_years: list, lat: float, lng: float) -
 
     rusle = None
     if slope is not None and k_factor is not None:
-        ls = compute_ls_factor(slope)
+        ls, slope_length_m = compute_ls_factor(slope, tree_canopy)
         c = compute_c_factor(tree_canopy, ndvi_change_5y)
         relative_index = round(k_factor * ls * c, 4)
         rusle = {
@@ -417,7 +933,8 @@ def score_erosion_risk(fields: dict, loss_years: list, lat: float, lng: float) -
             "c_factor": c,
             "p_factor": 1.0,
             "relative_index": relative_index,
-            "assumed_slope_length_m": ASSUMED_SLOPE_LENGTH_M,
+            "assumed_slope_length_m": slope_length_m,
+            "slope_length_estimated_from_canopy": tree_canopy is not None,
             "note": "K x LS x C only — R (rainfall erosivity) not yet resolved; relative screening index, not tons/acre/year.",
         }
         # Upgrade to an absolute A = R x K x LS x C (tons/acre/yr) with a live
@@ -521,8 +1038,12 @@ def get_risk(lat: float = Query(...), lng: float = Query(...)):
     except Exception as e:
         raise HTTPException(status_code=502, detail=f"Mireye /v1/fetch request failed: {e}")
 
-    fields = mireye_data.get("fields", {})
+    fields = mireye_data.get("fields") or {}
     fields = patch_nulls_with_live_ssurgo(lat, lng, fields)
+    fields = patch_null_slope_with_dem(lat, lng, fields)
+    fields = patch_nulls_with_fema_nfhl(lat, lng, fields)
+    fields = patch_nulls_with_nwi_wetlands(lat, lng, fields)
+    fields = patch_null_canopy_with_nlcd(lat, lng, fields)
 
     ask_summary = None
     ask_error = None
@@ -545,11 +1066,68 @@ def get_risk(lat: float = Query(...), lng: float = Query(...)):
         "location": {"lat": lat, "lng": lng},
         "risk": risk,
         "mireye_fields": fields,
-        "mireye_partial_failures": mireye_data.get("partial_failures", []),
+        "mireye_partial_failures": mireye_data.get("partial_failures") or [],
         "mireye_ask_summary": ask_summary,
         "mireye_ask_error": ask_error,
         "tree_cover_loss_by_year": loss_years,
         "gfw_error": gfw_error,
+    }
+
+
+# ---------------------------------------------------------------------------
+# Rankings ("Most At-Risk Areas" browse view)
+# ---------------------------------------------------------------------------
+#
+# Serves the precomputed cache from precompute_rankings.py rather than
+# computing anything live — see that script's docstring for why. This
+# endpoint just reads, filters, and sorts whatever is already on disk.
+
+RANKINGS_CACHE_FILE = Path(__file__).parent / "rankings_cache.json"
+
+
+@app.get("/api/rankings")
+def get_rankings(state: str = Query(None), region: str = Query(None), limit: int = Query(None, gt=0)):
+    if not RANKINGS_CACHE_FILE.exists():
+        return {
+            "data_available": False,
+            "message": (
+                "No rankings data yet. Run `python3 precompute_rankings.py` in "
+                "backend/ to populate rankings_cache.json (requires a Mireye "
+                "token; see precompute_rankings.py's docstring)."
+            ),
+            "computed_at": None,
+            "results": [],
+            "failed": [],
+        }
+
+    try:
+        cache = json.loads(RANKINGS_CACHE_FILE.read_text())
+    except (json.JSONDecodeError, OSError) as e:
+        raise HTTPException(status_code=500, detail=f"rankings_cache.json is unreadable: {e}")
+
+    all_results = cache.get("results") or []
+
+    def matches(row: dict) -> bool:
+        if state:
+            candidates = {(row.get("state") or "").lower(), (row.get("state_abbr") or "").lower()}
+            if state.lower() not in candidates:
+                return False
+        if region and (row.get("region") or "").lower() != region.lower():
+            return False
+        return True
+
+    filtered = [r for r in all_results if matches(r)]
+    ranked = sorted((r for r in filtered if "score" in r), key=lambda r: r["score"], reverse=True)
+    failed = [r for r in filtered if "score" not in r]
+
+    if limit is not None:
+        ranked = ranked[:limit]
+
+    return {
+        "data_available": True,
+        "computed_at": cache.get("computed_at"),
+        "results": ranked,
+        "failed": failed,
     }
 
 

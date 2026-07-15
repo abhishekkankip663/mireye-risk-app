@@ -1,0 +1,3145 @@
+county,state,state_abbr,region,lat,lng
+Autauga County,Alabama,AL,South,32.532237,-86.64644
+Baldwin County,Alabama,AL,South,30.659218,-87.746067
+Barbour County,Alabama,AL,South,31.870253,-85.405104
+Bibb County,Alabama,AL,South,33.015893,-87.127148
+Blount County,Alabama,AL,South,33.977358,-86.56644
+Bullock County,Alabama,AL,South,32.101759,-85.717261
+Butler County,Alabama,AL,South,31.751667,-86.681969
+Calhoun County,Alabama,AL,South,33.770516,-85.827909
+Chambers County,Alabama,AL,South,32.915504,-85.394032
+Cherokee County,Alabama,AL,South,34.069515,-85.654242
+Chilton County,Alabama,AL,South,32.854051,-86.726607
+Choctaw County,Alabama,AL,South,31.990954,-88.248889
+Clarke County,Alabama,AL,South,31.685521,-87.818624
+Clay County,Alabama,AL,South,33.2704,-85.863525
+Cleburne County,Alabama,AL,South,33.671964,-85.516126
+Coffee County,Alabama,AL,South,31.402258,-85.989602
+Colbert County,Alabama,AL,South,34.703112,-87.801457
+Conecuh County,Alabama,AL,South,31.430926,-86.988722
+Coosa County,Alabama,AL,South,32.931445,-86.243482
+Covington County,Alabama,AL,South,31.243987,-86.448721
+Crenshaw County,Alabama,AL,South,31.730311,-86.320038
+Cullman County,Alabama,AL,South,34.131923,-86.869267
+Dale County,Alabama,AL,South,31.430654,-85.609476
+Dallas County,Alabama,AL,South,32.333526,-87.11436
+DeKalb County,Alabama,AL,South,34.460915,-85.804021
+Elmore County,Alabama,AL,South,32.597229,-86.142735
+Escambia County,Alabama,AL,South,31.122287,-87.16841
+Etowah County,Alabama,AL,South,34.047641,-86.034263
+Fayette County,Alabama,AL,South,33.716157,-87.764292
+Franklin County,Alabama,AL,South,34.441989,-87.842814
+Geneva County,Alabama,AL,South,31.092382,-85.821022
+Greene County,Alabama,AL,South,32.844497,-87.9642
+Hale County,Alabama,AL,South,32.752796,-87.623061
+Henry County,Alabama,AL,South,31.516978,-85.239971
+Houston County,Alabama,AL,South,31.158183,-85.296411
+Jackson County,Alabama,AL,South,34.764114,-85.980056
+Jefferson County,Alabama,AL,South,33.553444,-86.896536
+Lamar County,Alabama,AL,South,33.787085,-88.087431
+Lauderdale County,Alabama,AL,South,34.904168,-87.651108
+Lawrence County,Alabama,AL,South,34.529776,-87.321865
+Lee County,Alabama,AL,South,32.604064,-85.353048
+Limestone County,Alabama,AL,South,34.810239,-86.981399
+Lowndes County,Alabama,AL,South,32.147888,-86.650586
+Macon County,Alabama,AL,South,32.387027,-85.692887
+Madison County,Alabama,AL,South,34.764238,-86.55108
+Marengo County,Alabama,AL,South,32.247591,-87.791091
+Marion County,Alabama,AL,South,34.138219,-87.881551
+Marshall County,Alabama,AL,South,34.309564,-86.321668
+Mobile County,Alabama,AL,South,30.684572,-88.196568
+Monroe County,Alabama,AL,South,31.580353,-87.383342
+Montgomery County,Alabama,AL,South,32.202881,-86.204461
+Morgan County,Alabama,AL,South,34.454484,-86.846402
+Perry County,Alabama,AL,South,32.639005,-87.293827
+Pickens County,Alabama,AL,South,33.2968,-88.096864
+Pike County,Alabama,AL,South,31.798653,-85.941608
+Randolph County,Alabama,AL,South,33.296461,-85.464064
+Russell County,Alabama,AL,South,32.289811,-85.18698
+St. Clair County,Alabama,AL,South,33.719491,-86.311327
+Shelby County,Alabama,AL,South,33.266893,-86.661007
+Sumter County,Alabama,AL,South,32.597481,-88.200057
+Talladega County,Alabama,AL,South,33.369314,-86.17593
+Tallapoosa County,Alabama,AL,South,32.863308,-85.799618
+Tuscaloosa County,Alabama,AL,South,33.29022,-87.522783
+Walker County,Alabama,AL,South,33.791558,-87.301094
+Washington County,Alabama,AL,South,31.408503,-88.212404
+Wilcox County,Alabama,AL,South,31.990082,-87.304935
+Winston County,Alabama,AL,South,34.154566,-87.365346
+Aleutians East Borough,Alaska,AK,West,55.245044,-161.997477
+Aleutians West Census Area,Alaska,AK,West,51.948964,+179.621188
+Anchorage Municipality,Alaska,AK,West,61.17425,-149.284329
+Bethel Census Area,Alaska,AK,West,60.929141,-160.152625
+Bristol Bay Borough,Alaska,AK,West,58.741661,-156.966805
+Chugach Census Area,Alaska,AK,West,60.488474,-146.203092
+Copper River Census Area,Alaska,AK,West,62.034479,-143.922167
+Denali Borough,Alaska,AK,West,63.682039,-150.027016
+Dillingham Census Area,Alaska,AK,West,59.543326,-158.267123
+Fairbanks North Star Borough,Alaska,AK,West,64.670454,-146.496061
+Haines Borough,Alaska,AK,West,59.098404,-135.575791
+Hoonah-Angoon Census Area,Alaska,AK,West,58.403336,-135.884909
+Juneau City and Borough,Alaska,AK,West,58.37291,-134.178445
+Kenai Peninsula Borough,Alaska,AK,West,60.366668,-152.322283
+Ketchikan Gateway Borough,Alaska,AK,West,55.449938,-131.106685
+Kodiak Island Borough,Alaska,AK,West,57.7044,-153.918372
+Kusilvak Census Area,Alaska,AK,West,62.283588,-163.190171
+Lake and Peninsula Borough,Alaska,AK,West,58.108507,-156.413413
+Matanuska-Susitna Borough,Alaska,AK,West,62.265626,-149.503993
+Nome Census Area,Alaska,AK,West,64.783686,-164.188912
+North Slope Borough,Alaska,AK,West,69.449343,-153.47283
+Northwest Arctic Borough,Alaska,AK,West,67.005066,-160.021086
+Petersburg Borough,Alaska,AK,West,57.112458,-133.008598
+Prince of Wales-Hyder Census Area,Alaska,AK,West,55.682773,-133.162389
+Sitka City and Borough,Alaska,AK,West,57.193204,-135.367396
+Skagway Municipality,Alaska,AK,West,59.560379,-135.338279
+Southeast Fairbanks Census Area,Alaska,AK,West,63.864997,-143.218628
+Wrangell City and Borough,Alaska,AK,West,56.180779,-132.026788
+Yakutat City and Borough,Alaska,AK,West,60.017508,-140.416847
+Yukon-Koyukuk Census Area,Alaska,AK,West,65.375727,-151.57785
+Apache County,Arizona,AZ,West,35.385084,-109.490172
+Cochise County,Arizona,AZ,West,31.840129,-109.775163
+Coconino County,Arizona,AZ,West,35.829692,-111.773728
+Gila County,Arizona,AZ,West,33.789618,-110.81187
+Graham County,Arizona,AZ,West,32.931828,-109.87831
+Greenlee County,Arizona,AZ,West,33.238872,-109.242323
+La Paz County,Arizona,AZ,West,33.72761,-114.038806
+Maricopa County,Arizona,AZ,West,33.345176,-112.49893
+Mohave County,Arizona,AZ,West,35.717705,-113.749689
+Navajo County,Arizona,AZ,West,35.390785,-110.321025
+Pima County,Arizona,AZ,West,32.128038,-111.783657
+Pinal County,Arizona,AZ,West,32.918521,-111.366339
+Santa Cruz County,Arizona,AZ,West,31.525733,-110.845228
+Yavapai County,Arizona,AZ,West,34.631071,-112.577225
+Yuma County,Arizona,AZ,West,32.773942,-113.910905
+Arkansas County,Arkansas,AR,South,34.28957,-91.376547
+Ashley County,Arkansas,AR,South,33.190835,-91.772267
+Baxter County,Arkansas,AR,South,36.280268,-92.329949
+Benton County,Arkansas,AR,South,36.337819,-94.256298
+Boone County,Arkansas,AR,South,36.304299,-93.079236
+Bradley County,Arkansas,AR,South,33.466549,-92.169156
+Calhoun County,Arkansas,AR,South,33.56046,-92.513879
+Carroll County,Arkansas,AR,South,36.33737,-93.540972
+Chicot County,Arkansas,AR,South,33.267139,-91.297158
+Clark County,Arkansas,AR,South,34.053316,-93.176208
+Clay County,Arkansas,AR,South,36.367302,-90.418704
+Cleburne County,Arkansas,AR,South,35.593628,-92.008898
+Cleveland County,Arkansas,AR,South,33.893201,-92.188714
+Columbia County,Arkansas,AR,South,33.223038,-93.232843
+Conway County,Arkansas,AR,South,35.26569,-92.689249
+Craighead County,Arkansas,AR,South,35.827729,-90.631421
+Crawford County,Arkansas,AR,South,35.582959,-94.236193
+Crittenden County,Arkansas,AR,South,35.197559,-90.30512
+Cross County,Arkansas,AR,South,35.285692,-90.763984
+Dallas County,Arkansas,AR,South,33.967823,-92.653999
+Desha County,Arkansas,AR,South,33.828752,-91.244103
+Drew County,Arkansas,AR,South,33.587242,-91.722778
+Faulkner County,Arkansas,AR,South,35.146548,-92.336928
+Franklin County,Arkansas,AR,South,35.508558,-93.887665
+Fulton County,Arkansas,AR,South,36.381322,-91.819285
+Garland County,Arkansas,AR,South,34.578852,-93.146932
+Grant County,Arkansas,AR,South,34.285568,-92.422979
+Greene County,Arkansas,AR,South,36.120607,-90.566346
+Hempstead County,Arkansas,AR,South,33.735953,-93.664355
+Hot Spring County,Arkansas,AR,South,34.315177,-92.944147
+Howard County,Arkansas,AR,South,34.083064,-93.990931
+Independence County,Arkansas,AR,South,35.737499,-91.559942
+Izard County,Arkansas,AR,South,36.094879,-91.913625
+Jackson County,Arkansas,AR,South,35.596467,-91.223205
+Jefferson County,Arkansas,AR,South,34.277239,-91.929673
+Johnson County,Arkansas,AR,South,35.573359,-93.466322
+Lafayette County,Arkansas,AR,South,33.240629,-93.611514
+Lawrence County,Arkansas,AR,South,36.041098,-91.101153
+Lee County,Arkansas,AR,South,34.779505,-90.779717
+Lincoln County,Arkansas,AR,South,33.956385,-91.742355
+Little River County,Arkansas,AR,South,33.701941,-94.236287
+Logan County,Arkansas,AR,South,35.218654,-93.72091
+Lonoke County,Arkansas,AR,South,34.755114,-91.894132
+Madison County,Arkansas,AR,South,36.012545,-93.724053
+Marion County,Arkansas,AR,South,36.266664,-92.678577
+Miller County,Arkansas,AR,South,33.305505,-93.901502
+Mississippi County,Arkansas,AR,South,35.766944,-90.052207
+Monroe County,Arkansas,AR,South,34.679512,-91.20331
+Montgomery County,Arkansas,AR,South,34.545656,-93.664153
+Nevada County,Arkansas,AR,South,33.666699,-93.305072
+Newton County,Arkansas,AR,South,35.910742,-93.215898
+Ouachita County,Arkansas,AR,South,33.591168,-92.878413
+Perry County,Arkansas,AR,South,34.946363,-92.926877
+Phillips County,Arkansas,AR,South,34.423687,-90.855593
+Pike County,Arkansas,AR,South,34.158191,-93.658659
+Poinsett County,Arkansas,AR,South,35.56887,-90.681104
+Polk County,Arkansas,AR,South,34.49096,-94.230894
+Pope County,Arkansas,AR,South,35.456557,-93.026818
+Prairie County,Arkansas,AR,South,34.831116,-91.55362
+Pulaski County,Arkansas,AR,South,34.770311,-92.312996
+Randolph County,Arkansas,AR,South,36.341298,-91.028441
+St. Francis County,Arkansas,AR,South,35.022838,-90.751506
+Saline County,Arkansas,AR,South,34.648525,-92.674463
+Scott County,Arkansas,AR,South,34.858869,-94.063641
+Searcy County,Arkansas,AR,South,35.896387,-92.695888
+Sebastian County,Arkansas,AR,South,35.196981,-94.274989
+Sevier County,Arkansas,AR,South,33.994877,-94.243279
+Sharp County,Arkansas,AR,South,36.173399,-91.471069
+Stone County,Arkansas,AR,South,35.857001,-92.140482
+Union County,Arkansas,AR,South,33.168219,-92.598145
+Van Buren County,Arkansas,AR,South,35.582953,-92.515976
+Washington County,Arkansas,AR,South,35.978001,-94.217269
+White County,Arkansas,AR,South,35.255118,-91.753034
+Woodruff County,Arkansas,AR,South,35.192777,-91.244535
+Yell County,Arkansas,AR,South,34.997713,-93.408303
+Alameda County,California,CA,West,37.647139,-121.912488
+Alpine County,California,CA,West,38.621783,-119.798352
+Amador County,California,CA,West,38.443549,-120.653858
+Butte County,California,CA,West,39.665336,-121.603209
+Calaveras County,California,CA,West,38.191068,-120.554107
+Colusa County,California,CA,West,39.177739,-122.237563
+Contra Costa County,California,CA,West,37.919479,-121.951543
+Del Norte County,California,CA,West,41.749903,-123.980998
+El Dorado County,California,CA,West,38.785612,-120.534225
+Fresno County,California,CA,West,36.761006,-119.655019
+Glenn County,California,CA,West,39.602546,-122.4017
+Humboldt County,California,CA,West,40.706655,-123.926176
+Imperial County,California,CA,West,33.040814,-115.3554
+Inyo County,California,CA,West,36.56216,-117.404209
+Kern County,California,CA,West,35.346629,-118.729506
+Kings County,California,CA,West,36.072478,-119.81553
+Lake County,California,CA,West,39.108009,-122.745217
+Lassen County,California,CA,West,40.715287,-120.621223
+Los Angeles County,California,CA,West,34.196398,-118.261862
+Madera County,California,CA,West,37.209821,-119.749802
+Marin County,California,CA,West,38.051367,-122.746396
+Mariposa County,California,CA,West,37.574343,-119.911721
+Mendocino County,California,CA,West,39.432388,-123.442881
+Merced County,California,CA,West,37.194806,-120.722802
+Modoc County,California,CA,West,41.592918,-120.71837
+Mono County,California,CA,West,37.915836,-118.875167
+Monterey County,California,CA,West,36.240104,-121.315578
+Napa County,California,CA,West,38.5071,-122.325904
+Nevada County,California,CA,West,39.297508,-120.771343
+Orange County,California,CA,West,33.675687,-117.777207
+Placer County,California,CA,West,39.062032,-120.722718
+Plumas County,California,CA,West,39.992295,-120.824371
+Riverside County,California,CA,West,33.729828,-116.002239
+Sacramento County,California,CA,West,38.450136,-121.344329
+San Benito County,California,CA,West,36.611651,-121.085811
+San Bernardino County,California,CA,West,34.856661,-116.181571
+San Diego County,California,CA,West,33.023604,-116.776117
+San Francisco County,California,CA,West,37.727239,-123.032229
+San Joaquin County,California,CA,West,37.934982,-121.272244
+San Luis Obispo County,California,CA,West,35.388189,-120.448897
+San Mateo County,California,CA,West,37.414672,-122.371546
+Santa Barbara County,California,CA,West,34.536677,-120.038364
+Santa Clara County,California,CA,West,37.221614,-121.68954
+Santa Cruz County,California,CA,West,37.012347,-122.007789
+Shasta County,California,CA,West,40.760514,-122.043556
+Sierra County,California,CA,West,39.576925,-120.521993
+Siskiyou County,California,CA,West,41.587986,-122.533287
+Solano County,California,CA,West,38.267226,-121.939594
+Sonoma County,California,CA,West,38.525182,-122.92611
+Stanislaus County,California,CA,West,37.562316,-121.002831
+Sutter County,California,CA,West,39.03619,-121.70394
+Tehama County,California,CA,West,40.126157,-122.232274
+Trinity County,California,CA,West,40.647858,-123.114666
+Tulare County,California,CA,West,36.228834,-118.781055
+Tuolumne County,California,CA,West,38.021434,-119.964733
+Ventura County,California,CA,West,34.358748,-119.133145
+Yolo County,California,CA,West,38.679609,-121.90275
+Yuba County,California,CA,West,39.27013,-121.344259
+Adams County,Colorado,CO,West,39.874325,-104.331872
+Alamosa County,Colorado,CO,West,37.568442,-105.788041
+Arapahoe County,Colorado,CO,West,39.644554,-104.331706
+Archuleta County,Colorado,CO,West,37.202395,-107.050863
+Baca County,Colorado,CO,West,37.30978,-102.543741
+Bent County,Colorado,CO,West,37.931891,-103.077584
+Boulder County,Colorado,CO,West,40.094966,-105.397702
+Broomfield County,Colorado,CO,West,39.953593,-105.050787
+Chaffee County,Colorado,CO,West,38.734599,-106.300025
+Cheyenne County,Colorado,CO,West,38.835646,-102.601791
+Clear Creek County,Colorado,CO,West,39.689403,-105.670783
+Conejos County,Colorado,CO,West,37.213406,-106.176447
+Costilla County,Colorado,CO,West,37.277547,-105.42894
+Crowley County,Colorado,CO,West,38.30618,-103.772736
+Custer County,Colorado,CO,West,38.101996,-105.373512
+Delta County,Colorado,CO,West,38.861423,-107.865043
+Denver County,Colorado,CO,West,39.76185,-104.881105
+Dolores County,Colorado,CO,West,37.733823,-108.506219
+Douglas County,Colorado,CO,West,39.325414,-104.925987
+Eagle County,Colorado,CO,West,39.626992,-106.695169
+Elbert County,Colorado,CO,West,39.315157,-104.114076
+El Paso County,Colorado,CO,West,38.827383,-104.527472
+Fremont County,Colorado,CO,West,38.45517,-105.424958
+Garfield County,Colorado,CO,West,39.599352,-107.90978
+Gilpin County,Colorado,CO,West,39.861156,-105.528878
+Grand County,Colorado,CO,West,40.113065,-106.110837
+Gunnison County,Colorado,CO,West,38.670499,-107.05688
+Hinsdale County,Colorado,CO,West,37.811519,-107.383974
+Huerfano County,Colorado,CO,West,37.687815,-104.959928
+Jackson County,Colorado,CO,West,40.663432,-106.329248
+Jefferson County,Colorado,CO,West,39.579511,-105.245462
+Kiowa County,Colorado,CO,West,38.387663,-102.756849
+Kit Carson County,Colorado,CO,West,39.30534,-102.603023
+Lake County,Colorado,CO,West,39.205341,-106.350079
+La Plata County,Colorado,CO,West,37.287367,-107.839718
+Larimer County,Colorado,CO,West,40.658093,-105.486764
+Las Animas County,Colorado,CO,West,37.318831,-104.04411
+Lincoln County,Colorado,CO,West,38.99374,-103.507555
+Logan County,Colorado,CO,West,40.728091,-103.090464
+Mesa County,Colorado,CO,West,39.019524,-108.460571
+Mineral County,Colorado,CO,West,37.549067,-107.003236
+Moffat County,Colorado,CO,West,40.610864,-108.217154
+Montezuma County,Colorado,CO,West,37.338025,-108.595786
+Montrose County,Colorado,CO,West,38.407507,-108.266282
+Morgan County,Colorado,CO,West,40.263159,-103.81221
+Otero County,Colorado,CO,West,37.88417,-103.72126
+Ouray County,Colorado,CO,West,38.154731,-107.78848
+Park County,Colorado,CO,West,39.118914,-105.717648
+Phillips County,Colorado,CO,West,40.594712,-102.345105
+Pitkin County,Colorado,CO,West,39.217541,-106.916162
+Prowers County,Colorado,CO,West,37.958181,-102.392161
+Pueblo County,Colorado,CO,West,38.162765,-104.484668
+Rio Blanco County,Colorado,CO,West,39.972622,-108.200716
+Rio Grande County,Colorado,CO,West,37.485853,-106.453128
+Routt County,Colorado,CO,West,40.483664,-106.987702
+Saguache County,Colorado,CO,West,38.031651,-106.234666
+San Juan County,Colorado,CO,West,37.781049,-107.670257
+San Miguel County,Colorado,CO,West,38.009319,-108.427263
+Sedgwick County,Colorado,CO,West,40.871568,-102.355358
+Summit County,Colorado,CO,West,39.621023,-106.137555
+Teller County,Colorado,CO,West,38.869976,-105.187365
+Washington County,Colorado,CO,West,39.96579,-103.209744
+Weld County,Colorado,CO,West,40.555961,-104.383666
+Yuma County,Colorado,CO,West,40.00077,-102.421649
+Capitol Planning Region,Connecticut,CT,Northeast,41.81697,-72.575886
+Greater Bridgeport Planning Region,Connecticut,CT,Northeast,41.184558,-73.209401
+Lower Connecticut River Valley Planning Region,Connecticut,CT,Northeast,41.420307,-72.493525
+Naugatuck Valley Planning Region,Connecticut,CT,Northeast,41.518931,-73.087906
+Northeastern Connecticut Planning Region,Connecticut,CT,Northeast,41.842375,-71.972655
+Northwest Hills Planning Region,Connecticut,CT,Northeast,41.854809,-73.221494
+South Central Connecticut Planning Region,Connecticut,CT,Northeast,41.290167,-72.837024
+Southeastern Connecticut Planning Region,Connecticut,CT,Northeast,41.484769,-72.101666
+Western Connecticut Planning Region,Connecticut,CT,Northeast,41.279055,-73.44655
+Kent County,Delaware,DE,South,39.097088,-75.502982
+New Castle County,Delaware,DE,South,39.575915,-75.644132
+Sussex County,Delaware,DE,South,38.673227,-75.337024
+District of Columbia,District of Columbia,DC,South,38.904247,-77.016517
+Alachua County,Florida,FL,South,29.67574,-82.357221
+Baker County,Florida,FL,South,30.324442,-82.302284
+Bay County,Florida,FL,South,30.15914,-85.534395
+Bradford County,Florida,FL,South,29.952386,-82.166698
+Brevard County,Florida,FL,South,28.298311,-80.700333
+Broward County,Florida,FL,South,26.193535,-80.476683
+Calhoun County,Florida,FL,South,30.388801,-85.197915
+Charlotte County,Florida,FL,South,26.906396,-82.003657
+Citrus County,Florida,FL,South,28.850292,-82.595552
+Clay County,Florida,FL,South,29.986584,-81.865036
+Collier County,Florida,FL,South,26.118786,-81.400955
+Columbia County,Florida,FL,South,30.221651,-82.623371
+DeSoto County,Florida,FL,South,27.190581,-81.806253
+Dixie County,Florida,FL,South,29.552675,-83.236232
+Duval County,Florida,FL,South,30.335245,-81.648113
+Escambia County,Florida,FL,South,30.529998,-87.320322
+Flagler County,Florida,FL,South,29.474891,-81.286253
+Franklin County,Florida,FL,South,29.677794,-84.815213
+Gadsden County,Florida,FL,South,30.578687,-84.612607
+Gilchrist County,Florida,FL,South,29.723456,-82.795801
+Glades County,Florida,FL,South,26.95481,-81.19082
+Gulf County,Florida,FL,South,29.859238,-85.272013
+Hamilton County,Florida,FL,South,30.498438,-82.951116
+Hardee County,Florida,FL,South,27.492846,-81.82158
+Hendry County,Florida,FL,South,26.539967,-81.152114
+Hernando County,Florida,FL,South,28.555995,-82.525969
+Highlands County,Florida,FL,South,27.34108,-81.342353
+Hillsborough County,Florida,FL,South,27.893154,-82.379991
+Holmes County,Florida,FL,South,30.862007,-85.815939
+Indian River County,Florida,FL,South,27.700528,-80.574789
+Jackson County,Florida,FL,South,30.789249,-85.208814
+Jefferson County,Florida,FL,South,30.396898,-83.921761
+Lafayette County,Florida,FL,South,29.990066,-83.17851
+Lake County,Florida,FL,South,28.764113,-81.712282
+Lee County,Florida,FL,South,26.563273,-81.984182
+Leon County,Florida,FL,South,30.45931,-84.2778
+Levy County,Florida,FL,South,29.271854,-82.831233
+Liberty County,Florida,FL,South,30.259849,-84.86858
+Madison County,Florida,FL,South,30.447233,-83.470416
+Manatee County,Florida,FL,South,27.475556,-82.393144
+Marion County,Florida,FL,South,29.202805,-82.0431
+Martin County,Florida,FL,South,27.083604,-80.398201
+Miami-Dade County,Florida,FL,South,25.616009,-80.50375
+Monroe County,Florida,FL,South,25.58612,-81.022603
+Nassau County,Florida,FL,South,30.605963,-81.765087
+Okaloosa County,Florida,FL,South,30.614325,-86.59108
+Okeechobee County,Florida,FL,South,27.385592,-80.887388
+Orange County,Florida,FL,South,28.514391,-81.323284
+Osceola County,Florida,FL,South,28.059027,-81.139312
+Palm Beach County,Florida,FL,South,26.649126,-80.448354
+Pasco County,Florida,FL,South,28.309823,-82.511006
+Pinellas County,Florida,FL,South,27.905342,-82.798066
+Polk County,Florida,FL,South,27.953685,-81.693493
+Putnam County,Florida,FL,South,29.593896,-81.732039
+St. Johns County,Florida,FL,South,29.890487,-81.40004
+St. Lucie County,Florida,FL,South,27.379814,-80.443536
+Santa Rosa County,Florida,FL,South,30.675348,-87.018919
+Sarasota County,Florida,FL,South,27.225327,-82.423714
+Seminole County,Florida,FL,South,28.690065,-81.131975
+Sumter County,Florida,FL,South,28.713976,-82.069684
+Suwannee County,Florida,FL,South,30.189244,-82.992754
+Taylor County,Florida,FL,South,29.967146,-83.639573
+Union County,Florida,FL,South,30.05428,-82.366918
+Volusia County,Florida,FL,South,29.057769,-81.161792
+Wakulla County,Florida,FL,South,30.091335,-84.359111
+Walton County,Florida,FL,South,30.571247,-86.162798
+Washington County,Florida,FL,South,30.602102,-85.655805
+Appling County,Georgia,GA,South,31.739712,-82.290103
+Atkinson County,Georgia,GA,South,31.296806,-82.878151
+Bacon County,Georgia,GA,South,31.55021,-82.451433
+Baker County,Georgia,GA,South,31.31958,-84.454881
+Baldwin County,Georgia,GA,South,33.05949,-83.255457
+Banks County,Georgia,GA,South,34.351922,-83.498441
+Barrow County,Georgia,GA,South,33.992009,-83.712303
+Bartow County,Georgia,GA,South,34.240917,-84.838188
+Ben Hill County,Georgia,GA,South,31.740772,-83.147197
+Berrien County,Georgia,GA,South,31.288652,-83.22787
+Bibb County,Georgia,GA,South,32.808845,-83.694194
+Bleckley County,Georgia,GA,South,32.435403,-83.331717
+Brantley County,Georgia,GA,South,31.197334,-81.982978
+Brooks County,Georgia,GA,South,30.822934,-83.581905
+Bryan County,Georgia,GA,South,32.017969,-81.438543
+Bulloch County,Georgia,GA,South,32.394481,-81.741618
+Burke County,Georgia,GA,South,33.060181,-82.000164
+Butts County,Georgia,GA,South,33.290355,-83.958221
+Calhoun County,Georgia,GA,South,31.521279,-84.62629
+Camden County,Georgia,GA,South,30.913358,-81.642019
+Candler County,Georgia,GA,South,32.40395,-82.071266
+Carroll County,Georgia,GA,South,33.582237,-85.080527
+Catoosa County,Georgia,GA,South,34.900212,-85.139385
+Charlton County,Georgia,GA,South,30.779904,-82.139644
+Chatham County,Georgia,GA,South,31.980404,-81.085184
+Chattahoochee County,Georgia,GA,South,32.347445,-84.788021
+Chattooga County,Georgia,GA,South,34.474178,-85.345289
+Cherokee County,Georgia,GA,South,34.244317,-84.475057
+Clarke County,Georgia,GA,South,33.952185,-83.367152
+Clay County,Georgia,GA,South,31.619831,-84.992583
+Clayton County,Georgia,GA,South,33.551603,-84.412868
+Clinch County,Georgia,GA,South,30.917653,-82.702614
+Cobb County,Georgia,GA,South,33.939926,-84.57411
+Coffee County,Georgia,GA,South,31.549245,-82.84494
+Colquitt County,Georgia,GA,South,31.189707,-83.769773
+Columbia County,Georgia,GA,South,33.552075,-82.249608
+Cook County,Georgia,GA,South,31.152516,-83.429445
+Coweta County,Georgia,GA,South,33.352897,-84.762138
+Crawford County,Georgia,GA,South,32.709428,-83.979187
+Crisp County,Georgia,GA,South,31.920268,-83.75653
+Dade County,Georgia,GA,South,34.852424,-85.506201
+Dawson County,Georgia,GA,South,34.442608,-84.173261
+Decatur County,Georgia,GA,South,30.880643,-84.58389
+DeKalb County,Georgia,GA,South,33.770661,-84.226343
+Dodge County,Georgia,GA,South,32.164369,-83.167866
+Dooly County,Georgia,GA,South,32.151995,-83.807167
+Dougherty County,Georgia,GA,South,31.532588,-84.20904
+Douglas County,Georgia,GA,South,33.701242,-84.767314
+Early County,Georgia,GA,South,31.324191,-84.906723
+Echols County,Georgia,GA,South,30.714008,-82.897376
+Effingham County,Georgia,GA,South,32.361688,-81.343355
+Elbert County,Georgia,GA,South,34.116415,-82.841892
+Emanuel County,Georgia,GA,South,32.5911,-82.299763
+Evans County,Georgia,GA,South,32.153083,-81.890153
+Fannin County,Georgia,GA,South,34.866543,-84.317331
+Fayette County,Georgia,GA,South,33.412717,-84.493941
+Floyd County,Georgia,GA,South,34.26369,-85.213685
+Forsyth County,Georgia,GA,South,34.225143,-84.127408
+Franklin County,Georgia,GA,South,34.375266,-83.227532
+Fulton County,Georgia,GA,South,33.790034,-84.468182
+Gilmer County,Georgia,GA,South,34.690523,-84.454811
+Glascock County,Georgia,GA,South,33.227491,-82.606913
+Glynn County,Georgia,GA,South,31.21271,-81.49645
+Gordon County,Georgia,GA,South,34.509667,-84.873862
+Grady County,Georgia,GA,South,30.8759,-84.244965
+Greene County,Georgia,GA,South,33.576704,-83.166625
+Gwinnett County,Georgia,GA,South,33.958756,-84.025735
+Habersham County,Georgia,GA,South,34.634392,-83.525875
+Hall County,Georgia,GA,South,34.317569,-83.8185
+Hancock County,Georgia,GA,South,33.26922,-83.000465
+Haralson County,Georgia,GA,South,33.795165,-85.220063
+Harris County,Georgia,GA,South,32.731549,-84.912432
+Hart County,Georgia,GA,South,34.348733,-82.96329
+Heard County,Georgia,GA,South,33.291347,-85.137886
+Henry County,Georgia,GA,South,33.452947,-84.154021
+Houston County,Georgia,GA,South,32.458147,-83.662309
+Irwin County,Georgia,GA,South,31.604306,-83.277037
+Jackson County,Georgia,GA,South,34.130905,-83.562557
+Jasper County,Georgia,GA,South,33.316981,-83.689151
+Jeff Davis County,Georgia,GA,South,31.811615,-82.636825
+Jefferson County,Georgia,GA,South,33.058176,-82.420004
+Jenkins County,Georgia,GA,South,32.794563,-81.971524
+Johnson County,Georgia,GA,South,32.694584,-82.66397
+Jones County,Georgia,GA,South,33.021664,-83.562196
+Lamar County,Georgia,GA,South,33.07444,-84.146689
+Lanier County,Georgia,GA,South,31.038197,-83.063164
+Laurens County,Georgia,GA,South,32.39322,-82.926317
+Lee County,Georgia,GA,South,31.818419,-84.146681
+Liberty County,Georgia,GA,South,31.807458,-81.457871
+Lincoln County,Georgia,GA,South,33.792151,-82.448299
+Long County,Georgia,GA,South,31.749563,-81.74287
+Lowndes County,Georgia,GA,South,30.833145,-83.268995
+Lumpkin County,Georgia,GA,South,34.56814,-83.998925
+McDuffie County,Georgia,GA,South,33.480613,-82.479533
+McIntosh County,Georgia,GA,South,31.485629,-81.372141
+Macon County,Georgia,GA,South,32.362686,-84.051231
+Madison County,Georgia,GA,South,34.12748,-83.208653
+Marion County,Georgia,GA,South,32.359312,-84.528735
+Meriwether County,Georgia,GA,South,33.029267,-84.667058
+Miller County,Georgia,GA,South,31.162931,-84.730398
+Mitchell County,Georgia,GA,South,31.228997,-84.192038
+Monroe County,Georgia,GA,South,33.018784,-83.921837
+Montgomery County,Georgia,GA,South,32.172108,-82.533349
+Morgan County,Georgia,GA,South,33.598696,-83.499435
+Murray County,Georgia,GA,South,34.797097,-84.73799
+Muscogee County,Georgia,GA,South,32.510197,-84.874946
+Newton County,Georgia,GA,South,33.552751,-83.85136
+Oconee County,Georgia,GA,South,33.834125,-83.437728
+Oglethorpe County,Georgia,GA,South,33.866806,-83.074081
+Paulding County,Georgia,GA,South,33.92103,-84.867169
+Peach County,Georgia,GA,South,32.571324,-83.831978
+Pickens County,Georgia,GA,South,34.456746,-84.490351
+Pierce County,Georgia,GA,South,31.353998,-82.21037
+Pike County,Georgia,GA,South,33.081149,-84.389462
+Polk County,Georgia,GA,South,33.996015,-85.188338
+Pulaski County,Georgia,GA,South,32.238803,-83.481845
+Putnam County,Georgia,GA,South,33.32106,-83.37179
+Quitman County,Georgia,GA,South,31.862938,-85.004798
+Rabun County,Georgia,GA,South,34.883934,-83.40487
+Randolph County,Georgia,GA,South,31.762651,-84.752311
+Richmond County,Georgia,GA,South,33.361486,-82.074998
+Rockdale County,Georgia,GA,South,33.652081,-84.02637
+Schley County,Georgia,GA,South,32.263444,-84.322708
+Screven County,Georgia,GA,South,32.744751,-81.617585
+Seminole County,Georgia,GA,South,30.93396,-84.867685
+Spalding County,Georgia,GA,South,33.262348,-84.284905
+Stephens County,Georgia,GA,South,34.553582,-83.290588
+Stewart County,Georgia,GA,South,32.073225,-84.834912
+Sumter County,Georgia,GA,South,32.042266,-84.204294
+Talbot County,Georgia,GA,South,32.704603,-84.530029
+Taliaferro County,Georgia,GA,South,33.559319,-82.875272
+Tattnall County,Georgia,GA,South,32.043768,-82.059208
+Taylor County,Georgia,GA,South,32.554667,-84.251426
+Telfair County,Georgia,GA,South,31.913641,-82.931063
+Terrell County,Georgia,GA,South,31.777191,-84.439446
+Thomas County,Georgia,GA,South,30.864619,-83.919815
+Tift County,Georgia,GA,South,31.457003,-83.525931
+Toombs County,Georgia,GA,South,32.117753,-82.330597
+Towns County,Georgia,GA,South,34.902529,-83.732264
+Treutlen County,Georgia,GA,South,32.409586,-82.570882
+Troup County,Georgia,GA,South,33.034482,-85.02836
+Turner County,Georgia,GA,South,31.7248,-83.620319
+Twiggs County,Georgia,GA,South,32.665847,-83.425879
+Union County,Georgia,GA,South,34.833333,-83.989257
+Upson County,Georgia,GA,South,32.881837,-84.292283
+Walker County,Georgia,GA,South,34.735802,-85.305456
+Walton County,Georgia,GA,South,33.783887,-83.731829
+Ware County,Georgia,GA,South,31.050881,-82.421507
+Warren County,Georgia,GA,South,33.419169,-82.688012
+Washington County,Georgia,GA,South,32.971843,-82.798112
+Wayne County,Georgia,GA,South,31.547845,-81.912376
+Webster County,Georgia,GA,South,32.046691,-84.553828
+Wheeler County,Georgia,GA,South,32.105258,-82.733849
+White County,Georgia,GA,South,34.644182,-83.743
+Whitfield County,Georgia,GA,South,34.801726,-84.968541
+Wilcox County,Georgia,GA,South,31.96272,-83.438259
+Wilkes County,Georgia,GA,South,33.779031,-82.747921
+Wilkinson County,Georgia,GA,South,32.804266,-83.175512
+Worth County,Georgia,GA,South,31.551773,-83.84996
+Hawaii County,Hawaii,HI,West,19.597764,-155.502443
+Honolulu County,Hawaii,HI,West,21.461365,-158.201974
+Kalawao County,Hawaii,HI,West,21.218764,-156.97401
+Kauai County,Hawaii,HI,West,22.012038,-159.705965
+Maui County,Hawaii,HI,West,20.855931,-156.60155
+Ada County,Idaho,ID,West,43.451477,-116.244376
+Adams County,Idaho,ID,West,44.877004,-116.461624
+Bannock County,Idaho,ID,West,42.692921,-112.228982
+Bear Lake County,Idaho,ID,West,42.285892,-111.327517
+Benewah County,Idaho,ID,West,47.218451,-116.633541
+Bingham County,Idaho,ID,West,43.216357,-112.399206
+Blaine County,Idaho,ID,West,43.394192,-113.955371
+Boise County,Idaho,ID,West,43.987275,-115.71511
+Bonner County,Idaho,ID,West,48.324634,-116.62745
+Bonneville County,Idaho,ID,West,43.395171,-111.621878
+Boundary County,Idaho,ID,West,48.773131,-116.524668
+Butte County,Idaho,ID,West,43.685101,-113.177631
+Camas County,Idaho,ID,West,43.502552,-114.772135
+Canyon County,Idaho,ID,West,43.625796,-116.709058
+Caribou County,Idaho,ID,West,42.786072,-111.544273
+Cassia County,Idaho,ID,West,42.282313,-113.626328
+Clark County,Idaho,ID,West,44.290218,-112.354613
+Clearwater County,Idaho,ID,West,46.67257,-115.6535
+Custer County,Idaho,ID,West,44.273351,-114.252267
+Elmore County,Idaho,ID,West,43.394698,-115.471205
+Franklin County,Idaho,ID,West,42.173609,-111.822965
+Fremont County,Idaho,ID,West,44.218091,-111.484429
+Gem County,Idaho,ID,West,44.061473,-116.398784
+Gooding County,Idaho,ID,West,42.973185,-114.82142
+Idaho County,Idaho,ID,West,45.849644,-115.467337
+Jefferson County,Idaho,ID,West,43.796965,-112.318588
+Jerome County,Idaho,ID,West,42.691395,-114.262086
+Kootenai County,Idaho,ID,West,47.675957,-116.695919
+Latah County,Idaho,ID,West,46.81892,-116.730974
+Lemhi County,Idaho,ID,West,44.928506,-113.887042
+Lewis County,Idaho,ID,West,46.236328,-116.42376
+Lincoln County,Idaho,ID,West,42.990782,-114.153089
+Madison County,Idaho,ID,West,43.788614,-111.656993
+Minidoka County,Idaho,ID,West,42.857211,-113.63984
+Nez Perce County,Idaho,ID,West,46.333791,-116.760909
+Oneida County,Idaho,ID,West,42.183895,-112.520449
+Owyhee County,Idaho,ID,West,42.572851,-116.18969
+Payette County,Idaho,ID,West,44.00243,-116.750238
+Power County,Idaho,ID,West,42.694126,-112.844407
+Shoshone County,Idaho,ID,West,47.347694,-115.885092
+Teton County,Idaho,ID,West,43.760994,-111.211765
+Twin Falls County,Idaho,ID,West,42.352309,-114.665639
+Valley County,Idaho,ID,West,44.85596,-115.618061
+Washington County,Idaho,ID,West,44.448223,-116.797792
+Adams County,Illinois,IL,Midwest,39.986052,-91.194961
+Alexander County,Illinois,IL,Midwest,37.183658,-89.349516
+Bond County,Illinois,IL,Midwest,38.885924,-89.436592
+Boone County,Illinois,IL,Midwest,42.318983,-88.824295
+Brown County,Illinois,IL,Midwest,39.962069,-90.750309
+Bureau County,Illinois,IL,Midwest,41.401304,-89.528377
+Calhoun County,Illinois,IL,Midwest,39.164262,-90.666295
+Carroll County,Illinois,IL,Midwest,42.0709,-89.924189
+Cass County,Illinois,IL,Midwest,39.969202,-90.245704
+Champaign County,Illinois,IL,Midwest,40.138985,-88.196975
+Christian County,Illinois,IL,Midwest,39.545524,-89.279593
+Clark County,Illinois,IL,Midwest,39.332334,-87.791683
+Clay County,Illinois,IL,Midwest,38.746819,-88.482325
+Clinton County,Illinois,IL,Midwest,38.606295,-89.426228
+Coles County,Illinois,IL,Midwest,39.51368,-88.220782
+Cook County,Illinois,IL,Midwest,41.894294,-87.645455
+Crawford County,Illinois,IL,Midwest,39.002787,-87.760619
+Cumberland County,Illinois,IL,Midwest,39.273121,-88.240619
+DeKalb County,Illinois,IL,Midwest,41.894612,-88.768991
+De Witt County,Illinois,IL,Midwest,40.181499,-88.901853
+Douglas County,Illinois,IL,Midwest,39.766078,-88.222866
+DuPage County,Illinois,IL,Midwest,41.852058,-88.086039
+Edgar County,Illinois,IL,Midwest,39.679037,-87.74711
+Edwards County,Illinois,IL,Midwest,38.417095,-88.047941
+Effingham County,Illinois,IL,Midwest,39.047945,-88.592849
+Fayette County,Illinois,IL,Midwest,39.001125,-89.017923
+Ford County,Illinois,IL,Midwest,40.596539,-88.224588
+Franklin County,Illinois,IL,Midwest,37.991852,-88.926321
+Fulton County,Illinois,IL,Midwest,40.46524,-90.202269
+Gallatin County,Illinois,IL,Midwest,37.768677,-88.227964
+Greene County,Illinois,IL,Midwest,39.355439,-90.387682
+Grundy County,Illinois,IL,Midwest,41.29241,-88.401054
+Hamilton County,Illinois,IL,Midwest,38.085227,-88.539009
+Hancock County,Illinois,IL,Midwest,40.401318,-91.168801
+Hardin County,Illinois,IL,Midwest,37.517852,-88.266148
+Henderson County,Illinois,IL,Midwest,40.814471,-90.941246
+Henry County,Illinois,IL,Midwest,41.350021,-90.130838
+Iroquois County,Illinois,IL,Midwest,40.748867,-87.833601
+Jackson County,Illinois,IL,Midwest,37.786096,-89.381212
+Jasper County,Illinois,IL,Midwest,39.004886,-88.150725
+Jefferson County,Illinois,IL,Midwest,38.30078,-88.92421
+Jersey County,Illinois,IL,Midwest,39.080195,-90.361385
+Jo Daviess County,Illinois,IL,Midwest,42.362391,-90.21147
+Johnson County,Illinois,IL,Midwest,37.460709,-88.882131
+Kane County,Illinois,IL,Midwest,41.939594,-88.42804
+Kankakee County,Illinois,IL,Midwest,41.13951,-87.861117
+Kendall County,Illinois,IL,Midwest,41.58814,-88.430626
+Knox County,Illinois,IL,Midwest,40.930945,-90.213792
+Lake County,Illinois,IL,Midwest,42.185968,-87.805939
+LaSalle County,Illinois,IL,Midwest,41.343341,-88.885931
+Lawrence County,Illinois,IL,Midwest,38.718954,-87.730221
+Lee County,Illinois,IL,Midwest,41.747447,-89.299362
+Livingston County,Illinois,IL,Midwest,40.894376,-88.552852
+Logan County,Illinois,IL,Midwest,40.129277,-89.365309
+McDonough County,Illinois,IL,Midwest,40.455808,-90.678954
+McHenry County,Illinois,IL,Midwest,42.324298,-88.452245
+McLean County,Illinois,IL,Midwest,40.494559,-88.844539
+Macon County,Illinois,IL,Midwest,39.860237,-88.961529
+Macoupin County,Illinois,IL,Midwest,39.265914,-89.92633
+Madison County,Illinois,IL,Midwest,38.82712,-89.900227
+Marion County,Illinois,IL,Midwest,38.648236,-88.920362
+Marshall County,Illinois,IL,Midwest,41.031119,-89.342371
+Mason County,Illinois,IL,Midwest,40.236993,-89.913575
+Massac County,Illinois,IL,Midwest,37.216119,-88.705658
+Menard County,Illinois,IL,Midwest,40.022569,-89.794133
+Mercer County,Illinois,IL,Midwest,41.205605,-90.74177
+Monroe County,Illinois,IL,Midwest,38.277983,-90.179078
+Montgomery County,Illinois,IL,Midwest,39.228068,-89.478141
+Morgan County,Illinois,IL,Midwest,39.717657,-90.204993
+Moultrie County,Illinois,IL,Midwest,39.636896,-88.625726
+Ogle County,Illinois,IL,Midwest,42.041884,-89.320176
+Peoria County,Illinois,IL,Midwest,40.785972,-89.766993
+Perry County,Illinois,IL,Midwest,38.084381,-89.368525
+Piatt County,Illinois,IL,Midwest,40.009033,-88.592355
+Pike County,Illinois,IL,Midwest,39.625106,-90.889034
+Pope County,Illinois,IL,Midwest,37.417169,-88.542374
+Pulaski County,Illinois,IL,Midwest,37.215615,-89.127755
+Putnam County,Illinois,IL,Midwest,41.198961,-89.298347
+Randolph County,Illinois,IL,Midwest,38.056515,-89.82121
+Richland County,Illinois,IL,Midwest,38.712187,-88.085452
+Rock Island County,Illinois,IL,Midwest,41.468421,-90.572125
+St. Clair County,Illinois,IL,Midwest,38.470198,-89.928546
+Saline County,Illinois,IL,Midwest,37.751508,-88.545024
+Sangamon County,Illinois,IL,Midwest,39.756886,-89.662435
+Schuyler County,Illinois,IL,Midwest,40.156905,-90.613464
+Scott County,Illinois,IL,Midwest,39.637002,-90.477771
+Shelby County,Illinois,IL,Midwest,39.384917,-88.798865
+Stark County,Illinois,IL,Midwest,41.096908,-89.797411
+Stephenson County,Illinois,IL,Midwest,42.349726,-89.665994
+Tazewell County,Illinois,IL,Midwest,40.508074,-89.51626
+Union County,Illinois,IL,Midwest,37.485652,-89.244639
+Vermilion County,Illinois,IL,Midwest,40.186754,-87.726778
+Wabash County,Illinois,IL,Midwest,38.445821,-87.839167
+Warren County,Illinois,IL,Midwest,40.850441,-90.620223
+Washington County,Illinois,IL,Midwest,38.35314,-89.417187
+Wayne County,Illinois,IL,Midwest,38.431857,-88.43243
+White County,Illinois,IL,Midwest,38.087326,-88.178623
+Whiteside County,Illinois,IL,Midwest,41.750673,-89.911005
+Will County,Illinois,IL,Midwest,41.448474,-87.978456
+Williamson County,Illinois,IL,Midwest,37.730353,-88.930018
+Winnebago County,Illinois,IL,Midwest,42.337396,-89.161205
+Woodford County,Illinois,IL,Midwest,40.789787,-89.210587
+Adams County,Indiana,IN,Midwest,40.74573,-84.936134
+Allen County,Indiana,IN,Midwest,41.091909,-85.071791
+Bartholomew County,Indiana,IN,Midwest,39.205843,-85.897999
+Benton County,Indiana,IN,Midwest,40.600939,-87.314786
+Blackford County,Indiana,IN,Midwest,40.472672,-85.32373
+Boone County,Indiana,IN,Midwest,40.050892,-86.469014
+Brown County,Indiana,IN,Midwest,39.195113,-86.230121
+Carroll County,Indiana,IN,Midwest,40.58498,-86.565141
+Cass County,Indiana,IN,Midwest,40.753799,-86.355168
+Clark County,Indiana,IN,Midwest,38.476217,-85.711122
+Clay County,Indiana,IN,Midwest,39.393928,-87.115858
+Clinton County,Indiana,IN,Midwest,40.305944,-86.477567
+Crawford County,Indiana,IN,Midwest,38.289433,-86.440871
+Daviess County,Indiana,IN,Midwest,38.69609,-87.076943
+Dearborn County,Indiana,IN,Midwest,39.140897,-84.975868
+Decatur County,Indiana,IN,Midwest,39.30598,-85.499831
+DeKalb County,Indiana,IN,Midwest,41.39676,-85.002697
+Delaware County,Indiana,IN,Midwest,40.227543,-85.399262
+Dubois County,Indiana,IN,Midwest,38.373344,-86.873385
+Elkhart County,Indiana,IN,Midwest,41.600693,-85.863986
+Fayette County,Indiana,IN,Midwest,39.639654,-85.185034
+Floyd County,Indiana,IN,Midwest,38.318081,-85.911847
+Fountain County,Indiana,IN,Midwest,40.121237,-87.234872
+Franklin County,Indiana,IN,Midwest,39.409762,-85.066964
+Fulton County,Indiana,IN,Midwest,41.050384,-86.265006
+Gibson County,Indiana,IN,Midwest,38.317398,-87.580523
+Grant County,Indiana,IN,Midwest,40.515758,-85.654946
+Greene County,Indiana,IN,Midwest,39.047147,-87.004771
+Hamilton County,Indiana,IN,Midwest,40.053513,-86.021709
+Hancock County,Indiana,IN,Midwest,39.822529,-85.77315
+Harrison County,Indiana,IN,Midwest,38.186454,-86.103766
+Hendricks County,Indiana,IN,Midwest,39.768963,-86.509908
+Henry County,Indiana,IN,Midwest,39.929591,-85.397363
+Howard County,Indiana,IN,Midwest,40.483537,-86.114118
+Huntington County,Indiana,IN,Midwest,40.826394,-85.478597
+Jackson County,Indiana,IN,Midwest,38.911957,-86.042516
+Jasper County,Indiana,IN,Midwest,41.017688,-87.118814
+Jay County,Indiana,IN,Midwest,40.434956,-85.002331
+Jefferson County,Indiana,IN,Midwest,38.783604,-85.44009
+Jennings County,Indiana,IN,Midwest,38.996229,-85.628103
+Johnson County,Indiana,IN,Midwest,39.496092,-86.094264
+Knox County,Indiana,IN,Midwest,38.688381,-87.420358
+Kosciusko County,Indiana,IN,Midwest,41.244293,-85.861575
+LaGrange County,Indiana,IN,Midwest,41.642462,-85.427845
+Lake County,Indiana,IN,Midwest,41.472247,-87.374337
+LaPorte County,Indiana,IN,Midwest,41.549013,-86.744739
+Lawrence County,Indiana,IN,Midwest,38.839815,-86.48782
+Madison County,Indiana,IN,Midwest,40.166203,-85.722454
+Marion County,Indiana,IN,Midwest,39.782976,-86.135794
+Marshall County,Indiana,IN,Midwest,41.325003,-86.269036
+Martin County,Indiana,IN,Midwest,38.705322,-86.801847
+Miami County,Indiana,IN,Midwest,40.772883,-86.044258
+Monroe County,Indiana,IN,Midwest,39.160729,-86.52331
+Montgomery County,Indiana,IN,Midwest,40.040296,-86.892715
+Morgan County,Indiana,IN,Midwest,39.482646,-86.447457
+Newton County,Indiana,IN,Midwest,40.962399,-87.402172
+Noble County,Indiana,IN,Midwest,41.404679,-85.417271
+Ohio County,Indiana,IN,Midwest,38.940527,-84.964299
+Orange County,Indiana,IN,Midwest,38.547381,-86.489257
+Owen County,Indiana,IN,Midwest,39.317339,-86.838845
+Parke County,Indiana,IN,Midwest,39.77425,-87.19695
+Perry County,Indiana,IN,Midwest,38.081436,-86.62654
+Pike County,Indiana,IN,Midwest,38.397961,-87.232547
+Porter County,Indiana,IN,Midwest,41.509914,-87.071313
+Posey County,Indiana,IN,Midwest,38.027614,-87.868653
+Pulaski County,Indiana,IN,Midwest,41.045272,-86.692538
+Putnam County,Indiana,IN,Midwest,39.665548,-86.853373
+Randolph County,Indiana,IN,Midwest,40.164079,-85.00579
+Ripley County,Indiana,IN,Midwest,39.100226,-85.260494
+Rush County,Indiana,IN,Midwest,39.622362,-85.466529
+St. Joseph County,Indiana,IN,Midwest,41.617723,-86.288048
+Scott County,Indiana,IN,Midwest,38.679431,-85.751898
+Shelby County,Indiana,IN,Midwest,39.524135,-85.792174
+Spencer County,Indiana,IN,Midwest,38.009697,-87.010375
+Starke County,Indiana,IN,Midwest,41.284478,-86.644636
+Steuben County,Indiana,IN,Midwest,41.643467,-85.002405
+Sullivan County,Indiana,IN,Midwest,39.089225,-87.415843
+Switzerland County,Indiana,IN,Midwest,38.825854,-85.029681
+Tippecanoe County,Indiana,IN,Midwest,40.389133,-86.893554
+Tipton County,Indiana,IN,Midwest,40.310229,-86.056207
+Union County,Indiana,IN,Midwest,39.623094,-84.925145
+Vanderburgh County,Indiana,IN,Midwest,38.02007,-87.586166
+Vermillion County,Indiana,IN,Midwest,39.854045,-87.462071
+Vigo County,Indiana,IN,Midwest,39.430874,-87.390989
+Wabash County,Indiana,IN,Midwest,40.843747,-85.795192
+Warren County,Indiana,IN,Midwest,40.352498,-87.375163
+Warrick County,Indiana,IN,Midwest,38.097728,-87.272049
+Washington County,Indiana,IN,Midwest,38.600613,-86.104751
+Wayne County,Indiana,IN,Midwest,39.863091,-85.006735
+Wells County,Indiana,IN,Midwest,40.735547,-85.213349
+White County,Indiana,IN,Midwest,40.75095,-86.864293
+Whitley County,Indiana,IN,Midwest,41.136426,-85.501892
+Adair County,Iowa,IA,Midwest,41.328528,-94.478164
+Adams County,Iowa,IA,Midwest,41.021656,-94.696906
+Allamakee County,Iowa,IA,Midwest,43.274964,-91.382751
+Appanoose County,Iowa,IA,Midwest,40.744249,-92.873062
+Audubon County,Iowa,IA,Midwest,41.679178,-94.904312
+Benton County,Iowa,IA,Midwest,42.092547,-92.05763
+Black Hawk County,Iowa,IA,Midwest,42.471132,-92.3076
+Boone County,Iowa,IA,Midwest,42.038623,-93.938605
+Bremer County,Iowa,IA,Midwest,42.780895,-92.327356
+Buchanan County,Iowa,IA,Midwest,42.470328,-91.838666
+Buena Vista County,Iowa,IA,Midwest,42.741522,-95.141432
+Butler County,Iowa,IA,Midwest,42.734757,-92.780153
+Calhoun County,Iowa,IA,Midwest,42.386061,-94.643602
+Carroll County,Iowa,IA,Midwest,42.039502,-94.86765
+Cass County,Iowa,IA,Midwest,41.333824,-94.933302
+Cedar County,Iowa,IA,Midwest,41.77236,-91.132611
+Cerro Gordo County,Iowa,IA,Midwest,43.074975,-93.250965
+Cherokee County,Iowa,IA,Midwest,42.742737,-95.633262
+Chickasaw County,Iowa,IA,Midwest,43.059741,-92.31721
+Clarke County,Iowa,IA,Midwest,41.029726,-93.785259
+Clay County,Iowa,IA,Midwest,43.081224,-95.149875
+Clayton County,Iowa,IA,Midwest,42.840985,-91.323576
+Clinton County,Iowa,IA,Midwest,41.898073,-90.534243
+Crawford County,Iowa,IA,Midwest,42.043119,-95.38909
+Dallas County,Iowa,IA,Midwest,41.68532,-94.040706
+Davis County,Iowa,IA,Midwest,40.748089,-92.410345
+Decatur County,Iowa,IA,Midwest,40.736379,-93.78458
+Delaware County,Iowa,IA,Midwest,42.473014,-91.366767
+Des Moines County,Iowa,IA,Midwest,40.915339,-91.186925
+Dickinson County,Iowa,IA,Midwest,43.389611,-95.196057
+Dubuque County,Iowa,IA,Midwest,42.463481,-90.878771
+Emmet County,Iowa,IA,Midwest,43.377984,-94.66937
+Fayette County,Iowa,IA,Midwest,42.864122,-91.840376
+Floyd County,Iowa,IA,Midwest,43.052741,-92.787367
+Franklin County,Iowa,IA,Midwest,42.736545,-93.271415
+Fremont County,Iowa,IA,Midwest,40.74259,-95.599182
+Greene County,Iowa,IA,Midwest,42.042513,-94.388727
+Grundy County,Iowa,IA,Midwest,42.403339,-92.790244
+Guthrie County,Iowa,IA,Midwest,41.683573,-94.501272
+Hamilton County,Iowa,IA,Midwest,42.390789,-93.70913
+Hancock County,Iowa,IA,Midwest,43.075411,-93.743697
+Hardin County,Iowa,IA,Midwest,42.390208,-93.241669
+Harrison County,Iowa,IA,Midwest,41.688584,-95.827149
+Henry County,Iowa,IA,Midwest,40.984802,-91.547259
+Howard County,Iowa,IA,Midwest,43.365312,-92.321908
+Humboldt County,Iowa,IA,Midwest,42.782221,-94.202775
+Ida County,Iowa,IA,Midwest,42.39186,-95.507421
+Iowa County,Iowa,IA,Midwest,41.683918,-92.059123
+Jackson County,Iowa,IA,Midwest,42.164226,-90.574582
+Jasper County,Iowa,IA,Midwest,41.685551,-93.054147
+Jefferson County,Iowa,IA,Midwest,41.006376,-91.966628
+Johnson County,Iowa,IA,Midwest,41.670668,-91.590529
+Jones County,Iowa,IA,Midwest,42.125118,-91.116914
+Keokuk County,Iowa,IA,Midwest,41.331182,-92.167721
+Kossuth County,Iowa,IA,Midwest,43.212356,-94.213965
+Lee County,Iowa,IA,Midwest,40.647588,-91.477157
+Linn County,Iowa,IA,Midwest,42.077951,-91.597674
+Louisa County,Iowa,IA,Midwest,41.218211,-91.256994
+Lucas County,Iowa,IA,Midwest,41.033344,-93.331467
+Lyon County,Iowa,IA,Midwest,43.38358,-96.207201
+Madison County,Iowa,IA,Midwest,41.330622,-94.015184
+Mahaska County,Iowa,IA,Midwest,41.330797,-92.636366
+Marion County,Iowa,IA,Midwest,41.331433,-93.093868
+Marshall County,Iowa,IA,Midwest,42.0417,-92.981403
+Mills County,Iowa,IA,Midwest,41.033703,-95.619101
+Mitchell County,Iowa,IA,Midwest,43.348564,-92.784466
+Monona County,Iowa,IA,Midwest,42.049432,-95.956566
+Monroe County,Iowa,IA,Midwest,41.028847,-92.869642
+Montgomery County,Iowa,IA,Midwest,41.021735,-95.15779
+Muscatine County,Iowa,IA,Midwest,41.483776,-91.118699
+O'Brien County,Iowa,IA,Midwest,43.083746,-95.625624
+Osceola County,Iowa,IA,Midwest,43.378542,-95.633788
+Page County,Iowa,IA,Midwest,40.739097,-95.144301
+Palo Alto County,Iowa,IA,Midwest,43.075337,-94.669055
+Plymouth County,Iowa,IA,Midwest,42.737585,-96.215864
+Pocahontas County,Iowa,IA,Midwest,42.734033,-94.678279
+Polk County,Iowa,IA,Midwest,41.684816,-93.568971
+Pottawattamie County,Iowa,IA,Midwest,41.340184,-95.544905
+Poweshiek County,Iowa,IA,Midwest,41.684642,-92.522934
+Ringgold County,Iowa,IA,Midwest,40.735334,-94.244251
+Sac County,Iowa,IA,Midwest,42.387526,-95.105224
+Scott County,Iowa,IA,Midwest,41.642079,-90.622289
+Shelby County,Iowa,IA,Midwest,41.679014,-95.308917
+Sioux County,Iowa,IA,Midwest,43.082646,-96.17801
+Story County,Iowa,IA,Midwest,42.037538,-93.466093
+Tama County,Iowa,IA,Midwest,42.074848,-92.529411
+Taylor County,Iowa,IA,Midwest,40.737949,-94.697108
+Union County,Iowa,IA,Midwest,41.02855,-94.245091
+Van Buren County,Iowa,IA,Midwest,40.754117,-91.952943
+Wapello County,Iowa,IA,Midwest,41.031275,-92.409466
+Warren County,Iowa,IA,Midwest,41.332446,-93.568751
+Washington County,Iowa,IA,Midwest,41.329401,-91.725052
+Wayne County,Iowa,IA,Midwest,40.739983,-93.332613
+Webster County,Iowa,IA,Midwest,42.433579,-94.175831
+Winnebago County,Iowa,IA,Midwest,43.378124,-93.743488
+Winneshiek County,Iowa,IA,Midwest,43.292989,-91.850788
+Woodbury County,Iowa,IA,Midwest,42.39322,-96.053296
+Worth County,Iowa,IA,Midwest,43.373491,-93.248533
+Wright County,Iowa,IA,Midwest,42.733007,-93.734735
+Allen County,Kansas,KS,Midwest,37.884228,-95.300945
+Anderson County,Kansas,KS,Midwest,38.215114,-95.292046
+Atchison County,Kansas,KS,Midwest,39.532544,-95.313397
+Barber County,Kansas,KS,Midwest,37.222906,-98.685052
+Barton County,Kansas,KS,Midwest,38.481239,-98.767837
+Bourbon County,Kansas,KS,Midwest,37.8561,-94.850928
+Brown County,Kansas,KS,Midwest,39.825931,-95.569905
+Butler County,Kansas,KS,Midwest,37.773649,-96.83884
+Chase County,Kansas,KS,Midwest,38.299475,-96.594029
+Chautauqua County,Kansas,KS,Midwest,37.154259,-96.245396
+Cherokee County,Kansas,KS,Midwest,37.169392,-94.845698
+Cheyenne County,Kansas,KS,Midwest,39.789901,-101.727317
+Clark County,Kansas,KS,Midwest,37.233831,-99.813869
+Clay County,Kansas,KS,Midwest,39.344964,-97.168853
+Cloud County,Kansas,KS,Midwest,39.487329,-97.64139
+Coffey County,Kansas,KS,Midwest,38.23645,-95.729137
+Comanche County,Kansas,KS,Midwest,37.181442,-99.251293
+Cowley County,Kansas,KS,Midwest,37.234507,-96.837247
+Crawford County,Kansas,KS,Midwest,37.505821,-94.853897
+Decatur County,Kansas,KS,Midwest,39.783542,-100.459708
+Dickinson County,Kansas,KS,Midwest,38.867735,-97.157943
+Doniphan County,Kansas,KS,Midwest,39.788502,-95.147225
+Douglas County,Kansas,KS,Midwest,38.896417,-95.290947
+Edwards County,Kansas,KS,Midwest,37.883595,-99.304746
+Elk County,Kansas,KS,Midwest,37.456026,-96.244642
+Ellis County,Kansas,KS,Midwest,38.914597,-99.317313
+Ellsworth County,Kansas,KS,Midwest,38.700845,-98.205355
+Finney County,Kansas,KS,Midwest,38.049808,-100.739967
+Ford County,Kansas,KS,Midwest,37.688416,-99.884748
+Franklin County,Kansas,KS,Midwest,38.558019,-95.278962
+Geary County,Kansas,KS,Midwest,39.002139,-96.7681
+Gove County,Kansas,KS,Midwest,38.917239,-100.48736
+Graham County,Kansas,KS,Midwest,39.354972,-99.879894
+Grant County,Kansas,KS,Midwest,37.547537,-101.299362
+Gray County,Kansas,KS,Midwest,37.744513,-100.451716
+Greeley County,Kansas,KS,Midwest,38.480404,-101.80597
+Greenwood County,Kansas,KS,Midwest,37.879347,-96.241732
+Hamilton County,Kansas,KS,Midwest,37.995244,-101.793689
+Harper County,Kansas,KS,Midwest,37.188184,-98.06659
+Harvey County,Kansas,KS,Midwest,38.050144,-97.436706
+Haskell County,Kansas,KS,Midwest,37.554979,-100.879952
+Hodgeman County,Kansas,KS,Midwest,38.087493,-99.898407
+Jackson County,Kansas,KS,Midwest,39.411145,-95.794485
+Jefferson County,Kansas,KS,Midwest,39.239644,-95.375314
+Jewell County,Kansas,KS,Midwest,39.777005,-98.222619
+Johnson County,Kansas,KS,Midwest,38.883907,-94.82233
+Kearny County,Kansas,KS,Midwest,37.994461,-101.308136
+Kingman County,Kansas,KS,Midwest,37.552951,-98.144529
+Kiowa County,Kansas,KS,Midwest,37.561231,-99.286539
+Labette County,Kansas,KS,Midwest,37.191468,-95.297473
+Lane County,Kansas,KS,Midwest,38.481286,-100.466185
+Leavenworth County,Kansas,KS,Midwest,39.189511,-95.038977
+Lincoln County,Kansas,KS,Midwest,39.04728,-98.214284
+Linn County,Kansas,KS,Midwest,38.216549,-94.844932
+Logan County,Kansas,KS,Midwest,38.91327,-101.157402
+Lyon County,Kansas,KS,Midwest,38.455403,-96.161641
+McPherson County,Kansas,KS,Midwest,38.395812,-97.647489
+Marion County,Kansas,KS,Midwest,38.359647,-97.102771
+Marshall County,Kansas,KS,Midwest,39.782709,-96.521243
+Meade County,Kansas,KS,Midwest,37.243886,-100.360094
+Miami County,Kansas,KS,Midwest,38.566772,-94.832963
+Mitchell County,Kansas,KS,Midwest,39.393026,-98.207362
+Montgomery County,Kansas,KS,Midwest,37.189537,-95.742403
+Morris County,Kansas,KS,Midwest,38.688204,-96.651448
+Morton County,Kansas,KS,Midwest,37.185249,-101.809516
+Nemaha County,Kansas,KS,Midwest,39.791043,-96.005381
+Neosho County,Kansas,KS,Midwest,37.564283,-95.315682
+Ness County,Kansas,KS,Midwest,38.480437,-99.908745
+Norton County,Kansas,KS,Midwest,39.783867,-99.899235
+Osage County,Kansas,KS,Midwest,38.650215,-95.708255
+Osborne County,Kansas,KS,Midwest,39.348261,-98.767942
+Ottawa County,Kansas,KS,Midwest,39.137963,-97.654802
+Pawnee County,Kansas,KS,Midwest,38.181477,-99.234772
+Phillips County,Kansas,KS,Midwest,39.784506,-99.34215
+Pottawatomie County,Kansas,KS,Midwest,39.382187,-96.337113
+Pratt County,Kansas,KS,Midwest,37.647594,-98.74012
+Rawlins County,Kansas,KS,Midwest,39.786198,-101.076738
+Reno County,Kansas,KS,Midwest,37.948185,-98.078346
+Republic County,Kansas,KS,Midwest,39.828906,-97.650883
+Rice County,Kansas,KS,Midwest,38.347178,-98.201415
+Riley County,Kansas,KS,Midwest,39.29121,-96.727488
+Rooks County,Kansas,KS,Midwest,39.346006,-99.324492
+Rush County,Kansas,KS,Midwest,38.523596,-99.309184
+Russell County,Kansas,KS,Midwest,38.91604,-98.770949
+Saline County,Kansas,KS,Midwest,38.791804,-97.651478
+Scott County,Kansas,KS,Midwest,38.481877,-100.90636
+Sedgwick County,Kansas,KS,Midwest,37.681045,-97.461054
+Seward County,Kansas,KS,Midwest,37.18096,-100.855257
+Shawnee County,Kansas,KS,Midwest,39.041805,-95.755664
+Sheridan County,Kansas,KS,Midwest,39.350547,-100.441228
+Sherman County,Kansas,KS,Midwest,39.351352,-101.719859
+Smith County,Kansas,KS,Midwest,39.78466,-98.785429
+Stafford County,Kansas,KS,Midwest,38.03563,-98.719889
+Stanton County,Kansas,KS,Midwest,37.565932,-101.789383
+Stevens County,Kansas,KS,Midwest,37.2017,-101.317268
+Sumner County,Kansas,KS,Midwest,37.236662,-97.493352
+Thomas County,Kansas,KS,Midwest,39.357713,-101.083386
+Trego County,Kansas,KS,Midwest,38.921302,-99.865423
+Wabaunsee County,Kansas,KS,Midwest,38.955154,-96.201262
+Wallace County,Kansas,KS,Midwest,38.926626,-101.771103
+Washington County,Kansas,KS,Midwest,39.776714,-97.095611
+Wichita County,Kansas,KS,Midwest,38.481922,-101.347434
+Wilson County,Kansas,KS,Midwest,37.558515,-95.745175
+Woodson County,Kansas,KS,Midwest,37.888193,-95.758469
+Wyandotte County,Kansas,KS,Midwest,39.115384,-94.763087
+Adair County,Kentucky,KY,South,37.105559,-85.28138
+Allen County,Kentucky,KY,South,36.75077,-86.192458
+Anderson County,Kentucky,KY,South,38.005396,-84.986417
+Ballard County,Kentucky,KY,South,37.051323,-89.010367
+Barren County,Kentucky,KY,South,36.962805,-85.932108
+Bath County,Kentucky,KY,South,38.152249,-83.737641
+Bell County,Kentucky,KY,South,36.728928,-83.680718
+Boone County,Kentucky,KY,South,38.9589,-84.736371
+Bourbon County,Kentucky,KY,South,38.202562,-84.20986
+Boyd County,Kentucky,KY,South,38.360003,-82.681406
+Boyle County,Kentucky,KY,South,37.618104,-84.868352
+Bracken County,Kentucky,KY,South,38.680365,-84.115235
+Breathitt County,Kentucky,KY,South,37.517807,-83.317158
+Breckinridge County,Kentucky,KY,South,37.777988,-86.432919
+Bullitt County,Kentucky,KY,South,37.969945,-85.702635
+Butler County,Kentucky,KY,South,37.207013,-86.682471
+Caldwell County,Kentucky,KY,South,37.148642,-87.870509
+Calloway County,Kentucky,KY,South,36.620978,-88.274086
+Campbell County,Kentucky,KY,South,38.946981,-84.379583
+Carlisle County,Kentucky,KY,South,36.85718,-88.976614
+Carroll County,Kentucky,KY,South,38.668394,-85.124024
+Carter County,Kentucky,KY,South,38.314094,-83.038988
+Casey County,Kentucky,KY,South,37.321962,-84.92822
+Christian County,Kentucky,KY,South,36.892059,-87.492986
+Clark County,Kentucky,KY,South,37.970314,-84.145115
+Clay County,Kentucky,KY,South,37.164273,-83.715454
+Clinton County,Kentucky,KY,South,36.727258,-85.136098
+Crittenden County,Kentucky,KY,South,37.358149,-88.10501
+Cumberland County,Kentucky,KY,South,36.782372,-85.388484
+Daviess County,Kentucky,KY,South,37.731671,-87.087139
+Edmonson County,Kentucky,KY,South,37.227514,-86.218015
+Elliott County,Kentucky,KY,South,38.116883,-83.096116
+Estill County,Kentucky,KY,South,37.692449,-83.963983
+Fayette County,Kentucky,KY,South,38.040678,-84.458272
+Fleming County,Kentucky,KY,South,38.367848,-83.699205
+Floyd County,Kentucky,KY,South,37.552456,-82.739724
+Franklin County,Kentucky,KY,South,38.234919,-84.868786
+Fulton County,Kentucky,KY,South,36.552511,-89.187659
+Gallatin County,Kentucky,KY,South,38.755663,-84.865143
+Garrard County,Kentucky,KY,South,37.630162,-84.545856
+Grant County,Kentucky,KY,South,38.649167,-84.625924
+Graves County,Kentucky,KY,South,36.723344,-88.649897
+Grayson County,Kentucky,KY,South,37.458577,-86.344011
+Green County,Kentucky,KY,South,37.278065,-85.537925
+Greenup County,Kentucky,KY,South,38.563562,-82.93382
+Hancock County,Kentucky,KY,South,37.843325,-86.792761
+Hardin County,Kentucky,KY,South,37.695836,-85.963183
+Harlan County,Kentucky,KY,South,36.859223,-83.221497
+Harrison County,Kentucky,KY,South,38.444578,-84.334131
+Hart County,Kentucky,KY,South,37.305827,-85.878443
+Henderson County,Kentucky,KY,South,37.792542,-87.572577
+Henry County,Kentucky,KY,South,38.451383,-85.119647
+Hickman County,Kentucky,KY,South,36.675896,-88.972084
+Hopkins County,Kentucky,KY,South,37.31107,-87.542196
+Jackson County,Kentucky,KY,South,37.403458,-84.020576
+Jefferson County,Kentucky,KY,South,38.189532,-85.657624
+Jessamine County,Kentucky,KY,South,37.873291,-84.58396
+Johnson County,Kentucky,KY,South,37.847756,-82.830121
+Kenton County,Kentucky,KY,South,38.930503,-84.533438
+Knott County,Kentucky,KY,South,37.354368,-82.952546
+Knox County,Kentucky,KY,South,36.8885,-83.855551
+Larue County,Kentucky,KY,South,37.544462,-85.696841
+Laurel County,Kentucky,KY,South,37.113268,-84.119395
+Lawrence County,Kentucky,KY,South,38.074453,-82.73829
+Lee County,Kentucky,KY,South,37.608116,-83.719248
+Leslie County,Kentucky,KY,South,37.087846,-83.388617
+Letcher County,Kentucky,KY,South,37.118536,-82.861251
+Lewis County,Kentucky,KY,South,38.535047,-83.370143
+Lincoln County,Kentucky,KY,South,37.457174,-84.658335
+Livingston County,Kentucky,KY,South,37.209517,-88.363426
+Logan County,Kentucky,KY,South,36.859607,-86.881288
+Lyon County,Kentucky,KY,South,37.023976,-88.083391
+McCracken County,Kentucky,KY,South,37.054111,-88.712454
+McCreary County,Kentucky,KY,South,36.731136,-84.491052
+McLean County,Kentucky,KY,South,37.526707,-87.265597
+Madison County,Kentucky,KY,South,37.725511,-84.278362
+Magoffin County,Kentucky,KY,South,37.698983,-83.069721
+Marion County,Kentucky,KY,South,37.552604,-85.268959
+Marshall County,Kentucky,KY,South,36.882017,-88.332752
+Martin County,Kentucky,KY,South,37.796774,-82.506623
+Mason County,Kentucky,KY,South,38.594137,-83.828125
+Meade County,Kentucky,KY,South,37.967476,-86.200863
+Menifee County,Kentucky,KY,South,37.935485,-83.589355
+Mercer County,Kentucky,KY,South,37.812085,-84.879695
+Metcalfe County,Kentucky,KY,South,36.99243,-85.633456
+Monroe County,Kentucky,KY,South,36.714077,-85.713508
+Montgomery County,Kentucky,KY,South,38.038109,-83.912416
+Morgan County,Kentucky,KY,South,37.92294,-83.258944
+Muhlenberg County,Kentucky,KY,South,37.213816,-87.134092
+Nelson County,Kentucky,KY,South,37.80312,-85.465931
+Nicholas County,Kentucky,KY,South,38.338031,-84.026223
+Ohio County,Kentucky,KY,South,37.477859,-86.844871
+Oldham County,Kentucky,KY,South,38.400127,-85.45615
+Owen County,Kentucky,KY,South,38.499395,-84.84159
+Owsley County,Kentucky,KY,South,37.423622,-83.691637
+Pendleton County,Kentucky,KY,South,38.696284,-84.351943
+Perry County,Kentucky,KY,South,37.241282,-83.217772
+Pike County,Kentucky,KY,South,37.486031,-82.410912
+Powell County,Kentucky,KY,South,37.809567,-83.831235
+Pulaski County,Kentucky,KY,South,37.107428,-84.576969
+Robertson County,Kentucky,KY,South,38.513473,-84.06423
+Rockcastle County,Kentucky,KY,South,37.36105,-84.314368
+Rowan County,Kentucky,KY,South,38.204266,-83.428079
+Russell County,Kentucky,KY,South,36.990587,-85.05495
+Scott County,Kentucky,KY,South,38.28571,-84.57834
+Shelby County,Kentucky,KY,South,38.239011,-85.228247
+Simpson County,Kentucky,KY,South,36.740937,-86.581793
+Spencer County,Kentucky,KY,South,38.025313,-85.317312
+Taylor County,Kentucky,KY,South,37.36621,-85.328059
+Todd County,Kentucky,KY,South,36.840338,-87.183642
+Trigg County,Kentucky,KY,South,36.807681,-87.858652
+Trimble County,Kentucky,KY,South,38.62004,-85.351208
+Union County,Kentucky,KY,South,37.658029,-87.95165
+Warren County,Kentucky,KY,South,36.995634,-86.423579
+Washington County,Kentucky,KY,South,37.754209,-85.175416
+Wayne County,Kentucky,KY,South,36.800772,-84.82659
+Webster County,Kentucky,KY,South,37.520375,-87.685206
+Whitley County,Kentucky,KY,South,36.758024,-84.144648
+Wolfe County,Kentucky,KY,South,37.743893,-83.49511
+Woodford County,Kentucky,KY,South,38.043103,-84.748855
+Acadia Parish,Louisiana,LA,South,30.291497,-92.411037
+Allen Parish,Louisiana,LA,South,30.652744,-92.819605
+Ascension Parish,Louisiana,LA,South,30.206444,-90.912502
+Assumption Parish,Louisiana,LA,South,29.9033,-91.065219
+Avoyelles Parish,Louisiana,LA,South,31.088503,-91.983275
+Beauregard Parish,Louisiana,LA,South,30.645018,-93.340253
+Bienville Parish,Louisiana,LA,South,32.340952,-93.041151
+Bossier Parish,Louisiana,LA,South,32.698481,-93.626561
+Caddo Parish,Louisiana,LA,South,32.580106,-93.88497
+Calcasieu Parish,Louisiana,LA,South,30.229559,-93.358015
+Caldwell Parish,Louisiana,LA,South,32.101219,-92.114231
+Cameron Parish,Louisiana,LA,South,29.871812,-93.164948
+Catahoula Parish,Louisiana,LA,South,31.666517,-91.846703
+Claiborne Parish,Louisiana,LA,South,32.82716,-92.989728
+Concordia Parish,Louisiana,LA,South,31.469805,-91.626315
+De Soto Parish,Louisiana,LA,South,32.059248,-93.740797
+East Baton Rouge Parish,Louisiana,LA,South,30.54393,-91.093131
+East Carroll Parish,Louisiana,LA,South,32.73017,-91.234141
+East Feliciana Parish,Louisiana,LA,South,30.839784,-91.043434
+Evangeline Parish,Louisiana,LA,South,30.720693,-92.404086
+Franklin Parish,Louisiana,LA,South,32.139076,-91.672371
+Grant Parish,Louisiana,LA,South,31.597787,-92.561716
+Iberia Parish,Louisiana,LA,South,29.606013,-91.842706
+Iberville Parish,Louisiana,LA,South,30.270653,-91.365872
+Jackson Parish,Louisiana,LA,South,32.30429,-92.5617
+Jefferson Parish,Louisiana,LA,South,29.5033,-90.036231
+Jefferson Davis Parish,Louisiana,LA,South,30.269529,-92.816221
+Lafayette Parish,Louisiana,LA,South,30.206507,-92.06417
+Lafourche Parish,Louisiana,LA,South,29.491992,-90.394849
+LaSalle Parish,Louisiana,LA,South,31.680083,-92.161596
+Lincoln Parish,Louisiana,LA,South,32.601823,-92.662303
+Livingston Parish,Louisiana,LA,South,30.440419,-90.727474
+Madison Parish,Louisiana,LA,South,32.346878,-91.231932
+Morehouse Parish,Louisiana,LA,South,32.820008,-91.800399
+Natchitoches Parish,Louisiana,LA,South,31.732509,-93.082546
+Orleans Parish,Louisiana,LA,South,30.05342,-89.934502
+Ouachita Parish,Louisiana,LA,South,32.480932,-92.151581
+Plaquemines Parish,Louisiana,LA,South,29.282447,-89.576068
+Pointe Coupee Parish,Louisiana,LA,South,30.708319,-91.604621
+Rapides Parish,Louisiana,LA,South,31.193204,-92.535953
+Red River Parish,Louisiana,LA,South,32.101213,-93.34905
+Richland Parish,Louisiana,LA,South,32.413158,-91.748353
+Sabine Parish,Louisiana,LA,South,31.560402,-93.559579
+St. Bernard Parish,Louisiana,LA,South,29.91811,-89.263494
+St. Charles Parish,Louisiana,LA,South,29.905722,-90.357855
+St. Helena Parish,Louisiana,LA,South,30.822539,-90.708307
+St. James Parish,Louisiana,LA,South,30.024777,-90.793956
+St. John the Baptist Parish,Louisiana,LA,South,30.144068,-90.49096
+St. Landry Parish,Louisiana,LA,South,30.583441,-91.989274
+St. Martin Parish,Louisiana,LA,South,30.121433,-91.611481
+St. Mary Parish,Louisiana,LA,South,29.629349,-91.463804
+St. Tammany Parish,Louisiana,LA,South,30.410022,-89.951962
+Tangipahoa Parish,Louisiana,LA,South,30.621348,-90.40649
+Tensas Parish,Louisiana,LA,South,32.001489,-91.342576
+Terrebonne Parish,Louisiana,LA,South,29.33413,-90.843674
+Union Parish,Louisiana,LA,South,32.829349,-92.37565
+Vermilion Parish,Louisiana,LA,South,29.806638,-92.321394
+Vernon Parish,Louisiana,LA,South,31.102841,-93.18833
+Washington Parish,Louisiana,LA,South,30.852144,-90.046253
+Webster Parish,Louisiana,LA,South,32.732152,-93.339825
+West Baton Rouge Parish,Louisiana,LA,South,30.464052,-91.309808
+West Carroll Parish,Louisiana,LA,South,32.79248,-91.451998
+West Feliciana Parish,Louisiana,LA,South,30.873364,-91.421776
+Winn Parish,Louisiana,LA,South,31.941187,-92.641269
+Androscoggin County,Maine,ME,Northeast,44.167681,-70.207435
+Aroostook County,Maine,ME,Northeast,46.709193,-68.612409
+Cumberland County,Maine,ME,Northeast,43.808348,-70.330375
+Franklin County,Maine,ME,Northeast,44.976724,-70.414935
+Hancock County,Maine,ME,Northeast,44.564906,-68.370703
+Kennebec County,Maine,ME,Northeast,44.417012,-69.765764
+Knox County,Maine,ME,Northeast,44.042045,-69.038514
+Lincoln County,Maine,ME,Northeast,43.994781,-69.513624
+Oxford County,Maine,ME,Northeast,44.4945,-70.734421
+Penobscot County,Maine,ME,Northeast,45.409284,-68.666616
+Piscataquis County,Maine,ME,Northeast,45.915639,-69.102231
+Sagadahoc County,Maine,ME,Northeast,43.916845,-69.844227
+Somerset County,Maine,ME,Northeast,45.503646,-69.95611
+Waldo County,Maine,ME,Northeast,44.505822,-69.138961
+Washington County,Maine,ME,Northeast,44.967009,-67.609354
+York County,Maine,ME,Northeast,43.426019,-70.668425
+Allegany County,Maryland,MD,South,39.612313,-78.703104
+Anne Arundel County,Maryland,MD,South,38.991617,-76.560894
+Baltimore County,Maryland,MD,South,39.443167,-76.616569
+Calvert County,Maryland,MD,South,38.522719,-76.529762
+Caroline County,Maryland,MD,South,38.871531,-75.831662
+Carroll County,Maryland,MD,South,39.563328,-77.01533
+Cecil County,Maryland,MD,South,39.562354,-75.941585
+Charles County,Maryland,MD,South,38.472853,-77.015427
+Dorchester County,Maryland,MD,South,38.429196,-76.047433
+Frederick County,Maryland,MD,South,39.470177,-77.397636
+Garrett County,Maryland,MD,South,39.547299,-79.274619
+Harford County,Maryland,MD,South,39.537429,-76.299789
+Howard County,Maryland,MD,South,39.252264,-76.924406
+Kent County,Maryland,MD,South,39.241279,-76.125987
+Montgomery County,Maryland,MD,South,39.137381,-77.203063
+Prince George's County,Maryland,MD,South,38.829278,-76.848188
+Queen Anne's County,Maryland,MD,South,39.040693,-76.082405
+St. Mary's County,Maryland,MD,South,38.223077,-76.534487
+Somerset County,Maryland,MD,South,38.07445,-75.853323
+Talbot County,Maryland,MD,South,38.748349,-76.178476
+Washington County,Maryland,MD,South,39.603621,-77.814671
+Wicomico County,Maryland,MD,South,38.36737,-75.632083
+Worcester County,Maryland,MD,South,38.222133,-75.309931
+Baltimore city,Maryland,MD,South,39.300032,-76.610476
+Barnstable County,Massachusetts,MA,Northeast,41.706123,-70.164823
+Berkshire County,Massachusetts,MA,Northeast,42.371493,-73.217928
+Bristol County,Massachusetts,MA,Northeast,41.748588,-71.088894
+Dukes County,Massachusetts,MA,Northeast,41.38097,-70.701499
+Essex County,Massachusetts,MA,Northeast,42.642708,-70.864909
+Franklin County,Massachusetts,MA,Northeast,42.584504,-72.591792
+Hampden County,Massachusetts,MA,Northeast,42.136198,-72.635648
+Hampshire County,Massachusetts,MA,Northeast,42.339459,-72.663694
+Middlesex County,Massachusetts,MA,Northeast,42.481718,-71.394916
+Nantucket County,Massachusetts,MA,Northeast,41.293392,-70.102164
+Norfolk County,Massachusetts,MA,Northeast,42.171738,-71.18111
+Plymouth County,Massachusetts,MA,Northeast,41.987196,-70.741942
+Suffolk County,Massachusetts,MA,Northeast,42.338551,-71.018253
+Worcester County,Massachusetts,MA,Northeast,42.311693,-71.940282
+Alcona County,Michigan,MI,Midwest,44.657509,-83.29458
+Alger County,Michigan,MI,Midwest,46.521736,-86.657119
+Allegan County,Michigan,MI,Midwest,42.421251,-86.261403
+Alpena County,Michigan,MI,Midwest,44.894954,-83.426574
+Antrim County,Michigan,MI,Midwest,45.005455,-85.175639
+Arenac County,Michigan,MI,Midwest,44.036833,-83.740675
+Baraga County,Michigan,MI,Midwest,46.695859,-88.36181
+Barry County,Michigan,MI,Midwest,42.582811,-85.31455
+Bay County,Michigan,MI,Midwest,43.699711,-83.978701
+Benzie County,Michigan,MI,Midwest,44.636844,-86.231999
+Berrien County,Michigan,MI,Midwest,41.791382,-86.742543
+Branch County,Michigan,MI,Midwest,41.918455,-85.066885
+Calhoun County,Michigan,MI,Midwest,42.24299,-85.012385
+Cass County,Michigan,MI,Midwest,41.917243,-86.000142
+Charlevoix County,Michigan,MI,Midwest,45.618554,-85.543684
+Cheboygan County,Michigan,MI,Midwest,45.476022,-84.495431
+Chippewa County,Michigan,MI,Midwest,46.321819,-84.52063
+Clare County,Michigan,MI,Midwest,43.991137,-84.838325
+Clinton County,Michigan,MI,Midwest,42.950455,-84.591695
+Crawford County,Michigan,MI,Midwest,44.680175,-84.611343
+Delta County,Michigan,MI,Midwest,45.805229,-86.901938
+Dickinson County,Michigan,MI,Midwest,46.012833,-87.866139
+Eaton County,Michigan,MI,Midwest,42.58953,-84.84645
+Emmet County,Michigan,MI,Midwest,45.590094,-84.986822
+Genesee County,Michigan,MI,Midwest,43.021077,-83.706372
+Gladwin County,Michigan,MI,Midwest,43.98975,-84.389816
+Gogebic County,Michigan,MI,Midwest,46.488054,-89.788314
+Grand Traverse County,Michigan,MI,Midwest,44.718688,-85.553848
+Gratiot County,Michigan,MI,Midwest,43.292326,-84.60469
+Hillsdale County,Michigan,MI,Midwest,41.927461,-84.637479
+Houghton County,Michigan,MI,Midwest,46.998427,-88.651903
+Huron County,Michigan,MI,Midwest,43.907616,-82.857045
+Ingham County,Michigan,MI,Midwest,42.603534,-84.373811
+Ionia County,Michigan,MI,Midwest,42.94465,-85.073766
+Iosco County,Michigan,MI,Midwest,44.386912,-83.380141
+Iron County,Michigan,MI,Midwest,46.170254,-88.540526
+Isabella County,Michigan,MI,Midwest,43.645233,-84.839424
+Jackson County,Michigan,MI,Midwest,42.248474,-84.420868
+Kalamazoo County,Michigan,MI,Midwest,42.246266,-85.532854
+Kalkaska County,Michigan,MI,Midwest,44.678881,-85.088992
+Kent County,Michigan,MI,Midwest,43.032497,-85.547446
+Keweenaw County,Michigan,MI,Midwest,47.367297,-88.351332
+Lake County,Michigan,MI,Midwest,43.995187,-85.8114
+Lapeer County,Michigan,MI,Midwest,43.088633,-83.224325
+Leelanau County,Michigan,MI,Midwest,45.146182,-86.051574
+Lenawee County,Michigan,MI,Midwest,41.896022,-84.074356
+Livingston County,Michigan,MI,Midwest,42.602532,-83.911718
+Luce County,Michigan,MI,Midwest,46.510988,-85.517552
+Mackinac County,Michigan,MI,Midwest,46.167868,-85.303762
+Macomb County,Michigan,MI,Midwest,42.671553,-82.911456
+Manistee County,Michigan,MI,Midwest,44.245268,-86.327537
+Marquette County,Michigan,MI,Midwest,46.656596,-87.584028
+Mason County,Michigan,MI,Midwest,43.957196,-86.442937
+Mecosta County,Michigan,MI,Midwest,43.635295,-85.332751
+Menominee County,Michigan,MI,Midwest,45.535568,-87.501457
+Midland County,Michigan,MI,Midwest,43.648203,-84.379414
+Missaukee County,Michigan,MI,Midwest,44.325424,-85.085471
+Monroe County,Michigan,MI,Midwest,41.916097,-83.487106
+Montcalm County,Michigan,MI,Midwest,43.312782,-85.149468
+Montmorency County,Michigan,MI,Midwest,45.024134,-84.130107
+Muskegon County,Michigan,MI,Midwest,43.428739,-86.420908
+Newaygo County,Michigan,MI,Midwest,43.562712,-85.791372
+Oakland County,Michigan,MI,Midwest,42.660452,-83.38421
+Oceana County,Michigan,MI,Midwest,43.603954,-86.467177
+Ogemaw County,Michigan,MI,Midwest,44.33328,-84.128073
+Ontonagon County,Michigan,MI,Midwest,46.835325,-89.276912
+Osceola County,Michigan,MI,Midwest,43.997552,-85.322283
+Oscoda County,Michigan,MI,Midwest,44.687257,-84.126905
+Otsego County,Michigan,MI,Midwest,45.021787,-84.576603
+Ottawa County,Michigan,MI,Midwest,43.054969,-86.219349
+Presque Isle County,Michigan,MI,Midwest,45.252397,-83.432283
+Roscommon County,Michigan,MI,Midwest,44.339517,-84.611271
+Saginaw County,Michigan,MI,Midwest,43.328267,-84.05541
+St. Clair County,Michigan,MI,Midwest,42.928803,-82.668913
+St. Joseph County,Michigan,MI,Midwest,41.911488,-85.52287
+Sanilac County,Michigan,MI,Midwest,43.449155,-82.642815
+Schoolcraft County,Michigan,MI,Midwest,46.021122,-86.197029
+Shiawassee County,Michigan,MI,Midwest,42.951545,-84.146352
+Tuscola County,Michigan,MI,Midwest,43.487902,-83.436618
+Van Buren County,Michigan,MI,Midwest,42.28215,-86.306076
+Washtenaw County,Michigan,MI,Midwest,42.252217,-83.843423
+Wayne County,Michigan,MI,Midwest,42.284664,-83.261953
+Wexford County,Michigan,MI,Midwest,44.331375,-85.570046
+Aitkin County,Minnesota,MN,Midwest,46.602409,-93.419694
+Anoka County,Minnesota,MN,Midwest,45.27411,-93.242723
+Becker County,Minnesota,MN,Midwest,46.937629,-95.741757
+Beltrami County,Minnesota,MN,Midwest,47.879508,-95.00505
+Benton County,Minnesota,MN,Midwest,45.701225,-94.00144
+Big Stone County,Minnesota,MN,Midwest,45.419925,-96.402226
+Blue Earth County,Minnesota,MN,Midwest,44.03371,-94.064012
+Brown County,Minnesota,MN,Midwest,44.246541,-94.733647
+Carlton County,Minnesota,MN,Midwest,46.603818,-92.671044
+Carver County,Minnesota,MN,Midwest,44.82132,-93.800091
+Cass County,Minnesota,MN,Midwest,46.951745,-94.333705
+Chippewa County,Minnesota,MN,Midwest,45.028625,-95.564108
+Chisago County,Minnesota,MN,Midwest,45.505444,-92.903849
+Clay County,Minnesota,MN,Midwest,46.898377,-96.494901
+Clearwater County,Minnesota,MN,Midwest,47.575873,-95.371117
+Cook County,Minnesota,MN,Midwest,47.758556,-90.344319
+Cottonwood County,Minnesota,MN,Midwest,44.010639,-95.183152
+Crow Wing County,Minnesota,MN,Midwest,46.491653,-94.070718
+Dakota County,Minnesota,MN,Midwest,44.670893,-93.062481
+Dodge County,Minnesota,MN,Midwest,44.020706,-92.869353
+Douglas County,Minnesota,MN,Midwest,45.936835,-95.462155
+Faribault County,Minnesota,MN,Midwest,43.676522,-93.947234
+Fillmore County,Minnesota,MN,Midwest,43.679187,-92.093937
+Freeborn County,Minnesota,MN,Midwest,43.674202,-93.350289
+Goodhue County,Minnesota,MN,Midwest,44.406178,-92.716
+Grant County,Minnesota,MN,Midwest,45.930743,-96.010699
+Hennepin County,Minnesota,MN,Midwest,45.006121,-93.475228
+Houston County,Minnesota,MN,Midwest,43.66699,-91.501556
+Hubbard County,Minnesota,MN,Midwest,47.095551,-94.91329
+Isanti County,Minnesota,MN,Midwest,45.562431,-93.296339
+Itasca County,Minnesota,MN,Midwest,47.490817,-93.611102
+Jackson County,Minnesota,MN,Midwest,43.671111,-95.149731
+Kanabec County,Minnesota,MN,Midwest,45.94776,-93.297788
+Kandiyohi County,Minnesota,MN,Midwest,45.152714,-95.004981
+Kittson County,Minnesota,MN,Midwest,48.77604,-96.780349
+Koochiching County,Minnesota,MN,Midwest,48.245374,-93.782896
+Lac qui Parle County,Minnesota,MN,Midwest,44.999826,-96.176851
+Lake County,Minnesota,MN,Midwest,47.517111,-91.411704
+Lake of the Woods County,Minnesota,MN,Midwest,48.7681,-94.904633
+Le Sueur County,Minnesota,MN,Midwest,44.373421,-93.730106
+Lincoln County,Minnesota,MN,Midwest,44.408238,-96.272032
+Lyon County,Minnesota,MN,Midwest,44.409195,-95.847268
+McLeod County,Minnesota,MN,Midwest,44.821657,-94.272323
+Mahnomen County,Minnesota,MN,Midwest,47.328387,-95.811089
+Marshall County,Minnesota,MN,Midwest,48.362728,-96.357761
+Martin County,Minnesota,MN,Midwest,43.677173,-94.547096
+Meeker County,Minnesota,MN,Midwest,45.123155,-94.527346
+Mille Lacs County,Minnesota,MN,Midwest,45.929043,-93.632996
+Morrison County,Minnesota,MN,Midwest,46.020484,-94.266619
+Mower County,Minnesota,MN,Midwest,43.666249,-92.759514
+Murray County,Minnesota,MN,Midwest,44.015594,-95.761581
+Nicollet County,Minnesota,MN,Midwest,44.35882,-94.245684
+Nobles County,Minnesota,MN,Midwest,43.677686,-95.763132
+Norman County,Minnesota,MN,Midwest,47.329453,-96.463776
+Olmsted County,Minnesota,MN,Midwest,43.9995,-92.410096
+Otter Tail County,Minnesota,MN,Midwest,46.405727,-95.714581
+Pennington County,Minnesota,MN,Midwest,48.069247,-96.037725
+Pine County,Minnesota,MN,Midwest,46.10094,-92.763094
+Pipestone County,Minnesota,MN,Midwest,44.015361,-96.257015
+Polk County,Minnesota,MN,Midwest,47.774254,-96.400027
+Pope County,Minnesota,MN,Midwest,45.589623,-95.446705
+Ramsey County,Minnesota,MN,Midwest,45.015204,-93.099965
+Red Lake County,Minnesota,MN,Midwest,47.865487,-96.08718
+Redwood County,Minnesota,MN,Midwest,44.403536,-95.254241
+Renville County,Minnesota,MN,Midwest,44.723697,-94.955617
+Rice County,Minnesota,MN,Midwest,44.350775,-93.298513
+Rock County,Minnesota,MN,Midwest,43.669587,-96.263238
+Roseau County,Minnesota,MN,Midwest,48.761068,-95.821504
+St. Louis County,Minnesota,MN,Midwest,47.578635,-92.514585
+Scott County,Minnesota,MN,Midwest,44.651811,-93.533733
+Sherburne County,Minnesota,MN,Midwest,45.453166,-93.769164
+Sibley County,Minnesota,MN,Midwest,44.575734,-94.230123
+Stearns County,Minnesota,MN,Midwest,45.555235,-94.610482
+Steele County,Minnesota,MN,Midwest,44.015261,-93.220453
+Stevens County,Minnesota,MN,Midwest,45.593461,-95.992315
+Swift County,Minnesota,MN,Midwest,45.27581,-95.690124
+Todd County,Minnesota,MN,Midwest,46.066569,-94.900576
+Traverse County,Minnesota,MN,Midwest,45.769935,-96.474832
+Wabasha County,Minnesota,MN,Midwest,44.289634,-92.233454
+Wadena County,Minnesota,MN,Midwest,46.586986,-94.988608
+Waseca County,Minnesota,MN,Midwest,44.01846,-93.589844
+Washington County,Minnesota,MN,Midwest,45.037929,-92.890117
+Watonwan County,Minnesota,MN,Midwest,43.978109,-94.613798
+Wilkin County,Minnesota,MN,Midwest,46.362335,-96.476657
+Winona County,Minnesota,MN,Midwest,43.981353,-91.777044
+Wright County,Minnesota,MN,Midwest,45.175091,-93.966396
+Yellow Medicine County,Minnesota,MN,Midwest,44.715736,-95.862756
+Adams County,Mississippi,MS,South,31.486224,-91.351797
+Alcorn County,Mississippi,MS,South,34.886569,-88.581109
+Amite County,Mississippi,MS,South,31.203933,-90.795542
+Attala County,Mississippi,MS,South,33.090468,-89.588622
+Benton County,Mississippi,MS,South,34.809593,-89.200213
+Bolivar County,Mississippi,MS,South,33.799139,-90.88412
+Calhoun County,Mississippi,MS,South,33.936634,-89.337114
+Carroll County,Mississippi,MS,South,33.440795,-89.918887
+Chickasaw County,Mississippi,MS,South,33.933277,-88.947558
+Choctaw County,Mississippi,MS,South,33.345964,-89.251332
+Claiborne County,Mississippi,MS,South,31.97281,-90.915424
+Clarke County,Mississippi,MS,South,32.045374,-88.687976
+Clay County,Mississippi,MS,South,33.65967,-88.782468
+Coahoma County,Mississippi,MS,South,34.230316,-90.60401
+Copiah County,Mississippi,MS,South,31.866915,-90.448758
+Covington County,Mississippi,MS,South,31.633331,-89.548897
+DeSoto County,Mississippi,MS,South,34.874922,-89.991211
+Forrest County,Mississippi,MS,South,31.18858,-89.259447
+Franklin County,Mississippi,MS,South,31.477773,-90.895457
+George County,Mississippi,MS,South,30.855431,-88.642268
+Greene County,Mississippi,MS,South,31.212845,-88.634811
+Grenada County,Mississippi,MS,South,33.770031,-89.80274
+Hancock County,Mississippi,MS,South,30.391641,-89.482791
+Harrison County,Mississippi,MS,South,30.416536,-89.083376
+Hinds County,Mississippi,MS,South,32.267788,-90.466017
+Holmes County,Mississippi,MS,South,33.125942,-90.091197
+Humphreys County,Mississippi,MS,South,33.130996,-90.523421
+Issaquena County,Mississippi,MS,South,32.755539,-91.003535
+Itawamba County,Mississippi,MS,South,34.281075,-88.363127
+Jackson County,Mississippi,MS,South,30.456005,-88.625101
+Jasper County,Mississippi,MS,South,32.016748,-89.119176
+Jefferson County,Mississippi,MS,South,31.733633,-91.043878
+Jefferson Davis County,Mississippi,MS,South,31.564808,-89.827086
+Jones County,Mississippi,MS,South,31.616601,-89.168532
+Kemper County,Mississippi,MS,South,32.750136,-88.625631
+Lafayette County,Mississippi,MS,South,34.353078,-89.485385
+Lamar County,Mississippi,MS,South,31.197586,-89.506369
+Lauderdale County,Mississippi,MS,South,32.403998,-88.660449
+Lawrence County,Mississippi,MS,South,31.550009,-90.10753
+Leake County,Mississippi,MS,South,32.76063,-89.52225
+Lee County,Mississippi,MS,South,34.29237,-88.682439
+Leflore County,Mississippi,MS,South,33.54979,-90.294934
+Lincoln County,Mississippi,MS,South,31.535216,-90.453566
+Lowndes County,Mississippi,MS,South,33.471424,-88.439723
+Madison County,Mississippi,MS,South,32.63437,-90.03416
+Marion County,Mississippi,MS,South,31.230167,-89.821712
+Marshall County,Mississippi,MS,South,34.76619,-89.504231
+Monroe County,Mississippi,MS,South,33.89003,-88.485038
+Montgomery County,Mississippi,MS,South,33.500714,-89.639625
+Neshoba County,Mississippi,MS,South,32.752518,-89.119274
+Newton County,Mississippi,MS,South,32.40197,-89.118412
+Noxubee County,Mississippi,MS,South,33.106606,-88.566152
+Oktibbeha County,Mississippi,MS,South,33.422313,-88.876151
+Panola County,Mississippi,MS,South,34.365205,-89.963065
+Pearl River County,Mississippi,MS,South,30.774793,-89.586904
+Perry County,Mississippi,MS,South,31.169307,-88.988755
+Pike County,Mississippi,MS,South,31.177516,-90.397725
+Pontotoc County,Mississippi,MS,South,34.227081,-89.037239
+Prentiss County,Mississippi,MS,South,34.620566,-88.522184
+Quitman County,Mississippi,MS,South,34.252833,-90.290171
+Rankin County,Mississippi,MS,South,32.267123,-89.946063
+Scott County,Mississippi,MS,South,32.411959,-89.533486
+Sharkey County,Mississippi,MS,South,32.892395,-90.827613
+Simpson County,Mississippi,MS,South,31.902505,-89.917709
+Smith County,Mississippi,MS,South,32.019029,-89.494876
+Stone County,Mississippi,MS,South,30.790184,-89.112297
+Sunflower County,Mississippi,MS,South,33.605529,-90.59509
+Tallahatchie County,Mississippi,MS,South,33.954529,-90.172243
+Tate County,Mississippi,MS,South,34.649553,-89.943105
+Tippah County,Mississippi,MS,South,34.763618,-88.918819
+Tishomingo County,Mississippi,MS,South,34.738835,-88.234827
+Tunica County,Mississippi,MS,South,34.652201,-90.37177
+Union County,Mississippi,MS,South,34.489533,-89.002339
+Walthall County,Mississippi,MS,South,31.164492,-90.103431
+Warren County,Mississippi,MS,South,32.356095,-90.852384
+Washington County,Mississippi,MS,South,33.273174,-90.944446
+Wayne County,Mississippi,MS,South,31.642503,-88.678214
+Webster County,Mississippi,MS,South,33.612061,-89.283961
+Wilkinson County,Mississippi,MS,South,31.161091,-91.324617
+Winston County,Mississippi,MS,South,33.078724,-89.037391
+Yalobusha County,Mississippi,MS,South,34.030666,-89.703807
+Yazoo County,Mississippi,MS,South,32.765675,-90.387928
+Adair County,Missouri,MO,Midwest,40.190666,-92.603592
+Andrew County,Missouri,MO,Midwest,39.988863,-94.803551
+Atchison County,Missouri,MO,Midwest,40.431846,-95.437555
+Audrain County,Missouri,MO,Midwest,39.214481,-91.843418
+Barry County,Missouri,MO,Midwest,36.699376,-93.834334
+Barton County,Missouri,MO,Midwest,37.500799,-94.344089
+Bates County,Missouri,MO,Midwest,38.257217,-94.339246
+Benton County,Missouri,MO,Midwest,38.301036,-93.287942
+Bollinger County,Missouri,MO,Midwest,37.318427,-90.024645
+Boone County,Missouri,MO,Midwest,38.989861,-92.310202
+Buchanan County,Missouri,MO,Midwest,39.660369,-94.808173
+Butler County,Missouri,MO,Midwest,36.71518,-90.40313
+Caldwell County,Missouri,MO,Midwest,39.658998,-93.979179
+Callaway County,Missouri,MO,Midwest,38.835547,-91.923446
+Camden County,Missouri,MO,Midwest,38.026527,-92.765327
+Cape Girardeau County,Missouri,MO,Midwest,37.384141,-89.685658
+Carroll County,Missouri,MO,Midwest,39.427375,-93.500227
+Carter County,Missouri,MO,Midwest,36.944858,-90.945705
+Cass County,Missouri,MO,Midwest,38.646474,-94.354547
+Cedar County,Missouri,MO,Midwest,37.733655,-93.850014
+Chariton County,Missouri,MO,Midwest,39.517968,-92.96162
+Christian County,Missouri,MO,Midwest,36.969739,-93.187614
+Clark County,Missouri,MO,Midwest,40.407275,-91.729472
+Clay County,Missouri,MO,Midwest,39.315551,-94.421502
+Clinton County,Missouri,MO,Midwest,39.608723,-94.395803
+Cole County,Missouri,MO,Midwest,38.503233,-92.280027
+Cooper County,Missouri,MO,Midwest,38.847093,-92.810069
+Crawford County,Missouri,MO,Midwest,37.966559,-91.313936
+Dade County,Missouri,MO,Midwest,37.43235,-93.854878
+Dallas County,Missouri,MO,Midwest,37.683583,-93.033815
+Daviess County,Missouri,MO,Midwest,39.962839,-93.970053
+DeKalb County,Missouri,MO,Midwest,39.894665,-94.40719
+Dent County,Missouri,MO,Midwest,37.603072,-91.489717
+Douglas County,Missouri,MO,Midwest,36.946517,-92.515892
+Dunklin County,Missouri,MO,Midwest,36.153025,-90.062254
+Franklin County,Missouri,MO,Midwest,38.413003,-91.072832
+Gasconade County,Missouri,MO,Midwest,38.441183,-91.50578
+Gentry County,Missouri,MO,Midwest,40.208127,-94.405321
+Greene County,Missouri,MO,Midwest,37.258196,-93.340641
+Grundy County,Missouri,MO,Midwest,40.112541,-93.565054
+Harrison County,Missouri,MO,Midwest,40.34562,-93.992582
+Henry County,Missouri,MO,Midwest,38.386491,-93.792628
+Hickory County,Missouri,MO,Midwest,37.93691,-93.322988
+Holt County,Missouri,MO,Midwest,40.095724,-95.219072
+Howard County,Missouri,MO,Midwest,39.143365,-92.695926
+Howell County,Missouri,MO,Midwest,36.774369,-91.887368
+Iron County,Missouri,MO,Midwest,37.625971,-90.699587
+Jackson County,Missouri,MO,Midwest,39.005364,-94.343211
+Jasper County,Missouri,MO,Midwest,37.205197,-94.337259
+Jefferson County,Missouri,MO,Midwest,38.25763,-90.543681
+Johnson County,Missouri,MO,Midwest,38.741528,-93.811863
+Knox County,Missouri,MO,Midwest,40.136856,-92.146835
+Laclede County,Missouri,MO,Midwest,37.659698,-92.594843
+Lafayette County,Missouri,MO,Midwest,39.068705,-93.802639
+Lawrence County,Missouri,MO,Midwest,37.10659,-93.830551
+Lewis County,Missouri,MO,Midwest,40.084559,-91.728803
+Lincoln County,Missouri,MO,Midwest,39.062255,-90.962916
+Linn County,Missouri,MO,Midwest,39.86444,-93.108019
+Livingston County,Missouri,MO,Midwest,39.778587,-93.548201
+McDonald County,Missouri,MO,Midwest,36.627955,-94.343716
+Macon County,Missouri,MO,Midwest,39.829795,-92.56434
+Madison County,Missouri,MO,Midwest,37.474481,-90.343413
+Maries County,Missouri,MO,Midwest,38.162615,-91.923601
+Marion County,Missouri,MO,Midwest,39.807538,-91.635379
+Mercer County,Missouri,MO,Midwest,40.421413,-93.567631
+Miller County,Missouri,MO,Midwest,38.21668,-92.429876
+Mississippi County,Missouri,MO,Midwest,36.826264,-89.295929
+Moniteau County,Missouri,MO,Midwest,38.633037,-92.583642
+Monroe County,Missouri,MO,Midwest,39.49827,-92.006458
+Montgomery County,Missouri,MO,Midwest,38.935184,-91.465427
+Morgan County,Missouri,MO,Midwest,38.420806,-92.874835
+New Madrid County,Missouri,MO,Midwest,36.594261,-89.655948
+Newton County,Missouri,MO,Midwest,36.908371,-94.335034
+Nodaway County,Missouri,MO,Midwest,40.361136,-94.883146
+Oregon County,Missouri,MO,Midwest,36.68531,-91.401827
+Osage County,Missouri,MO,Midwest,38.464253,-91.859504
+Ozark County,Missouri,MO,Midwest,36.64959,-92.458549
+Pemiscot County,Missouri,MO,Midwest,36.209916,-89.785942
+Perry County,Missouri,MO,Midwest,37.71113,-89.802125
+Pettis County,Missouri,MO,Midwest,38.727367,-93.285207
+Phelps County,Missouri,MO,Midwest,37.866326,-91.790349
+Pike County,Missouri,MO,Midwest,39.339959,-91.171607
+Platte County,Missouri,MO,Midwest,39.37869,-94.761477
+Polk County,Missouri,MO,Midwest,37.616761,-93.400817
+Pulaski County,Missouri,MO,Midwest,37.824835,-92.207022
+Putnam County,Missouri,MO,Midwest,40.478606,-93.014531
+Ralls County,Missouri,MO,Midwest,39.553455,-91.524787
+Randolph County,Missouri,MO,Midwest,39.439249,-92.492959
+Ray County,Missouri,MO,Midwest,39.308401,-93.995746
+Reynolds County,Missouri,MO,Midwest,37.366464,-90.972282
+Ripley County,Missouri,MO,Midwest,36.65017,-90.874834
+St. Charles County,Missouri,MO,Midwest,38.781102,-90.674915
+St. Clair County,Missouri,MO,Midwest,38.04223,-93.77656
+Ste. Genevieve County,Missouri,MO,Midwest,37.885845,-90.161531
+St. Francois County,Missouri,MO,Midwest,37.810707,-90.473868
+St. Louis County,Missouri,MO,Midwest,38.640688,-90.446073
+Saline County,Missouri,MO,Midwest,39.13584,-93.204164
+Schuyler County,Missouri,MO,Midwest,40.469361,-92.519016
+Scotland County,Missouri,MO,Midwest,40.447686,-92.142824
+Scott County,Missouri,MO,Midwest,37.047793,-89.568098
+Shannon County,Missouri,MO,Midwest,37.152498,-91.391328
+Shelby County,Missouri,MO,Midwest,39.797531,-92.088719
+Stoddard County,Missouri,MO,Midwest,36.851557,-89.947481
+Stone County,Missouri,MO,Midwest,36.745822,-93.457842
+Sullivan County,Missouri,MO,Midwest,40.209587,-93.109783
+Taney County,Missouri,MO,Midwest,36.649827,-93.042819
+Texas County,Missouri,MO,Midwest,37.314257,-91.964478
+Vernon County,Missouri,MO,Midwest,37.850196,-94.341597
+Warren County,Missouri,MO,Midwest,38.761902,-91.159306
+Washington County,Missouri,MO,Midwest,37.942611,-90.897018
+Wayne County,Missouri,MO,Midwest,37.111074,-90.453931
+Webster County,Missouri,MO,Midwest,37.280804,-92.87608
+Worth County,Missouri,MO,Midwest,40.480499,-94.419198
+Wright County,Missouri,MO,Midwest,37.267633,-92.479989
+St. Louis city,Missouri,MO,Midwest,38.635699,-90.244582
+Beaverhead County,Montana,MT,West,45.133863,-112.892869
+Big Horn County,Montana,MT,West,45.407868,-107.518162
+Blaine County,Montana,MT,West,48.428282,-108.967648
+Broadwater County,Montana,MT,West,46.329849,-111.497873
+Carbon County,Montana,MT,West,45.224468,-109.028554
+Carter County,Montana,MT,West,45.516825,-104.515324
+Cascade County,Montana,MT,West,47.316575,-111.350262
+Chouteau County,Montana,MT,West,47.886834,-110.4362
+Custer County,Montana,MT,West,46.261414,-105.550352
+Daniels County,Montana,MT,West,48.794429,-105.541739
+Dawson County,Montana,MT,West,47.26613,-104.898271
+Deer Lodge County,Montana,MT,West,46.094672,-113.141624
+Fallon County,Montana,MT,West,46.318184,-104.405718
+Fergus County,Montana,MT,West,47.221816,-109.232956
+Flathead County,Montana,MT,West,48.295422,-114.052059
+Gallatin County,Montana,MT,West,45.518054,-111.163921
+Garfield County,Montana,MT,West,47.267184,-106.995991
+Glacier County,Montana,MT,West,48.705671,-112.990502
+Golden Valley County,Montana,MT,West,46.380624,-109.174586
+Granite County,Montana,MT,West,46.395955,-113.427356
+Hill County,Montana,MT,West,48.631959,-110.106321
+Jefferson County,Montana,MT,West,46.124232,-112.059428
+Judith Basin County,Montana,MT,West,47.032558,-110.30532
+Lake County,Montana,MT,West,47.642901,-114.083687
+Lewis and Clark County,Montana,MT,West,47.132013,-112.373367
+Liberty County,Montana,MT,West,48.559654,-111.036924
+Lincoln County,Montana,MT,West,48.552385,-115.463185
+McCone County,Montana,MT,West,47.629628,-105.757222
+Madison County,Montana,MT,West,45.32529,-111.913791
+Meagher County,Montana,MT,West,46.5857,-110.92174
+Mineral County,Montana,MT,West,47.129687,-115.085385
+Missoula County,Montana,MT,West,47.027263,-113.892691
+Musselshell County,Montana,MT,West,46.505281,-108.439763
+Park County,Montana,MT,West,45.463081,-110.53493
+Petroleum County,Montana,MT,West,47.141917,-108.226575
+Phillips County,Montana,MT,West,48.250143,-107.928897
+Pondera County,Montana,MT,West,48.228604,-112.220761
+Powder River County,Montana,MT,West,45.408926,-105.555344
+Powell County,Montana,MT,West,46.844225,-112.9311
+Prairie County,Montana,MT,West,46.812388,-105.503938
+Ravalli County,Montana,MT,West,46.077744,-114.105795
+Richland County,Montana,MT,West,47.785633,-104.563408
+Roosevelt County,Montana,MT,West,48.282747,-104.99517
+Rosebud County,Montana,MT,West,46.173206,-106.666792
+Sanders County,Montana,MT,West,47.756497,-115.180306
+Sheridan County,Montana,MT,West,48.705587,-104.533916
+Silver Bow County,Montana,MT,West,45.896232,-112.660071
+Stillwater County,Montana,MT,West,45.658545,-109.381576
+Sweet Grass County,Montana,MT,West,45.811292,-109.944796
+Teton County,Montana,MT,West,47.819035,-112.281725
+Toole County,Montana,MT,West,48.645125,-111.733472
+Treasure County,Montana,MT,West,46.227113,-107.275296
+Valley County,Montana,MT,West,48.34985,-106.670424
+Wheatland County,Montana,MT,West,46.496967,-109.857684
+Wibaux County,Montana,MT,West,46.962966,-104.274518
+Yellowstone County,Montana,MT,West,45.936987,-108.276656
+Adams County,Nebraska,NE,Midwest,40.520632,-98.500044
+Antelope County,Nebraska,NE,Midwest,42.183225,-98.058037
+Arthur County,Nebraska,NE,Midwest,41.57193,-101.695917
+Banner County,Nebraska,NE,Midwest,41.53975,-103.726263
+Blaine County,Nebraska,NE,Midwest,41.931945,-99.996407
+Boone County,Nebraska,NE,Midwest,41.703934,-98.070476
+Box Butte County,Nebraska,NE,Midwest,42.21038,-103.081779
+Boyd County,Nebraska,NE,Midwest,42.894448,-98.773022
+Brown County,Nebraska,NE,Midwest,42.359562,-99.92392
+Buffalo County,Nebraska,NE,Midwest,40.855265,-99.074984
+Burt County,Nebraska,NE,Midwest,41.854179,-96.337746
+Butler County,Nebraska,NE,Midwest,41.226072,-97.132039
+Cass County,Nebraska,NE,Midwest,40.909878,-96.140609
+Cedar County,Nebraska,NE,Midwest,42.60456,-97.25687
+Chase County,Nebraska,NE,Midwest,40.53039,-101.694192
+Cherry County,Nebraska,NE,Midwest,42.571323,-101.047653
+Cheyenne County,Nebraska,NE,Midwest,41.214236,-103.011929
+Clay County,Nebraska,NE,Midwest,40.523669,-98.050858
+Colfax County,Nebraska,NE,Midwest,41.57496,-97.088945
+Cuming County,Nebraska,NE,Midwest,41.915865,-96.788517
+Custer County,Nebraska,NE,Midwest,41.393893,-99.726866
+Dakota County,Nebraska,NE,Midwest,42.391624,-96.561327
+Dawes County,Nebraska,NE,Midwest,42.713038,-103.135436
+Dawson County,Nebraska,NE,Midwest,40.86784,-99.815583
+Deuel County,Nebraska,NE,Midwest,41.111903,-102.332609
+Dixon County,Nebraska,NE,Midwest,42.485086,-96.855784
+Dodge County,Nebraska,NE,Midwest,41.577008,-96.645852
+Douglas County,Nebraska,NE,Midwest,41.297091,-96.154066
+Dundy County,Nebraska,NE,Midwest,40.180165,-101.681133
+Fillmore County,Nebraska,NE,Midwest,40.52504,-97.596705
+Franklin County,Nebraska,NE,Midwest,40.183203,-98.96208
+Frontier County,Nebraska,NE,Midwest,40.530947,-100.406683
+Furnas County,Nebraska,NE,Midwest,40.192252,-99.908637
+Gage County,Nebraska,NE,Midwest,40.255234,-96.683453
+Garden County,Nebraska,NE,Midwest,41.633364,-102.302985
+Garfield County,Nebraska,NE,Midwest,41.906912,-98.951283
+Gosper County,Nebraska,NE,Midwest,40.509095,-99.823206
+Grant County,Nebraska,NE,Midwest,41.913957,-101.755965
+Greeley County,Nebraska,NE,Midwest,41.567563,-98.530567
+Hall County,Nebraska,NE,Midwest,40.866027,-98.502664
+Hamilton County,Nebraska,NE,Midwest,40.872817,-98.022329
+Harlan County,Nebraska,NE,Midwest,40.178766,-99.403418
+Hayes County,Nebraska,NE,Midwest,40.537234,-101.047963
+Hitchcock County,Nebraska,NE,Midwest,40.176896,-101.044217
+Holt County,Nebraska,NE,Midwest,42.459287,-98.784766
+Hooker County,Nebraska,NE,Midwest,41.920317,-101.117324
+Howard County,Nebraska,NE,Midwest,41.216851,-98.513342
+Jefferson County,Nebraska,NE,Midwest,40.175736,-97.143103
+Johnson County,Nebraska,NE,Midwest,40.394955,-96.265264
+Kearney County,Nebraska,NE,Midwest,40.50912,-98.947602
+Keith County,Nebraska,NE,Midwest,41.194245,-101.644449
+Keya Paha County,Nebraska,NE,Midwest,42.87548,-99.718351
+Kimball County,Nebraska,NE,Midwest,41.199274,-103.703153
+Knox County,Nebraska,NE,Midwest,42.634404,-97.891349
+Lancaster County,Nebraska,NE,Midwest,40.783547,-96.688658
+Lincoln County,Nebraska,NE,Midwest,41.050322,-100.744481
+Logan County,Nebraska,NE,Midwest,41.542155,-100.443665
+Loup County,Nebraska,NE,Midwest,41.90279,-99.509276
+McPherson County,Nebraska,NE,Midwest,41.648414,-101.120851
+Madison County,Nebraska,NE,Midwest,41.909929,-97.606856
+Merrick County,Nebraska,NE,Midwest,41.16979,-98.031057
+Morrill County,Nebraska,NE,Midwest,41.732204,-102.990594
+Nance County,Nebraska,NE,Midwest,41.402385,-97.991408
+Nemaha County,Nebraska,NE,Midwest,40.387389,-95.852721
+Nuckolls County,Nebraska,NE,Midwest,40.176492,-98.046842
+Otoe County,Nebraska,NE,Midwest,40.637992,-96.131027
+Pawnee County,Nebraska,NE,Midwest,40.137797,-96.245214
+Perkins County,Nebraska,NE,Midwest,40.857646,-101.627468
+Phelps County,Nebraska,NE,Midwest,40.516365,-99.406557
+Pierce County,Nebraska,NE,Midwest,42.271413,-97.610992
+Platte County,Nebraska,NE,Midwest,41.576866,-97.513467
+Polk County,Nebraska,NE,Midwest,41.187925,-97.570663
+Red Willow County,Nebraska,NE,Midwest,40.16942,-100.468576
+Richardson County,Nebraska,NE,Midwest,40.123743,-95.718603
+Rock County,Nebraska,NE,Midwest,42.394749,-99.420851
+Saline County,Nebraska,NE,Midwest,40.516802,-97.131755
+Sarpy County,Nebraska,NE,Midwest,41.115064,-96.109125
+Saunders County,Nebraska,NE,Midwest,41.22339,-96.6421
+Scotts Bluff County,Nebraska,NE,Midwest,41.850506,-103.703021
+Seward County,Nebraska,NE,Midwest,40.871944,-97.140383
+Sheridan County,Nebraska,NE,Midwest,42.512289,-102.36828
+Sherman County,Nebraska,NE,Midwest,41.218743,-98.972849
+Sioux County,Nebraska,NE,Midwest,42.470668,-103.73217
+Stanton County,Nebraska,NE,Midwest,41.905045,-97.177109
+Thayer County,Nebraska,NE,Midwest,40.173429,-97.596235
+Thomas County,Nebraska,NE,Midwest,41.85573,-100.524703
+Thurston County,Nebraska,NE,Midwest,42.154061,-96.533943
+Valley County,Nebraska,NE,Midwest,41.564094,-98.983484
+Washington County,Nebraska,NE,Midwest,41.533973,-96.224577
+Wayne County,Nebraska,NE,Midwest,42.210746,-97.126243
+Webster County,Nebraska,NE,Midwest,40.180646,-98.49859
+Wheeler County,Nebraska,NE,Midwest,41.922575,-98.520853
+York County,Nebraska,NE,Midwest,40.873056,-97.596742
+Churchill County,Nevada,NV,West,39.53771,-118.264166
+Clark County,Nevada,NV,West,36.21413,-115.014398
+Douglas County,Nevada,NV,West,38.905129,-119.609019
+Elko County,Nevada,NV,West,41.141133,-115.351424
+Esmeralda County,Nevada,NV,West,37.778966,-117.632382
+Eureka County,Nevada,NV,West,39.977788,-116.272208
+Humboldt County,Nevada,NV,West,41.407914,-118.127591
+Lander County,Nevada,NV,West,39.90021,-117.04724
+Lincoln County,Nevada,NV,West,37.634605,-114.863037
+Lyon County,Nevada,NV,West,39.022213,-119.197425
+Mineral County,Nevada,NV,West,38.516647,-118.416279
+Nye County,Nevada,NV,West,37.965864,-116.459011
+Pershing County,Nevada,NV,West,40.439639,-118.409477
+Storey County,Nevada,NV,West,39.438385,-119.524646
+Washoe County,Nevada,NV,West,40.73132,-119.663269
+White Pine County,Nevada,NV,West,39.418176,-114.900565
+Carson City,Nevada,NV,West,39.15306,-119.747368
+Belknap County,New Hampshire,NH,Northeast,43.519109,-71.425366
+Carroll County,New Hampshire,NH,Northeast,43.867774,-71.20156
+Cheshire County,New Hampshire,NH,Northeast,42.92546,-72.248183
+Coos County,New Hampshire,NH,Northeast,44.652548,-71.289431
+Grafton County,New Hampshire,NH,Northeast,43.926439,-71.842424
+Hillsborough County,New Hampshire,NH,Northeast,42.911532,-71.723055
+Merrimack County,New Hampshire,NH,Northeast,43.299579,-71.680041
+Rockingham County,New Hampshire,NH,Northeast,42.988664,-71.09908
+Strafford County,New Hampshire,NH,Northeast,43.293272,-71.035589
+Sullivan County,New Hampshire,NH,Northeast,43.361188,-72.222084
+Atlantic County,New Jersey,NJ,Northeast,39.469355,-74.633759
+Bergen County,New Jersey,NJ,Northeast,40.959698,-74.074727
+Burlington County,New Jersey,NJ,Northeast,39.875786,-74.663006
+Camden County,New Jersey,NJ,Northeast,39.802407,-74.961249
+Cape May County,New Jersey,NJ,Northeast,39.085841,-74.846354
+Cumberland County,New Jersey,NJ,Northeast,39.328434,-75.121628
+Essex County,New Jersey,NJ,Northeast,40.7874,-74.246292
+Gloucester County,New Jersey,NJ,Northeast,39.722875,-75.145679
+Hudson County,New Jersey,NJ,Northeast,40.731375,-74.078601
+Hunterdon County,New Jersey,NJ,Northeast,40.565283,-74.911969
+Mercer County,New Jersey,NJ,Northeast,40.282503,-74.703724
+Middlesex County,New Jersey,NJ,Northeast,40.439621,-74.40743
+Monmouth County,New Jersey,NJ,Northeast,40.287048,-74.152446
+Morris County,New Jersey,NJ,Northeast,40.858896,-74.547292
+Ocean County,New Jersey,NJ,Northeast,39.865669,-74.258864
+Passaic County,New Jersey,NJ,Northeast,41.036655,-74.299408
+Salem County,New Jersey,NJ,Northeast,39.573828,-75.357356
+Somerset County,New Jersey,NJ,Northeast,40.565527,-74.619938
+Sussex County,New Jersey,NJ,Northeast,41.137461,-74.691914
+Union County,New Jersey,NJ,Northeast,40.659871,-74.308696
+Warren County,New Jersey,NJ,Northeast,40.853491,-75.009498
+Bernalillo County,New Mexico,NM,West,35.053628,-106.66908
+Catron County,New Mexico,NM,West,33.901621,-108.391928
+Chaves County,New Mexico,NM,West,33.361604,-104.469837
+Cibola County,New Mexico,NM,West,34.928272,-107.99268
+Colfax County,New Mexico,NM,West,36.612964,-104.64011
+Curry County,New Mexico,NM,West,34.572984,-103.346055
+De Baca County,New Mexico,NM,West,34.359273,-104.368696
+DoÃ±a Ana County,New Mexico,NM,West,32.349919,-106.834968
+Eddy County,New Mexico,NM,West,32.457835,-104.306434
+Grant County,New Mexico,NM,West,32.732087,-108.381504
+Guadalupe County,New Mexico,NM,West,34.869782,-104.784968
+Harding County,New Mexico,NM,West,35.859352,-103.853424
+Hidalgo County,New Mexico,NM,West,31.898052,-108.751929
+Lea County,New Mexico,NM,West,32.795687,-103.413271
+Lincoln County,New Mexico,NM,West,33.740841,-105.449805
+Los Alamos County,New Mexico,NM,West,35.870047,-106.307968
+Luna County,New Mexico,NM,West,32.184523,-107.747191
+McKinley County,New Mexico,NM,West,35.584062,-108.253294
+Mora County,New Mexico,NM,West,35.982841,-104.921898
+Otero County,New Mexico,NM,West,32.615599,-105.751308
+Quay County,New Mexico,NM,West,35.107018,-103.548071
+Rio Arriba County,New Mexico,NM,West,36.509669,-106.693983
+Roosevelt County,New Mexico,NM,West,34.021207,-103.483004
+Sandoval County,New Mexico,NM,West,35.685091,-106.883119
+San Juan County,New Mexico,NM,West,36.511624,-108.324578
+San Miguel County,New Mexico,NM,West,35.476859,-104.803519
+Santa Fe County,New Mexico,NM,West,35.514531,-105.963972
+Sierra County,New Mexico,NM,West,33.119468,-107.188161
+Socorro County,New Mexico,NM,West,33.991658,-106.939136
+Taos County,New Mexico,NM,West,36.577183,-105.638878
+Torrance County,New Mexico,NM,West,34.554978,-105.890557
+Union County,New Mexico,NM,West,36.488085,-103.475723
+Valencia County,New Mexico,NM,West,34.71684,-106.806582
+Albany County,New York,NY,Northeast,42.58824,-73.97401
+Allegany County,New York,NY,Northeast,42.247853,-78.026153
+Bronx County,New York,NY,Northeast,40.848711,-73.852939
+Broome County,New York,NY,Northeast,42.161977,-75.830283
+Cattaraugus County,New York,NY,Northeast,42.239099,-78.662332
+Cayuga County,New York,NY,Northeast,43.008546,-76.574587
+Chautauqua County,New York,NY,Northeast,42.304216,-79.407595
+Chemung County,New York,NY,Northeast,42.148697,-76.752471
+Chenango County,New York,NY,Northeast,42.478024,-75.602241
+Clinton County,New York,NY,Northeast,44.752712,-73.705643
+Columbia County,New York,NY,Northeast,42.247696,-73.626718
+Cortland County,New York,NY,Northeast,42.594039,-76.07624
+Delaware County,New York,NY,Northeast,42.193986,-74.966728
+Dutchess County,New York,NY,Northeast,41.754825,-73.740014
+Erie County,New York,NY,Northeast,42.752759,-78.778192
+Essex County,New York,NY,Northeast,44.109601,-73.778431
+Franklin County,New York,NY,Northeast,44.594376,-74.31067
+Fulton County,New York,NY,Northeast,43.115609,-74.423678
+Genesee County,New York,NY,Northeast,43.00091,-78.192778
+Greene County,New York,NY,Northeast,42.28697,-74.149542
+Hamilton County,New York,NY,Northeast,43.657879,-74.502456
+Herkimer County,New York,NY,Northeast,43.571009,-74.841097
+Jefferson County,New York,NY,Northeast,43.996389,-76.052968
+Kings County,New York,NY,Northeast,40.635045,-73.95064
+Lewis County,New York,NY,Northeast,43.782706,-75.444132
+Livingston County,New York,NY,Northeast,42.729042,-77.778463
+Madison County,New York,NY,Northeast,42.910026,-75.663575
+Monroe County,New York,NY,Northeast,43.250347,-77.700518
+Montgomery County,New York,NY,Northeast,42.900891,-74.435357
+Nassau County,New York,NY,Northeast,40.729612,-73.589414
+New York County,New York,NY,Northeast,40.776642,-73.970187
+Niagara County,New York,NY,Northeast,43.272672,-78.812943
+Oneida County,New York,NY,Northeast,43.242727,-75.434282
+Onondaga County,New York,NY,Northeast,43.006516,-76.196134
+Ontario County,New York,NY,Northeast,42.856357,-77.303497
+Orange County,New York,NY,Northeast,41.40241,-74.306252
+Orleans County,New York,NY,Northeast,43.339906,-78.207028
+Oswego County,New York,NY,Northeast,43.461443,-76.209262
+Otsego County,New York,NY,Northeast,42.629776,-75.028841
+Putnam County,New York,NY,Northeast,41.427907,-73.743861
+Queens County,New York,NY,Northeast,40.654658,-73.841209
+Rensselaer County,New York,NY,Northeast,42.710421,-73.513845
+Richmond County,New York,NY,Northeast,40.561263,-74.1399
+Rockland County,New York,NY,Northeast,41.154628,-74.024662
+St. Lawrence County,New York,NY,Northeast,44.488112,-75.074311
+Saratoga County,New York,NY,Northeast,43.106135,-73.855387
+Schenectady County,New York,NY,Northeast,42.817552,-74.043559
+Schoharie County,New York,NY,Northeast,42.591294,-74.438172
+Schuyler County,New York,NY,Northeast,42.419776,-76.938603
+Seneca County,New York,NY,Northeast,42.782294,-76.827088
+Steuben County,New York,NY,Northeast,42.266725,-77.385525
+Suffolk County,New York,NY,Northeast,40.943554,-72.692218
+Sullivan County,New York,NY,Northeast,41.719993,-74.771577
+Tioga County,New York,NY,Northeast,42.178057,-76.297456
+Tompkins County,New York,NY,Northeast,42.453006,-76.473483
+Ulster County,New York,NY,Northeast,41.947212,-74.265458
+Warren County,New York,NY,Northeast,43.555105,-73.838139
+Washington County,New York,NY,Northeast,43.312377,-73.439428
+Wayne County,New York,NY,Northeast,43.218114,-77.049402
+Westchester County,New York,NY,Northeast,41.152686,-73.745753
+Wyoming County,New York,NY,Northeast,42.701365,-78.228576
+Yates County,New York,NY,Northeast,42.638237,-77.104324
+Alamance County,North Carolina,NC,South,36.043954,-79.400573
+Alexander County,North Carolina,NC,South,35.920951,-81.177467
+Alleghany County,North Carolina,NC,South,36.489356,-81.132299
+Anson County,North Carolina,NC,South,34.974972,-80.109763
+Ashe County,North Carolina,NC,South,36.443469,-81.499334
+Avery County,North Carolina,NC,South,36.07209,-81.920285
+Beaufort County,North Carolina,NC,South,35.482313,-76.842014
+Bertie County,North Carolina,NC,South,36.059043,-76.962364
+Bladen County,North Carolina,NC,South,34.591938,-78.539489
+Brunswick County,North Carolina,NC,South,34.038754,-78.227765
+Buncombe County,North Carolina,NC,South,35.609371,-82.530423
+Burke County,North Carolina,NC,South,35.746182,-81.70618
+Cabarrus County,North Carolina,NC,South,35.388346,-80.552728
+Caldwell County,North Carolina,NC,South,35.966396,-81.51254
+Camden County,North Carolina,NC,South,36.342344,-76.162488
+Carteret County,North Carolina,NC,South,34.858343,-76.53586
+Caswell County,North Carolina,NC,South,36.394298,-79.339609
+Catawba County,North Carolina,NC,South,35.661883,-81.214906
+Chatham County,North Carolina,NC,South,35.704994,-79.251454
+Cherokee County,North Carolina,NC,South,35.13715,-84.061449
+Chowan County,North Carolina,NC,South,36.128979,-76.602752
+Clay County,North Carolina,NC,South,35.052997,-83.752264
+Cleveland County,North Carolina,NC,South,35.33463,-81.557114
+Columbus County,North Carolina,NC,South,34.261602,-78.639308
+Craven County,North Carolina,NC,South,35.116829,-77.08132
+Cumberland County,North Carolina,NC,South,35.050192,-78.828719
+Currituck County,North Carolina,NC,South,36.372174,-75.941224
+Dare County,North Carolina,NC,South,35.606269,-75.767536
+Davidson County,North Carolina,NC,South,35.795131,-80.207107
+Davie County,North Carolina,NC,South,35.929355,-80.542552
+Duplin County,North Carolina,NC,South,34.934403,-77.933543
+Durham County,North Carolina,NC,South,36.033828,-78.878125
+Edgecombe County,North Carolina,NC,South,35.917077,-77.602742
+Forsyth County,North Carolina,NC,South,36.132466,-80.256961
+Franklin County,North Carolina,NC,South,36.088241,-78.28309
+Gaston County,North Carolina,NC,South,35.293344,-81.177256
+Gates County,North Carolina,NC,South,36.442135,-76.702355
+Graham County,North Carolina,NC,South,35.348364,-83.830915
+Granville County,North Carolina,NC,South,36.299884,-78.657634
+Greene County,North Carolina,NC,South,35.481959,-77.681688
+Guilford County,North Carolina,NC,South,36.079065,-79.788665
+Halifax County,North Carolina,NC,South,36.251438,-77.644842
+Harnett County,North Carolina,NC,South,35.36866,-78.871665
+Haywood County,North Carolina,NC,South,35.558882,-82.981307
+Henderson County,North Carolina,NC,South,35.336427,-82.479583
+Hertford County,North Carolina,NC,South,36.363517,-76.981616
+Hoke County,North Carolina,NC,South,35.017233,-79.241964
+Hyde County,North Carolina,NC,South,35.408157,-76.153687
+Iredell County,North Carolina,NC,South,35.806251,-80.874524
+Jackson County,North Carolina,NC,South,35.285454,-83.123966
+Johnston County,North Carolina,NC,South,35.513419,-78.367348
+Jones County,North Carolina,NC,South,35.032268,-77.356195
+Lee County,North Carolina,NC,South,35.476336,-79.172117
+Lenoir County,North Carolina,NC,South,35.240066,-77.635514
+Lincoln County,North Carolina,NC,South,35.488491,-81.226893
+McDowell County,North Carolina,NC,South,35.682271,-82.048044
+Macon County,North Carolina,NC,South,35.152959,-83.421901
+Madison County,North Carolina,NC,South,35.864206,-82.712631
+Martin County,North Carolina,NC,South,35.847301,-77.119602
+Mecklenburg County,North Carolina,NC,South,35.246862,-80.833832
+Mitchell County,North Carolina,NC,South,36.013102,-82.163554
+Montgomery County,North Carolina,NC,South,35.327548,-79.910752
+Moore County,North Carolina,NC,South,35.308273,-79.492723
+Nash County,North Carolina,NC,South,35.965945,-77.987555
+New Hanover County,North Carolina,NC,South,34.183445,-77.864204
+Northampton County,North Carolina,NC,South,36.421774,-77.398352
+Onslow County,North Carolina,NC,South,34.763109,-77.499469
+Orange County,North Carolina,NC,South,36.062525,-79.120033
+Pamlico County,North Carolina,NC,South,35.147575,-76.665268
+Pasquotank County,North Carolina,NC,South,36.265199,-76.260691
+Pender County,North Carolina,NC,South,34.512556,-77.888106
+Perquimans County,North Carolina,NC,South,36.180897,-76.403244
+Person County,North Carolina,NC,South,36.386356,-78.96563
+Pitt County,North Carolina,NC,South,35.59249,-77.372739
+Polk County,North Carolina,NC,South,35.277901,-82.167621
+Randolph County,North Carolina,NC,South,35.709915,-79.806215
+Richmond County,North Carolina,NC,South,35.004636,-79.755695
+Robeson County,North Carolina,NC,South,34.63921,-79.100881
+Rockingham County,North Carolina,NC,South,36.381806,-79.782754
+Rowan County,North Carolina,NC,South,35.641355,-80.521721
+Rutherford County,North Carolina,NC,South,35.402747,-81.919582
+Sampson County,North Carolina,NC,South,34.989298,-78.371261
+Scotland County,North Carolina,NC,South,34.840023,-79.477337
+Stanly County,North Carolina,NC,South,35.310449,-80.254374
+Stokes County,North Carolina,NC,South,36.393797,-80.269921
+Surry County,North Carolina,NC,South,36.415416,-80.686463
+Swain County,North Carolina,NC,South,35.568849,-83.465614
+Transylvania County,North Carolina,NC,South,35.210103,-82.816666
+Tyrrell County,North Carolina,NC,South,35.87042,-76.165345
+Union County,North Carolina,NC,South,34.99182,-80.530426
+Vance County,North Carolina,NC,South,36.365481,-78.405434
+Wake County,North Carolina,NC,South,35.789846,-78.650624
+Warren County,North Carolina,NC,South,36.398105,-78.099899
+Washington County,North Carolina,NC,South,35.844713,-76.572291
+Watauga County,North Carolina,NC,South,36.235368,-81.709888
+Wayne County,North Carolina,NC,South,35.35419,-78.00867
+Wilkes County,North Carolina,NC,South,36.208883,-81.166095
+Wilson County,North Carolina,NC,South,35.700357,-77.921598
+Yadkin County,North Carolina,NC,South,36.158765,-80.665164
+Yancey County,North Carolina,NC,South,35.889326,-82.303954
+Adams County,North Dakota,ND,Midwest,46.096815,-102.533198
+Barnes County,North Dakota,ND,Midwest,46.94255,-98.070195
+Benson County,North Dakota,ND,Midwest,48.071743,-99.351152
+Billings County,North Dakota,ND,Midwest,47.007044,-103.364016
+Bottineau County,North Dakota,ND,Midwest,48.794412,-100.831257
+Bowman County,North Dakota,ND,Midwest,46.110144,-103.505943
+Burke County,North Dakota,ND,Midwest,48.786453,-102.520087
+Burleigh County,North Dakota,ND,Midwest,46.978829,-100.469533
+Cass County,North Dakota,ND,Midwest,46.927003,-97.252375
+Cavalier County,North Dakota,ND,Midwest,48.768439,-98.46379
+Dickey County,North Dakota,ND,Midwest,46.107756,-98.496518
+Divide County,North Dakota,ND,Midwest,48.814754,-103.509326
+Dunn County,North Dakota,ND,Midwest,47.354557,-102.612322
+Eddy County,North Dakota,ND,Midwest,47.723436,-98.900474
+Emmons County,North Dakota,ND,Midwest,46.284255,-100.237842
+Foster County,North Dakota,ND,Midwest,47.471431,-98.872876
+Golden Valley County,North Dakota,ND,Midwest,46.938924,-103.844612
+Grand Forks County,North Dakota,ND,Midwest,47.926003,-97.450851
+Grant County,North Dakota,ND,Midwest,46.357827,-101.639049
+Griggs County,North Dakota,ND,Midwest,47.456334,-98.232286
+Hettinger County,North Dakota,ND,Midwest,46.435704,-102.454238
+Kidder County,North Dakota,ND,Midwest,46.938273,-99.731198
+LaMoure County,North Dakota,ND,Midwest,46.464195,-98.526057
+Logan County,North Dakota,ND,Midwest,46.469278,-99.504585
+McHenry County,North Dakota,ND,Midwest,48.233842,-100.633267
+McIntosh County,North Dakota,ND,Midwest,46.108682,-99.416487
+McKenzie County,North Dakota,ND,Midwest,47.742475,-103.403215
+McLean County,North Dakota,ND,Midwest,47.653206,-101.421914
+Mercer County,North Dakota,ND,Midwest,47.307147,-101.833328
+Morton County,North Dakota,ND,Midwest,46.710029,-101.310041
+Mountrail County,North Dakota,ND,Midwest,48.210073,-102.364895
+Nelson County,North Dakota,ND,Midwest,47.918667,-98.204428
+Oliver County,North Dakota,ND,Midwest,47.118079,-101.33142
+Pembina County,North Dakota,ND,Midwest,48.766896,-97.545405
+Pierce County,North Dakota,ND,Midwest,48.238883,-99.966497
+Ramsey County,North Dakota,ND,Midwest,48.266163,-98.739031
+Ransom County,North Dakota,ND,Midwest,46.449276,-97.647554
+Renville County,North Dakota,ND,Midwest,48.712781,-101.658152
+Richland County,North Dakota,ND,Midwest,46.265219,-96.93796
+Rolette County,North Dakota,ND,Midwest,48.768271,-99.840463
+Sargent County,North Dakota,ND,Midwest,46.108204,-97.630051
+Sheridan County,North Dakota,ND,Midwest,47.581359,-100.330986
+Sioux County,North Dakota,ND,Midwest,46.110618,-101.061284
+Slope County,North Dakota,ND,Midwest,46.445834,-103.462462
+Stark County,North Dakota,ND,Midwest,46.817031,-102.662026
+Steele County,North Dakota,ND,Midwest,47.451062,-97.71892
+Stutsman County,North Dakota,ND,Midwest,46.972223,-98.956123
+Towner County,North Dakota,ND,Midwest,48.682183,-99.248158
+Traill County,North Dakota,ND,Midwest,47.446271,-97.164636
+Walsh County,North Dakota,ND,Midwest,48.376979,-97.72223
+Ward County,North Dakota,ND,Midwest,48.216686,-101.540537
+Wells County,North Dakota,ND,Midwest,47.580851,-99.682213
+Williams County,North Dakota,ND,Midwest,48.355765,-103.501333
+Adams County,Ohio,OH,Midwest,38.834468,-83.478082
+Allen County,Ohio,OH,Midwest,40.771627,-84.106103
+Ashland County,Ohio,OH,Midwest,40.843273,-82.270127
+Ashtabula County,Ohio,OH,Midwest,41.906637,-80.745592
+Athens County,Ohio,OH,Midwest,39.332755,-82.045885
+Auglaize County,Ohio,OH,Midwest,40.561309,-84.224018
+Belmont County,Ohio,OH,Midwest,40.017682,-80.967727
+Brown County,Ohio,OH,Midwest,38.931377,-83.866772
+Butler County,Ohio,OH,Midwest,39.439747,-84.565734
+Carroll County,Ohio,OH,Midwest,40.579884,-81.090787
+Champaign County,Ohio,OH,Midwest,40.132775,-83.767604
+Clark County,Ohio,OH,Midwest,39.917032,-83.783676
+Clermont County,Ohio,OH,Midwest,39.052054,-84.149485
+Clinton County,Ohio,OH,Midwest,39.416681,-83.804583
+Columbiana County,Ohio,OH,Midwest,40.770073,-80.778455
+Coshocton County,Ohio,OH,Midwest,40.29671,-81.930109
+Crawford County,Ohio,OH,Midwest,40.848524,-82.924783
+Cuyahoga County,Ohio,OH,Midwest,41.555037,-81.604957
+Darke County,Ohio,OH,Midwest,40.131467,-84.621191
+Defiance County,Ohio,OH,Midwest,41.321679,-84.486433
+Delaware County,Ohio,OH,Midwest,40.278941,-83.007462
+Erie County,Ohio,OH,Midwest,41.394143,-82.586835
+Fairfield County,Ohio,OH,Midwest,39.747694,-82.626685
+Fayette County,Ohio,OH,Midwest,39.555246,-83.461893
+Franklin County,Ohio,OH,Midwest,39.969875,-83.009086
+Fulton County,Ohio,OH,Midwest,41.597264,-84.124267
+Gallia County,Ohio,OH,Midwest,38.817046,-82.301746
+Geauga County,Ohio,OH,Midwest,41.499322,-81.173505
+Greene County,Ohio,OH,Midwest,39.687479,-83.894894
+Guernsey County,Ohio,OH,Midwest,40.056665,-81.497875
+Hamilton County,Ohio,OH,Midwest,39.196927,-84.544187
+Hancock County,Ohio,OH,Midwest,41.000217,-83.665947
+Hardin County,Ohio,OH,Midwest,40.660415,-83.664077
+Harrison County,Ohio,OH,Midwest,40.292318,-81.091565
+Henry County,Ohio,OH,Midwest,41.331584,-84.0689
+Highland County,Ohio,OH,Midwest,39.184422,-83.601359
+Hocking County,Ohio,OH,Midwest,39.490342,-82.483447
+Holmes County,Ohio,OH,Midwest,40.565597,-81.930001
+Huron County,Ohio,OH,Midwest,41.14508,-82.594641
+Jackson County,Ohio,OH,Midwest,39.013477,-82.614142
+Jefferson County,Ohio,OH,Midwest,40.399384,-80.763527
+Knox County,Ohio,OH,Midwest,40.40362,-82.422393
+Lake County,Ohio,OH,Midwest,41.778142,-81.19733
+Lawrence County,Ohio,OH,Midwest,38.603866,-82.517186
+Licking County,Ohio,OH,Midwest,40.091505,-82.483435
+Logan County,Ohio,OH,Midwest,40.387553,-83.766343
+Lorain County,Ohio,OH,Midwest,41.438805,-82.179722
+Lucas County,Ohio,OH,Midwest,41.682321,-83.468903
+Madison County,Ohio,OH,Midwest,39.89661,-83.400887
+Mahoning County,Ohio,OH,Midwest,41.01088,-80.770396
+Marion County,Ohio,OH,Midwest,40.588034,-83.168803
+Medina County,Ohio,OH,Midwest,41.116174,-81.899764
+Meigs County,Ohio,OH,Midwest,39.089807,-82.028397
+Mercer County,Ohio,OH,Midwest,40.535333,-84.632059
+Miami County,Ohio,OH,Midwest,40.053326,-84.228413
+Monroe County,Ohio,OH,Midwest,39.726253,-81.090983
+Montgomery County,Ohio,OH,Midwest,39.753736,-84.290591
+Morgan County,Ohio,OH,Midwest,39.624946,-81.861697
+Morrow County,Ohio,OH,Midwest,40.525266,-82.797729
+Muskingum County,Ohio,OH,Midwest,39.966046,-81.943506
+Noble County,Ohio,OH,Midwest,39.767232,-81.452493
+Ottawa County,Ohio,OH,Midwest,41.545495,-83.012613
+Paulding County,Ohio,OH,Midwest,41.118948,-84.582125
+Perry County,Ohio,OH,Midwest,39.743187,-82.237952
+Pickaway County,Ohio,OH,Midwest,39.648947,-83.052827
+Pike County,Ohio,OH,Midwest,39.071341,-83.052911
+Portage County,Ohio,OH,Midwest,41.16897,-81.196962
+Preble County,Ohio,OH,Midwest,39.73881,-84.644758
+Putnam County,Ohio,OH,Midwest,41.024533,-84.129879
+Richland County,Ohio,OH,Midwest,40.774159,-82.542781
+Ross County,Ohio,OH,Midwest,39.323895,-83.059538
+Sandusky County,Ohio,OH,Midwest,41.355319,-83.142776
+Scioto County,Ohio,OH,Midwest,38.814889,-82.998675
+Seneca County,Ohio,OH,Midwest,41.119992,-83.127547
+Shelby County,Ohio,OH,Midwest,40.33668,-84.204142
+Stark County,Ohio,OH,Midwest,40.814131,-81.365667
+Summit County,Ohio,OH,Midwest,41.121847,-81.534928
+Trumbull County,Ohio,OH,Midwest,41.306374,-80.7704
+Tuscarawas County,Ohio,OH,Midwest,40.447439,-81.471166
+Union County,Ohio,OH,Midwest,40.295901,-83.367042
+Van Wert County,Ohio,OH,Midwest,40.85552,-84.585775
+Vinton County,Ohio,OH,Midwest,39.252042,-82.485961
+Warren County,Ohio,OH,Midwest,39.425663,-84.16994
+Washington County,Ohio,OH,Midwest,39.450676,-81.490636
+Wayne County,Ohio,OH,Midwest,40.829661,-81.887194
+Williams County,Ohio,OH,Midwest,41.564959,-84.584324
+Wood County,Ohio,OH,Midwest,41.360183,-83.622682
+Wyandot County,Ohio,OH,Midwest,40.839782,-83.313681
+Adair County,Oklahoma,OK,South,35.898043,-94.651026
+Alfalfa County,Oklahoma,OK,South,36.729703,-98.323445
+Atoka County,Oklahoma,OK,South,34.392469,-96.036558
+Beaver County,Oklahoma,OK,South,36.748334,-100.483056
+Beckham County,Oklahoma,OK,South,35.270601,-99.690057
+Blaine County,Oklahoma,OK,South,35.877795,-98.429031
+Bryan County,Oklahoma,OK,South,33.964004,-96.265135
+Caddo County,Oklahoma,OK,South,35.16792,-98.381045
+Canadian County,Oklahoma,OK,South,35.543354,-97.979889
+Carter County,Oklahoma,OK,South,34.251848,-97.287927
+Cherokee County,Oklahoma,OK,South,35.904367,-94.996796
+Choctaw County,Oklahoma,OK,South,34.027699,-95.554079
+Cimarron County,Oklahoma,OK,South,36.74839,-102.517698
+Cleveland County,Oklahoma,OK,South,35.206376,-97.323088
+Coal County,Oklahoma,OK,South,34.582861,-96.288039
+Comanche County,Oklahoma,OK,South,34.66263,-98.476612
+Cotton County,Oklahoma,OK,South,34.290676,-98.373438
+Craig County,Oklahoma,OK,South,36.76389,-95.201553
+Creek County,Oklahoma,OK,South,35.907398,-96.380177
+Custer County,Oklahoma,OK,South,35.645601,-98.997386
+Delaware County,Oklahoma,OK,South,36.393437,-94.808189
+Dewey County,Oklahoma,OK,South,35.97796,-99.014385
+Ellis County,Oklahoma,OK,South,36.224258,-99.750139
+Garfield County,Oklahoma,OK,South,36.378132,-97.788741
+Garvin County,Oklahoma,OK,South,34.70935,-97.312723
+Grady County,Oklahoma,OK,South,35.021058,-97.88689
+Grant County,Oklahoma,OK,South,36.788254,-97.788151
+Greer County,Oklahoma,OK,South,34.933853,-99.552968
+Harmon County,Oklahoma,OK,South,34.745971,-99.844194
+Harper County,Oklahoma,OK,South,36.80035,-99.662805
+Haskell County,Oklahoma,OK,South,35.232431,-95.109642
+Hughes County,Oklahoma,OK,South,35.052934,-96.251183
+Jackson County,Oklahoma,OK,South,34.594006,-99.412235
+Jefferson County,Oklahoma,OK,South,34.105082,-97.83889
+Johnston County,Oklahoma,OK,South,34.313455,-96.654254
+Kay County,Oklahoma,OK,South,36.814885,-97.143862
+Kingfisher County,Oklahoma,OK,South,35.949436,-97.934557
+Kiowa County,Oklahoma,OK,South,34.921489,-98.981617
+Latimer County,Oklahoma,OK,South,34.875137,-95.272262
+Le Flore County,Oklahoma,OK,South,34.897356,-94.695074
+Lincoln County,Oklahoma,OK,South,35.703117,-96.881392
+Logan County,Oklahoma,OK,South,35.914277,-97.450952
+Love County,Oklahoma,OK,South,33.957804,-97.245093
+McClain County,Oklahoma,OK,South,35.016436,-97.449803
+McCurtain County,Oklahoma,OK,South,34.117073,-94.766086
+McIntosh County,Oklahoma,OK,South,35.369108,-95.671787
+Major County,Oklahoma,OK,South,36.313119,-98.542015
+Marshall County,Oklahoma,OK,South,34.027007,-96.770533
+Mayes County,Oklahoma,OK,South,36.303804,-95.235638
+Murray County,Oklahoma,OK,South,34.485766,-97.071557
+Muskogee County,Oklahoma,OK,South,35.617551,-95.383911
+Noble County,Oklahoma,OK,South,36.384901,-97.236335
+Nowata County,Oklahoma,OK,South,36.789615,-95.613312
+Okfuskee County,Oklahoma,OK,South,35.466804,-96.327762
+Oklahoma County,Oklahoma,OK,South,35.554611,-97.409401
+Okmulgee County,Oklahoma,OK,South,35.6435,-95.965947
+Osage County,Oklahoma,OK,South,36.624299,-96.408112
+Ottawa County,Oklahoma,OK,South,36.835764,-94.802681
+Pawnee County,Oklahoma,OK,South,36.313704,-96.696669
+Payne County,Oklahoma,OK,South,36.079225,-96.975255
+Pittsburg County,Oklahoma,OK,South,34.92554,-95.74813
+Pontotoc County,Oklahoma,OK,South,34.721421,-96.691804
+Pottawatomie County,Oklahoma,OK,South,35.211391,-96.957004
+Pushmataha County,Oklahoma,OK,South,34.377899,-95.408082
+Roger Mills County,Oklahoma,OK,South,35.708554,-99.741572
+Rogers County,Oklahoma,OK,South,36.377794,-95.601383
+Seminole County,Oklahoma,OK,South,35.158366,-96.602857
+Sequoyah County,Oklahoma,OK,South,35.502435,-94.750757
+Stephens County,Oklahoma,OK,South,34.481361,-97.855607
+Texas County,Oklahoma,OK,South,36.746317,-101.483855
+Tillman County,Oklahoma,OK,South,34.371085,-98.931701
+Tulsa County,Oklahoma,OK,South,36.120318,-95.941813
+Wagoner County,Oklahoma,OK,South,35.963388,-95.514201
+Washington County,Oklahoma,OK,South,36.704403,-95.906253
+Washita County,Oklahoma,OK,South,35.290068,-98.992195
+Woods County,Oklahoma,OK,South,36.726984,-98.863649
+Woodward County,Oklahoma,OK,South,36.425619,-99.273661
+Baker County,Oregon,OR,West,44.703427,-117.691933
+Benton County,Oregon,OR,West,44.493882,-123.424664
+Clackamas County,Oregon,OR,West,45.160493,-122.195127
+Clatsop County,Oregon,OR,West,46.024509,-123.705037
+Columbia County,Oregon,OR,West,45.941932,-123.081079
+Coos County,Oregon,OR,West,43.18591,-124.094133
+Crook County,Oregon,OR,West,44.163054,-120.371585
+Curry County,Oregon,OR,West,42.466439,-124.210929
+Deschutes County,Oregon,OR,West,43.915118,-121.225575
+Douglas County,Oregon,OR,West,43.286328,-123.154476
+Gilliam County,Oregon,OR,West,45.382955,-120.276246
+Grant County,Oregon,OR,West,44.496326,-119.014057
+Harney County,Oregon,OR,West,43.064449,-118.987169
+Hood River County,Oregon,OR,West,45.511775,-121.655976
+Jackson County,Oregon,OR,West,42.411621,-122.675611
+Jefferson County,Oregon,OR,West,44.645151,-121.178632
+Josephine County,Oregon,OR,West,42.386983,-123.57162
+Klamath County,Oregon,OR,West,42.683761,-121.646168
+Lake County,Oregon,OR,West,42.788401,-120.38979
+Lane County,Oregon,OR,West,43.928334,-122.897581
+Lincoln County,Oregon,OR,West,44.641061,-123.911212
+Linn County,Oregon,OR,West,44.488898,-122.537208
+Malheur County,Oregon,OR,West,43.188625,-117.603191
+Marion County,Oregon,OR,West,44.900898,-122.57626
+Morrow County,Oregon,OR,West,45.425496,-119.602311
+Multnomah County,Oregon,OR,West,45.547711,-122.417363
+Polk County,Oregon,OR,West,44.900372,-123.39864
+Sherman County,Oregon,OR,West,45.399216,-120.678512
+Tillamook County,Oregon,OR,West,45.45589,-123.759299
+Umatilla County,Oregon,OR,West,45.5912,-118.73388
+Union County,Oregon,OR,West,45.304081,-117.999149
+Wallowa County,Oregon,OR,West,45.593753,-117.18558
+Wasco County,Oregon,OR,West,45.164536,-121.165069
+Washington County,Oregon,OR,West,45.553542,-123.097615
+Wheeler County,Oregon,OR,West,44.736415,-120.026861
+Yamhill County,Oregon,OR,West,45.247827,-123.316399
+Adams County,Pennsylvania,PA,Northeast,39.869471,-77.21773
+Allegheny County,Pennsylvania,PA,Northeast,40.469757,-79.980451
+Armstrong County,Pennsylvania,PA,Northeast,40.81238,-79.464129
+Beaver County,Pennsylvania,PA,Northeast,40.68414,-80.350721
+Bedford County,Pennsylvania,PA,Northeast,39.998634,-78.494747
+Berks County,Pennsylvania,PA,Northeast,40.413957,-75.92686
+Blair County,Pennsylvania,PA,Northeast,40.498683,-78.309597
+Bradford County,Pennsylvania,PA,Northeast,41.791504,-76.502123
+Bucks County,Pennsylvania,PA,Northeast,40.336887,-75.10706
+Butler County,Pennsylvania,PA,Northeast,40.913847,-79.918978
+Cambria County,Pennsylvania,PA,Northeast,40.510209,-78.710488
+Cameron County,Pennsylvania,PA,Northeast,41.438291,-78.198323
+Carbon County,Pennsylvania,PA,Northeast,40.918367,-75.705039
+Centre County,Pennsylvania,PA,Northeast,40.909322,-77.847667
+Chester County,Pennsylvania,PA,Northeast,39.974029,-75.749751
+Clarion County,Pennsylvania,PA,Northeast,41.198159,-79.420369
+Clearfield County,Pennsylvania,PA,Northeast,41.006862,-78.477724
+Clinton County,Pennsylvania,PA,Northeast,41.239508,-77.629009
+Columbia County,Pennsylvania,PA,Northeast,41.045517,-76.40426
+Crawford County,Pennsylvania,PA,Northeast,41.687876,-80.107795
+Cumberland County,Pennsylvania,PA,Northeast,40.164805,-77.263442
+Dauphin County,Pennsylvania,PA,Northeast,40.412565,-76.792634
+Delaware County,Pennsylvania,PA,Northeast,39.916685,-75.398818
+Elk County,Pennsylvania,PA,Northeast,41.427332,-78.653937
+Erie County,Pennsylvania,PA,Northeast,42.117952,-80.096386
+Fayette County,Pennsylvania,PA,Northeast,39.918907,-79.640119
+Forest County,Pennsylvania,PA,Northeast,41.513304,-79.249705
+Franklin County,Pennsylvania,PA,Northeast,39.926772,-77.724521
+Fulton County,Pennsylvania,PA,Northeast,39.91075,-78.122617
+Greene County,Pennsylvania,PA,Northeast,39.847707,-80.225655
+Huntingdon County,Pennsylvania,PA,Northeast,40.422311,-77.968595
+Indiana County,Pennsylvania,PA,Northeast,40.651432,-79.087545
+Jefferson County,Pennsylvania,PA,Northeast,41.138028,-79.012419
+Juniata County,Pennsylvania,PA,Northeast,40.530673,-77.400438
+Lackawanna County,Pennsylvania,PA,Northeast,41.436636,-75.608768
+Lancaster County,Pennsylvania,PA,Northeast,40.041992,-76.250198
+Lawrence County,Pennsylvania,PA,Northeast,40.992735,-80.334446
+Lebanon County,Pennsylvania,PA,Northeast,40.371448,-76.464819
+Lehigh County,Pennsylvania,PA,Northeast,40.614241,-75.590627
+Luzerne County,Pennsylvania,PA,Northeast,41.173078,-75.976053
+Lycoming County,Pennsylvania,PA,Northeast,41.343882,-77.055262
+McKean County,Pennsylvania,PA,Northeast,41.81459,-78.572463
+Mercer County,Pennsylvania,PA,Northeast,41.300014,-80.252786
+Mifflin County,Pennsylvania,PA,Northeast,40.601615,-77.651832
+Monroe County,Pennsylvania,PA,Northeast,41.05624,-75.329065
+Montgomery County,Pennsylvania,PA,Northeast,40.209999,-75.370201
+Montour County,Pennsylvania,PA,Northeast,41.029284,-76.665225
+Northampton County,Pennsylvania,PA,Northeast,40.752791,-75.307447
+Northumberland County,Pennsylvania,PA,Northeast,40.851524,-76.709877
+Perry County,Pennsylvania,PA,Northeast,40.39778,-77.266328
+Philadelphia County,Pennsylvania,PA,Northeast,40.009376,-75.133346
+Pike County,Pennsylvania,PA,Northeast,41.325949,-75.031514
+Potter County,Pennsylvania,PA,Northeast,41.748587,-77.894436
+Schuylkill County,Pennsylvania,PA,Northeast,40.703682,-76.217788
+Snyder County,Pennsylvania,PA,Northeast,40.755412,-77.07302
+Somerset County,Pennsylvania,PA,Northeast,39.981297,-79.028486
+Sullivan County,Pennsylvania,PA,Northeast,41.439285,-76.511717
+Susquehanna County,Pennsylvania,PA,Northeast,41.819665,-75.800969
+Tioga County,Pennsylvania,PA,Northeast,41.766858,-77.257288
+Union County,Pennsylvania,PA,Northeast,40.962179,-77.055475
+Venango County,Pennsylvania,PA,Northeast,41.400714,-79.765813
+Warren County,Pennsylvania,PA,Northeast,41.834298,-79.298182
+Washington County,Pennsylvania,PA,Northeast,40.200005,-80.252132
+Wayne County,Pennsylvania,PA,Northeast,41.646602,-75.292493
+Westmoreland County,Pennsylvania,PA,Northeast,40.311068,-79.466688
+Wyoming County,Pennsylvania,PA,Northeast,41.525167,-76.008682
+York County,Pennsylvania,PA,Northeast,39.921751,-76.728889
+Bristol County,Rhode Island,RI,Northeast,41.70684,-71.286687
+Kent County,Rhode Island,RI,Northeast,41.675118,-71.580282
+Newport County,Rhode Island,RI,Northeast,41.501045,-71.283063
+Providence County,Rhode Island,RI,Northeast,41.869768,-71.578625
+Washington County,Rhode Island,RI,Northeast,41.396792,-71.620282
+Abbeville County,South Carolina,SC,South,34.229041,-82.454058
+Aiken County,South Carolina,SC,South,33.550013,-81.632983
+Allendale County,South Carolina,SC,South,32.979757,-81.363265
+Anderson County,South Carolina,SC,South,34.521235,-82.638603
+Bamberg County,South Carolina,SC,South,33.203021,-81.053161
+Barnwell County,South Carolina,SC,South,33.260552,-81.434228
+Beaufort County,South Carolina,SC,South,32.358112,-80.689422
+Berkeley County,South Carolina,SC,South,33.2077,-79.953655
+Calhoun County,South Carolina,SC,South,33.67478,-80.780347
+Charleston County,South Carolina,SC,South,32.800458,-79.94248
+Cherokee County,South Carolina,SC,South,35.049796,-81.607647
+Chester County,South Carolina,SC,South,34.689342,-81.161249
+Chesterfield County,South Carolina,SC,South,34.637018,-80.159227
+Clarendon County,South Carolina,SC,South,33.664682,-80.217889
+Colleton County,South Carolina,SC,South,32.849386,-80.656402
+Darlington County,South Carolina,SC,South,34.332185,-79.962115
+Dillon County,South Carolina,SC,South,34.390209,-79.375294
+Dorchester County,South Carolina,SC,South,33.082186,-80.404697
+Edgefield County,South Carolina,SC,South,33.779453,-81.959637
+Fairfield County,South Carolina,SC,South,34.395669,-81.127001
+Florence County,South Carolina,SC,South,34.028535,-79.710233
+Georgetown County,South Carolina,SC,South,33.417531,-79.296333
+Greenville County,South Carolina,SC,South,34.892645,-82.372077
+Greenwood County,South Carolina,SC,South,34.155796,-82.127876
+Hampton County,South Carolina,SC,South,32.778334,-81.143822
+Horry County,South Carolina,SC,South,33.909269,-78.976675
+Jasper County,South Carolina,SC,South,32.43059,-81.021627
+Kershaw County,South Carolina,SC,South,34.338356,-80.590885
+Lancaster County,South Carolina,SC,South,34.686818,-80.703688
+Laurens County,South Carolina,SC,South,34.483676,-82.005498
+Lee County,South Carolina,SC,South,34.15864,-80.251209
+Lexington County,South Carolina,SC,South,33.892373,-81.272903
+McCormick County,South Carolina,SC,South,33.897599,-82.316196
+Marion County,South Carolina,SC,South,34.08362,-79.354001
+Marlboro County,South Carolina,SC,South,34.60167,-79.679435
+Newberry County,South Carolina,SC,South,34.289881,-81.599676
+Oconee County,South Carolina,SC,South,34.748766,-83.06154
+Orangeburg County,South Carolina,SC,South,33.436135,-80.802913
+Pickens County,South Carolina,SC,South,34.885368,-82.723377
+Richland County,South Carolina,SC,South,34.029095,-80.898037
+Saluda County,South Carolina,SC,South,34.005278,-81.727903
+Spartanburg County,South Carolina,SC,South,34.932014,-81.991624
+Sumter County,South Carolina,SC,South,33.91614,-80.382376
+Union County,South Carolina,SC,South,34.690397,-81.615896
+Williamsburg County,South Carolina,SC,South,33.626462,-79.716474
+York County,South Carolina,SC,South,34.970188,-81.183187
+Aurora County,South Dakota,SD,Midwest,43.724719,-98.577587
+Beadle County,South Dakota,SD,Midwest,44.418265,-98.279422
+Bennett County,South Dakota,SD,Midwest,43.186912,-101.677181
+Bon Homme County,South Dakota,SD,Midwest,42.985799,-97.884199
+Brookings County,South Dakota,SD,Midwest,44.376675,-96.797797
+Brown County,South Dakota,SD,Midwest,45.589254,-98.352175
+Brule County,South Dakota,SD,Midwest,43.729873,-99.092909
+Buffalo County,South Dakota,SD,Midwest,44.044306,-99.203998
+Butte County,South Dakota,SD,Midwest,44.896226,-103.501436
+Campbell County,South Dakota,SD,Midwest,45.785575,-100.002107
+Charles Mix County,South Dakota,SD,Midwest,43.206185,-98.595143
+Clark County,South Dakota,SD,Midwest,44.855211,-97.724912
+Clay County,South Dakota,SD,Midwest,42.91615,-96.980468
+Codington County,South Dakota,SD,Midwest,44.966285,-97.198837
+Corson County,South Dakota,SD,Midwest,45.685671,-101.179665
+Custer County,South Dakota,SD,Midwest,43.684943,-103.46225
+Davison County,South Dakota,SD,Midwest,43.680439,-98.155868
+Day County,South Dakota,SD,Midwest,45.355161,-97.58143
+Deuel County,South Dakota,SD,Midwest,44.75629,-96.690239
+Dewey County,South Dakota,SD,Midwest,45.148049,-100.837953
+Douglas County,South Dakota,SD,Midwest,43.391506,-98.358433
+Edmunds County,South Dakota,SD,Midwest,45.41168,-99.205362
+Fall River County,South Dakota,SD,Midwest,43.221619,-103.512609
+Faulk County,South Dakota,SD,Midwest,45.065476,-99.153564
+Grant County,South Dakota,SD,Midwest,45.172637,-96.772261
+Gregory County,South Dakota,SD,Midwest,43.175142,-99.206591
+Haakon County,South Dakota,SD,Midwest,44.288097,-101.540856
+Hamlin County,South Dakota,SD,Midwest,44.680619,-97.178598
+Hand County,South Dakota,SD,Midwest,44.546713,-99.004575
+Hanson County,South Dakota,SD,Midwest,43.680612,-97.796845
+Harding County,South Dakota,SD,Midwest,45.596611,-103.473871
+Hughes County,South Dakota,SD,Midwest,44.384452,-99.975684
+Hutchinson County,South Dakota,SD,Midwest,43.33671,-97.749383
+Hyde County,South Dakota,SD,Midwest,44.537174,-99.472736
+Jackson County,South Dakota,SD,Midwest,43.677506,-101.626323
+Jerauld County,South Dakota,SD,Midwest,44.06341,-98.62317
+Jones County,South Dakota,SD,Midwest,43.951991,-100.686138
+Kingsbury County,South Dakota,SD,Midwest,44.362969,-97.499313
+Lake County,South Dakota,SD,Midwest,44.02845,-97.123223
+Lawrence County,South Dakota,SD,Midwest,44.348514,-103.806362
+Lincoln County,South Dakota,SD,Midwest,43.27942,-96.722286
+Lyman County,South Dakota,SD,Midwest,43.894812,-99.841925
+McCook County,South Dakota,SD,Midwest,43.680416,-97.358048
+McPherson County,South Dakota,SD,Midwest,45.784249,-99.211421
+Marshall County,South Dakota,SD,Midwest,45.737044,-97.58087
+Meade County,South Dakota,SD,Midwest,44.605282,-102.714169
+Mellette County,South Dakota,SD,Midwest,43.581334,-100.75521
+Miner County,South Dakota,SD,Midwest,44.021541,-97.608122
+Minnehaha County,South Dakota,SD,Midwest,43.667472,-96.795726
+Moody County,South Dakota,SD,Midwest,44.012429,-96.676054
+Oglala Lakota County,South Dakota,SD,Midwest,43.333393,-102.561486
+Pennington County,South Dakota,SD,Midwest,44.002349,-102.823801
+Perkins County,South Dakota,SD,Midwest,45.483387,-102.467995
+Potter County,South Dakota,SD,Midwest,45.052713,-99.962003
+Roberts County,South Dakota,SD,Midwest,45.623397,-96.947551
+Sanborn County,South Dakota,SD,Midwest,44.018942,-98.091709
+Spink County,South Dakota,SD,Midwest,44.923772,-98.339615
+Stanley County,South Dakota,SD,Midwest,44.413984,-100.747822
+Sully County,South Dakota,SD,Midwest,44.722325,-100.131399
+Todd County,South Dakota,SD,Midwest,43.208794,-100.707664
+Tripp County,South Dakota,SD,Midwest,43.349729,-99.876219
+Turner County,South Dakota,SD,Midwest,43.30867,-97.150185
+Union County,South Dakota,SD,Midwest,42.831106,-96.650829
+Walworth County,South Dakota,SD,Midwest,45.427605,-100.027856
+Yankton County,South Dakota,SD,Midwest,43.006603,-97.388361
+Ziebach County,South Dakota,SD,Midwest,44.989764,-101.660827
+Anderson County,Tennessee,TN,South,36.116731,-84.195418
+Bedford County,Tennessee,TN,South,35.51366,-86.458294
+Benton County,Tennessee,TN,South,36.070948,-88.071232
+Bledsoe County,Tennessee,TN,South,35.593561,-85.20591
+Blount County,Tennessee,TN,South,35.688185,-83.922973
+Bradley County,Tennessee,TN,South,35.153914,-84.859414
+Campbell County,Tennessee,TN,South,36.401592,-84.159249
+Cannon County,Tennessee,TN,South,35.808394,-86.062404
+Carroll County,Tennessee,TN,South,35.965748,-88.452379
+Carter County,Tennessee,TN,South,36.284744,-82.126593
+Cheatham County,Tennessee,TN,South,36.255169,-87.100808
+Chester County,Tennessee,TN,South,35.420253,-88.611353
+Claiborne County,Tennessee,TN,South,36.501572,-83.660698
+Clay County,Tennessee,TN,South,36.545749,-85.545717
+Cocke County,Tennessee,TN,South,35.916198,-83.119224
+Coffee County,Tennessee,TN,South,35.488765,-86.078202
+Crockett County,Tennessee,TN,South,35.818795,-89.132494
+Cumberland County,Tennessee,TN,South,35.952398,-84.994761
+Davidson County,Tennessee,TN,South,36.169129,-86.78479
+Decatur County,Tennessee,TN,South,35.603136,-88.110292
+DeKalb County,Tennessee,TN,South,35.982219,-85.833596
+Dickson County,Tennessee,TN,South,36.145533,-87.364155
+Dyer County,Tennessee,TN,South,36.054196,-89.398306
+Fayette County,Tennessee,TN,South,35.196993,-89.413803
+Fentress County,Tennessee,TN,South,36.369892,-84.937764
+Franklin County,Tennessee,TN,South,35.155926,-86.099203
+Gibson County,Tennessee,TN,South,35.991632,-88.933812
+Giles County,Tennessee,TN,South,35.202723,-87.035319
+Grainger County,Tennessee,TN,South,36.277509,-83.509546
+Greene County,Tennessee,TN,South,36.179487,-82.847523
+Grundy County,Tennessee,TN,South,35.393352,-85.710374
+Hamblen County,Tennessee,TN,South,36.218397,-83.266071
+Hamilton County,Tennessee,TN,South,35.163472,-85.201843
+Hancock County,Tennessee,TN,South,36.521353,-83.227493
+Hardeman County,Tennessee,TN,South,35.218785,-88.988697
+Hardin County,Tennessee,TN,South,35.201893,-88.185696
+Hawkins County,Tennessee,TN,South,36.452089,-82.931485
+Haywood County,Tennessee,TN,South,35.586678,-89.282691
+Henderson County,Tennessee,TN,South,35.653994,-88.387674
+Henry County,Tennessee,TN,South,36.325295,-88.300288
+Hickman County,Tennessee,TN,South,35.802327,-87.467116
+Houston County,Tennessee,TN,South,36.285782,-87.705598
+Humphreys County,Tennessee,TN,South,36.040822,-87.790453
+Jackson County,Tennessee,TN,South,36.35425,-85.674128
+Jefferson County,Tennessee,TN,South,36.048452,-83.441216
+Johnson County,Tennessee,TN,South,36.453203,-81.861247
+Knox County,Tennessee,TN,South,35.992726,-83.937721
+Lake County,Tennessee,TN,South,36.333905,-89.485536
+Lauderdale County,Tennessee,TN,South,35.762951,-89.627732
+Lawrence County,Tennessee,TN,South,35.220476,-87.396546
+Lewis County,Tennessee,TN,South,35.523244,-87.496983
+Lincoln County,Tennessee,TN,South,35.142784,-86.593403
+Loudon County,Tennessee,TN,South,35.735085,-84.314085
+McMinn County,Tennessee,TN,South,35.424472,-84.619949
+McNairy County,Tennessee,TN,South,35.175375,-88.56374
+Macon County,Tennessee,TN,South,36.537757,-86.00096
+Madison County,Tennessee,TN,South,35.606056,-88.833424
+Marion County,Tennessee,TN,South,35.133422,-85.618399
+Marshall County,Tennessee,TN,South,35.468329,-86.765868
+Maury County,Tennessee,TN,South,35.615696,-87.077763
+Meigs County,Tennessee,TN,South,35.512203,-84.816102
+Monroe County,Tennessee,TN,South,35.447818,-84.249705
+Montgomery County,Tennessee,TN,South,36.500354,-87.380887
+Moore County,Tennessee,TN,South,35.288888,-86.358684
+Morgan County,Tennessee,TN,South,36.138697,-84.639262
+Obion County,Tennessee,TN,South,36.361892,-89.148078
+Overton County,Tennessee,TN,South,36.34485,-85.283076
+Perry County,Tennessee,TN,South,35.663752,-87.869326
+Pickett County,Tennessee,TN,South,36.559364,-85.075741
+Polk County,Tennessee,TN,South,35.109437,-84.541112
+Putnam County,Tennessee,TN,South,36.14094,-85.49618
+Rhea County,Tennessee,TN,South,35.60059,-84.949548
+Roane County,Tennessee,TN,South,35.84725,-84.523929
+Robertson County,Tennessee,TN,South,36.524385,-86.872594
+Rutherford County,Tennessee,TN,South,35.843369,-86.417213
+Scott County,Tennessee,TN,South,36.430592,-84.504091
+Sequatchie County,Tennessee,TN,South,35.372336,-85.410082
+Sevier County,Tennessee,TN,South,35.787822,-83.5249
+Shelby County,Tennessee,TN,South,35.184553,-89.894612
+Smith County,Tennessee,TN,South,36.256645,-85.941915
+Stewart County,Tennessee,TN,South,36.458464,-87.811889
+Sullivan County,Tennessee,TN,South,36.509681,-82.301336
+Sumner County,Tennessee,TN,South,36.472423,-86.458405
+Tipton County,Tennessee,TN,South,35.498763,-89.747145
+Trousdale County,Tennessee,TN,South,36.39303,-86.156691
+Unicoi County,Tennessee,TN,South,36.100129,-82.418218
+Union County,Tennessee,TN,South,36.28414,-83.836088
+Van Buren County,Tennessee,TN,South,35.699234,-85.458409
+Warren County,Tennessee,TN,South,35.67825,-85.777343
+Washington County,Tennessee,TN,South,36.295665,-82.495037
+Wayne County,Tennessee,TN,South,35.242847,-87.819843
+Weakley County,Tennessee,TN,South,36.303596,-88.721194
+White County,Tennessee,TN,South,35.927049,-85.455785
+Williamson County,Tennessee,TN,South,35.894845,-86.897888
+Wilson County,Tennessee,TN,South,36.149431,-86.291181
+Anderson County,Texas,TX,South,31.841261,-95.661727
+Andrews County,Texas,TX,South,32.312258,-102.640206
+Angelina County,Texas,TX,South,31.251896,-94.611134
+Aransas County,Texas,TX,South,28.122621,-96.967501
+Archer County,Texas,TX,South,33.616305,-98.687267
+Armstrong County,Texas,TX,South,34.964179,-101.356636
+Atascosa County,Texas,TX,South,28.891478,-98.535381
+Austin County,Texas,TX,South,29.891901,-96.27017
+Bailey County,Texas,TX,South,34.067521,-102.830345
+Bandera County,Texas,TX,South,29.756389,-99.248285
+Bastrop County,Texas,TX,South,30.100772,-97.310639
+Baylor County,Texas,TX,South,33.618802,-99.208189
+Bee County,Texas,TX,South,28.416077,-97.742586
+Bell County,Texas,TX,South,31.04275,-97.481268
+Bexar County,Texas,TX,South,29.448671,-98.520147
+Blanco County,Texas,TX,South,30.266203,-98.399332
+Borden County,Texas,TX,South,32.73859,-101.439199
+Bosque County,Texas,TX,South,31.900819,-97.637641
+Bowie County,Texas,TX,South,33.446065,-94.422393
+Brazoria County,Texas,TX,South,29.167817,-95.434647
+Brazos County,Texas,TX,South,30.656713,-96.302394
+Brewster County,Texas,TX,South,29.808997,-103.252458
+Briscoe County,Texas,TX,South,34.525172,-101.205893
+Brooks County,Texas,TX,South,27.034994,-98.215276
+Brown County,Texas,TX,South,31.764137,-98.998456
+Burleson County,Texas,TX,South,30.493487,-96.622091
+Burnet County,Texas,TX,South,30.78963,-98.201187
+Caldwell County,Texas,TX,South,29.832399,-97.628141
+Calhoun County,Texas,TX,South,28.441719,-96.579574
+Callahan County,Texas,TX,South,32.29315,-99.372249
+Cameron County,Texas,TX,South,26.102923,-97.478958
+Camp County,Texas,TX,South,32.974581,-94.979085
+Carson County,Texas,TX,South,35.405496,-101.355356
+Cass County,Texas,TX,South,33.083698,-94.357579
+Castro County,Texas,TX,South,34.533621,-102.258786
+Chambers County,Texas,TX,South,29.696374,-94.669445
+Cherokee County,Texas,TX,South,31.843881,-95.156343
+Childress County,Texas,TX,South,34.524624,-100.208166
+Clay County,Texas,TX,South,33.785904,-98.212917
+Cochran County,Texas,TX,South,33.60844,-102.830449
+Coke County,Texas,TX,South,31.87711,-100.635231
+Coleman County,Texas,TX,South,31.914205,-99.346622
+Collin County,Texas,TX,South,33.194494,-96.579428
+Collingsworth County,Texas,TX,South,34.963358,-100.272135
+Colorado County,Texas,TX,South,29.596296,-96.508935
+Comal County,Texas,TX,South,29.812377,-98.258129
+Comanche County,Texas,TX,South,31.951645,-98.549617
+Concho County,Texas,TX,South,31.318883,-99.863649
+Cooke County,Texas,TX,South,33.639196,-97.210343
+Coryell County,Texas,TX,South,31.391177,-97.798022
+Cottle County,Texas,TX,South,34.091906,-100.276442
+Crane County,Texas,TX,South,31.422796,-102.487774
+Crockett County,Texas,TX,South,30.717532,-101.404211
+Crosby County,Texas,TX,South,33.609144,-101.29871
+Culberson County,Texas,TX,South,31.445908,-104.526945
+Dallam County,Texas,TX,South,36.28637,-102.59402
+Dallas County,Texas,TX,South,32.766987,-96.778424
+Dawson County,Texas,TX,South,32.742528,-101.948771
+Deaf Smith County,Texas,TX,South,34.940766,-102.607564
+Delta County,Texas,TX,South,33.385933,-95.67335
+Denton County,Texas,TX,South,33.205132,-97.12114
+DeWitt County,Texas,TX,South,29.082346,-97.361654
+Dickens County,Texas,TX,South,33.615363,-100.787617
+Dimmit County,Texas,TX,South,28.423587,-99.765871
+Donley County,Texas,TX,South,34.955036,-100.815846
+Duval County,Texas,TX,South,27.681123,-98.497393
+Eastland County,Texas,TX,South,32.324645,-98.83656
+Ector County,Texas,TX,South,31.865301,-102.542507
+Edwards County,Texas,TX,South,29.985933,-100.3074
+Ellis County,Texas,TX,South,32.346878,-96.79694
+El Paso County,Texas,TX,South,31.766456,-106.24152
+Erath County,Texas,TX,South,32.236669,-98.220545
+Falls County,Texas,TX,South,31.25193,-96.934127
+Fannin County,Texas,TX,South,33.591161,-96.104988
+Fayette County,Texas,TX,South,29.877886,-96.921231
+Fisher County,Texas,TX,South,32.740473,-100.40312
+Floyd County,Texas,TX,South,34.07373,-101.303274
+Foard County,Texas,TX,South,33.963306,-99.816828
+Fort Bend County,Texas,TX,South,29.526602,-95.771015
+Franklin County,Texas,TX,South,33.175846,-95.219066
+Freestone County,Texas,TX,South,31.701749,-96.144957
+Frio County,Texas,TX,South,28.869383,-99.109005
+Gaines County,Texas,TX,South,32.743942,-102.631561
+Galveston County,Texas,TX,South,29.233927,-94.888197
+Garza County,Texas,TX,South,33.183792,-101.301134
+Gillespie County,Texas,TX,South,30.325093,-98.94185
+Glasscock County,Texas,TX,South,31.868006,-101.521494
+Goliad County,Texas,TX,South,28.6607,-97.430415
+Gonzales County,Texas,TX,South,29.461912,-97.49192
+Gray County,Texas,TX,South,35.402542,-100.812374
+Grayson County,Texas,TX,South,33.624548,-96.675777
+Gregg County,Texas,TX,South,32.486401,-94.816277
+Grimes County,Texas,TX,South,30.543231,-95.988082
+Guadalupe County,Texas,TX,South,29.582671,-97.948995
+Hale County,Texas,TX,South,34.068436,-101.822888
+Hall County,Texas,TX,South,34.453189,-100.576343
+Hamilton County,Texas,TX,South,31.707342,-98.111756
+Hansford County,Texas,TX,South,36.272847,-101.35693
+Hardeman County,Texas,TX,South,34.289904,-99.745697
+Hardin County,Texas,TX,South,30.329648,-94.393178
+Harris County,Texas,TX,South,29.857273,-95.393037
+Harrison County,Texas,TX,South,32.547991,-94.374434
+Hartley County,Texas,TX,South,35.840244,-102.610047
+Haskell County,Texas,TX,South,33.175964,-99.730774
+Hays County,Texas,TX,South,30.061225,-98.029267
+Hemphill County,Texas,TX,South,35.815956,-100.27921
+Henderson County,Texas,TX,South,32.211633,-95.853418
+Hidalgo County,Texas,TX,South,26.396384,-98.18099
+Hill County,Texas,TX,South,31.982681,-97.130668
+Hockley County,Texas,TX,South,33.605932,-102.343398
+Hood County,Texas,TX,South,32.430149,-97.831677
+Hopkins County,Texas,TX,South,33.148967,-95.565434
+Houston County,Texas,TX,South,31.323036,-95.4216
+Howard County,Texas,TX,South,32.30343,-101.438721
+Hudspeth County,Texas,TX,South,31.450868,-105.377549
+Hunt County,Texas,TX,South,33.123308,-96.08423
+Hutchinson County,Texas,TX,South,35.837047,-101.362746
+Irion County,Texas,TX,South,31.303424,-100.981304
+Jack County,Texas,TX,South,33.23216,-98.171177
+Jackson County,Texas,TX,South,28.959802,-96.58908
+Jasper County,Texas,TX,South,30.752932,-94.022294
+Jeff Davis County,Texas,TX,South,30.625357,-104.191873
+Jefferson County,Texas,TX,South,29.854,-94.149331
+Jim Hogg County,Texas,TX,South,27.053231,-98.747572
+Jim Wells County,Texas,TX,South,27.733516,-98.090814
+Johnson County,Texas,TX,South,32.379654,-97.364906
+Jones County,Texas,TX,South,32.743709,-99.87443
+Karnes County,Texas,TX,South,28.908996,-97.852205
+Kaufman County,Texas,TX,South,32.598944,-96.288377
+Kendall County,Texas,TX,South,29.943525,-98.709269
+Kenedy County,Texas,TX,South,26.890213,-97.591143
+Kent County,Texas,TX,South,33.18478,-100.76972
+Kerr County,Texas,TX,South,30.059953,-99.353339
+Kimble County,Texas,TX,South,30.479472,-99.746396
+King County,Texas,TX,South,33.614268,-100.245345
+Kinney County,Texas,TX,South,29.347086,-100.4177
+Kleberg County,Texas,TX,South,27.438735,-97.66062
+Knox County,Texas,TX,South,33.61189,-99.730356
+Lamar County,Texas,TX,South,33.667263,-95.570348
+Lamb County,Texas,TX,South,34.068861,-102.348018
+Lampasas County,Texas,TX,South,31.196731,-98.240889
+La Salle County,Texas,TX,South,28.351098,-99.096774
+Lavaca County,Texas,TX,South,29.382578,-96.923633
+Lee County,Texas,TX,South,30.321498,-96.976823
+Leon County,Texas,TX,South,31.300493,-95.995622
+Liberty County,Texas,TX,South,30.158508,-94.844061
+Limestone County,Texas,TX,South,31.547543,-96.593623
+Lipscomb County,Texas,TX,South,36.2802,-100.272683
+Live Oak County,Texas,TX,South,28.351535,-98.126961
+Llano County,Texas,TX,South,30.707584,-98.68469
+Loving County,Texas,TX,South,31.844936,-103.561229
+Lubbock County,Texas,TX,South,33.611469,-101.819944
+Lynn County,Texas,TX,South,33.178412,-101.818493
+McCulloch County,Texas,TX,South,31.205477,-99.359856
+McLennan County,Texas,TX,South,31.549596,-97.201511
+McMullen County,Texas,TX,South,28.384922,-98.578853
+Madison County,Texas,TX,South,30.966878,-95.930372
+Marion County,Texas,TX,South,32.798182,-94.356853
+Martin County,Texas,TX,South,32.30983,-101.961836
+Mason County,Texas,TX,South,30.703916,-99.237302
+Matagorda County,Texas,TX,South,28.77476,-96.001532
+Maverick County,Texas,TX,South,28.729787,-100.316678
+Medina County,Texas,TX,South,29.353661,-99.111085
+Menard County,Texas,TX,South,30.885268,-99.858861
+Midland County,Texas,TX,South,31.814269,-102.002454
+Milam County,Texas,TX,South,30.791242,-96.984395
+Mills County,Texas,TX,South,31.494888,-98.594623
+Mitchell County,Texas,TX,South,32.304117,-100.924392
+Montague County,Texas,TX,South,33.678356,-97.725014
+Montgomery County,Texas,TX,South,30.298801,-95.50295
+Moore County,Texas,TX,South,35.835676,-101.890502
+Morris County,Texas,TX,South,33.116466,-94.731265
+Motley County,Texas,TX,South,34.057899,-100.793152
+Nacogdoches County,Texas,TX,South,31.62056,-94.62025
+Navarro County,Texas,TX,South,32.048448,-96.476909
+Newton County,Texas,TX,South,30.786718,-93.73925
+Nolan County,Texas,TX,South,32.312338,-100.418108
+Nueces County,Texas,TX,South,27.740032,-97.516214
+Ochiltree County,Texas,TX,South,36.278744,-100.815864
+Oldham County,Texas,TX,South,35.401921,-102.59762
+Orange County,Texas,TX,South,30.122323,-93.8941
+Palo Pinto County,Texas,TX,South,32.752204,-98.317967
+Panola County,Texas,TX,South,32.163978,-94.305156
+Parker County,Texas,TX,South,32.777096,-97.805905
+Parmer County,Texas,TX,South,34.532163,-102.784853
+Pecos County,Texas,TX,South,30.773298,-102.718153
+Polk County,Texas,TX,South,30.784553,-94.837338
+Potter County,Texas,TX,South,35.398675,-101.893804
+Presidio County,Texas,TX,South,30.005891,-104.261619
+Rains County,Texas,TX,South,32.870457,-95.795613
+Randall County,Texas,TX,South,34.962529,-101.895547
+Reagan County,Texas,TX,South,31.375191,-101.514395
+Real County,Texas,TX,South,29.830097,-99.812549
+Red River County,Texas,TX,South,33.619625,-95.048429
+Reeves County,Texas,TX,South,31.308366,-103.712706
+Refugio County,Texas,TX,South,28.322116,-97.162472
+Roberts County,Texas,TX,South,35.838596,-100.836682
+Robertson County,Texas,TX,South,31.025481,-96.514941
+Rockwall County,Texas,TX,South,32.899886,-96.41205
+Runnels County,Texas,TX,South,31.845119,-99.982715
+Rusk County,Texas,TX,South,32.109423,-94.756382
+Sabine County,Texas,TX,South,31.3433,-93.851913
+San Augustine County,Texas,TX,South,31.382449,-94.16318
+San Jacinto County,Texas,TX,South,30.574388,-95.163136
+San Patricio County,Texas,TX,South,28.011794,-97.517157
+San Saba County,Texas,TX,South,31.155138,-98.819292
+Schleicher County,Texas,TX,South,30.896233,-100.527216
+Scurry County,Texas,TX,South,32.744353,-100.913346
+Shackelford County,Texas,TX,South,32.74382,-99.347005
+Shelby County,Texas,TX,South,31.790139,-94.142579
+Sherman County,Texas,TX,South,36.278593,-101.899265
+Smith County,Texas,TX,South,32.375105,-95.268939
+Somervell County,Texas,TX,South,32.218071,-97.769217
+Starr County,Texas,TX,South,26.530903,-98.740235
+Stephens County,Texas,TX,South,32.738052,-98.839344
+Sterling County,Texas,TX,South,31.835773,-101.054911
+Stonewall County,Texas,TX,South,33.17958,-100.253807
+Sutton County,Texas,TX,South,30.522185,-100.513359
+Swisher County,Texas,TX,South,34.526319,-101.743865
+Tarrant County,Texas,TX,South,32.772119,-97.291224
+Taylor County,Texas,TX,South,32.297126,-99.89043
+Terrell County,Texas,TX,South,30.232343,-102.072513
+Terry County,Texas,TX,South,33.171229,-102.339284
+Throckmorton County,Texas,TX,South,33.170695,-99.205796
+Titus County,Texas,TX,South,33.214599,-94.966783
+Tom Green County,Texas,TX,South,31.398295,-100.46385
+Travis County,Texas,TX,South,30.239513,-97.69127
+Trinity County,Texas,TX,South,31.096675,-95.151687
+Tyler County,Texas,TX,South,30.769295,-94.375656
+Upshur County,Texas,TX,South,32.735349,-94.941184
+Upton County,Texas,TX,South,31.353816,-102.041546
+Uvalde County,Texas,TX,South,29.350308,-99.768427
+Val Verde County,Texas,TX,South,29.875285,-101.143324
+Van Zandt County,Texas,TX,South,32.558787,-95.836906
+Victoria County,Texas,TX,South,28.79637,-96.971198
+Walker County,Texas,TX,South,30.743163,-95.569825
+Waller County,Texas,TX,South,30.01359,-95.982149
+Ward County,Texas,TX,South,31.513069,-103.105113
+Washington County,Texas,TX,South,30.215075,-96.410272
+Webb County,Texas,TX,South,27.760799,-99.340752
+Wharton County,Texas,TX,South,29.27848,-96.229674
+Wheeler County,Texas,TX,South,35.392593,-100.253107
+Wichita County,Texas,TX,South,33.988212,-98.70801
+Wilbarger County,Texas,TX,South,34.08492,-99.24244
+Willacy County,Texas,TX,South,26.481861,-97.594731
+Williamson County,Texas,TX,South,30.649082,-97.605065
+Wilson County,Texas,TX,South,29.173883,-98.086734
+Winkler County,Texas,TX,South,31.832862,-103.054925
+Wise County,Texas,TX,South,33.219095,-97.653997
+Wood County,Texas,TX,South,32.783588,-95.382166
+Yoakum County,Texas,TX,South,33.162339,-102.832241
+Young County,Texas,TX,South,33.158778,-98.67839
+Zapata County,Texas,TX,South,26.996981,-99.182603
+Zavala County,Texas,TX,South,28.864652,-99.75983
+Beaver County,Utah,UT,West,38.357535,-113.238948
+Box Elder County,Utah,UT,West,41.622623,-113.060252
+Cache County,Utah,UT,West,41.734118,-111.745394
+Carbon County,Utah,UT,West,39.673284,-110.588484
+Daggett County,Utah,UT,West,40.890099,-109.505785
+Davis County,Utah,UT,West,41.037559,-112.201943
+Duchesne County,Utah,UT,West,40.289393,-110.429584
+Emery County,Utah,UT,West,39.009025,-110.7211
+Garfield County,Utah,UT,West,37.831663,-111.450907
+Grand County,Utah,UT,West,38.974326,-109.57345
+Iron County,Utah,UT,West,37.909304,-113.30674
+Juab County,Utah,UT,West,39.71412,-112.790471
+Kane County,Utah,UT,West,37.275089,-111.815329
+Millard County,Utah,UT,West,38.956744,-113.133092
+Morgan County,Utah,UT,West,41.091027,-111.577885
+Piute County,Utah,UT,West,38.335881,-112.129375
+Rich County,Utah,UT,West,41.627598,-111.240227
+Salt Lake County,Utah,UT,West,40.667883,-111.92424
+San Juan County,Utah,UT,West,37.602633,-109.791574
+Sanpete County,Utah,UT,West,39.373426,-111.576933
+Sevier County,Utah,UT,West,38.746824,-111.81193
+Summit County,Utah,UT,West,40.87206,-110.968486
+Tooele County,Utah,UT,West,40.467753,-113.123979
+Uintah County,Utah,UT,West,40.125887,-109.517748
+Utah County,Utah,UT,West,40.120418,-111.668563
+Wasatch County,Utah,UT,West,40.334884,-111.161568
+Washington County,Utah,UT,West,37.262531,-113.4878
+Wayne County,Utah,UT,West,38.259856,-110.990872
+Weber County,Utah,UT,West,41.270325,-111.876883
+Addison County,Vermont,VT,Northeast,44.031248,-73.141581
+Bennington County,Vermont,VT,Northeast,43.035328,-73.111496
+Caledonia County,Vermont,VT,Northeast,44.468791,-72.112168
+Chittenden County,Vermont,VT,Northeast,44.463329,-73.06941
+Essex County,Vermont,VT,Northeast,44.724021,-71.732736
+Franklin County,Vermont,VT,Northeast,44.858964,-72.909402
+Grand Isle County,Vermont,VT,Northeast,44.801787,-73.300759
+Lamoille County,Vermont,VT,Northeast,44.611192,-72.632659
+Orange County,Vermont,VT,Northeast,44.003373,-72.369579
+Orleans County,Vermont,VT,Northeast,44.828442,-72.25163
+Rutland County,Vermont,VT,Northeast,43.612399,-73.060304
+Washington County,Vermont,VT,Northeast,44.274969,-72.609444
+Windham County,Vermont,VT,Northeast,42.995304,-72.721877
+Windsor County,Vermont,VT,Northeast,43.572448,-72.598813
+Accomack County,Virginia,VA,South,37.765944,-75.757807
+Albemarle County,Virginia,VA,South,38.024184,-78.553506
+Alleghany County,Virginia,VA,South,37.787905,-80.008669
+Amelia County,Virginia,VA,South,37.331927,-77.977462
+Amherst County,Virginia,VA,South,37.629304,-79.154667
+Appomattox County,Virginia,VA,South,37.370725,-78.81094
+Arlington County,Virginia,VA,South,38.878337,-77.100703
+Augusta County,Virginia,VA,South,38.17259,-79.140975
+Bath County,Virginia,VA,South,38.068368,-79.731203
+Bedford County,Virginia,VA,South,37.312257,-79.527223
+Bland County,Virginia,VA,South,37.130612,-81.125853
+Botetourt County,Virginia,VA,South,37.565482,-79.797546
+Brunswick County,Virginia,VA,South,36.764204,-77.861483
+Buchanan County,Virginia,VA,South,37.26812,-82.038151
+Buckingham County,Virginia,VA,South,37.573928,-78.529169
+Campbell County,Virginia,VA,South,37.210152,-79.095428
+Caroline County,Virginia,VA,South,38.028033,-77.353736
+Carroll County,Virginia,VA,South,36.731963,-80.727831
+Charles City County,Virginia,VA,South,37.361054,-77.05417
+Charlotte County,Virginia,VA,South,37.009042,-78.658568
+Chesterfield County,Virginia,VA,South,37.378434,-77.585847
+Clarke County,Virginia,VA,South,39.115307,-77.990748
+Craig County,Virginia,VA,South,37.473603,-80.231051
+Culpeper County,Virginia,VA,South,38.48593,-77.956476
+Cumberland County,Virginia,VA,South,37.520189,-78.252836
+Dickenson County,Virginia,VA,South,37.136701,-82.34922
+Dinwiddie County,Virginia,VA,South,37.073498,-77.635492
+Essex County,Virginia,VA,South,37.936389,-76.933747
+Fairfax County,Virginia,VA,South,38.82952,-77.273252
+Fauquier County,Virginia,VA,South,38.744096,-77.8215
+Floyd County,Virginia,VA,South,36.931433,-80.350266
+Fluvanna County,Virginia,VA,South,37.830584,-78.283494
+Franklin County,Virginia,VA,South,36.991186,-79.882715
+Frederick County,Virginia,VA,South,39.20366,-78.263829
+Giles County,Virginia,VA,South,37.318072,-80.698321
+Gloucester County,Virginia,VA,South,37.403541,-76.523505
+Goochland County,Virginia,VA,South,37.718814,-77.917626
+Grayson County,Virginia,VA,South,36.652229,-81.215324
+Greene County,Virginia,VA,South,38.297981,-78.470163
+Greensville County,Virginia,VA,South,36.680336,-77.560277
+Halifax County,Virginia,VA,South,36.766461,-78.939614
+Hanover County,Virginia,VA,South,37.760215,-77.491317
+Henrico County,Virginia,VA,South,37.43752,-77.300333
+Henry County,Virginia,VA,South,36.620612,-79.980662
+Highland County,Virginia,VA,South,38.366243,-79.564472
+Isle of Wight County,Virginia,VA,South,36.901418,-76.707569
+James City County,Virginia,VA,South,37.324837,-76.777888
+King and Queen County,Virginia,VA,South,37.717772,-76.905581
+King George County,Virginia,VA,South,38.27718,-77.162636
+King William County,Virginia,VA,South,37.70826,-77.091054
+Lancaster County,Virginia,VA,South,37.704843,-76.412663
+Lee County,Virginia,VA,South,36.701721,-83.130112
+Loudoun County,Virginia,VA,South,39.0812,-77.638898
+Louisa County,Virginia,VA,South,37.972704,-77.959795
+Lunenburg County,Virginia,VA,South,36.945555,-78.240528
+Madison County,Virginia,VA,South,38.412059,-78.276961
+Mathews County,Virginia,VA,South,37.425348,-76.268808
+Mecklenburg County,Virginia,VA,South,36.687256,-78.368959
+Middlesex County,Virginia,VA,South,37.606975,-76.528082
+Montgomery County,Virginia,VA,South,37.175538,-80.387794
+Nelson County,Virginia,VA,South,37.789079,-78.88344
+New Kent County,Virginia,VA,South,37.51016,-76.999331
+Northampton County,Virginia,VA,South,37.302775,-75.924018
+Northumberland County,Virginia,VA,South,37.856974,-76.379687
+Nottoway County,Virginia,VA,South,37.141167,-78.053866
+Orange County,Virginia,VA,South,38.249326,-78.011092
+Page County,Virginia,VA,South,38.623209,-78.491872
+Patrick County,Virginia,VA,South,36.667138,-80.286413
+Pittsylvania County,Virginia,VA,South,36.821721,-79.398502
+Powhatan County,Virginia,VA,South,37.549404,-77.912855
+Prince Edward County,Virginia,VA,South,37.224881,-78.432957
+Prince George County,Virginia,VA,South,37.187325,-77.220993
+Prince William County,Virginia,VA,South,38.701119,-77.479579
+Pulaski County,Virginia,VA,South,37.063385,-80.713444
+Rappahannock County,Virginia,VA,South,38.684522,-78.168824
+Richmond County,Virginia,VA,South,37.942894,-76.730561
+Roanoke County,Virginia,VA,South,37.330792,-80.191237
+Rockbridge County,Virginia,VA,South,37.814517,-79.447754
+Rockingham County,Virginia,VA,South,38.507585,-78.885321
+Russell County,Virginia,VA,South,36.93342,-82.095934
+Scott County,Virginia,VA,South,36.712776,-82.613624
+Shenandoah County,Virginia,VA,South,38.856204,-78.573987
+Smyth County,Virginia,VA,South,36.842318,-81.539786
+Southampton County,Virginia,VA,South,36.720068,-77.103813
+Spotsylvania County,Virginia,VA,South,38.182431,-77.657226
+Stafford County,Virginia,VA,South,38.423084,-77.458048
+Surry County,Virginia,VA,South,37.119761,-76.880172
+Sussex County,Virginia,VA,South,36.926645,-77.259732
+Tazewell County,Virginia,VA,South,37.125395,-81.562924
+Warren County,Virginia,VA,South,38.908221,-78.207594
+Washington County,Virginia,VA,South,36.747814,-81.950322
+Westmoreland County,Virginia,VA,South,38.109311,-76.803933
+Wise County,Virginia,VA,South,36.974561,-82.62156
+Wythe County,Virginia,VA,South,36.899868,-81.08301
+York County,Virginia,VA,South,37.220914,-76.395533
+Alexandria city,Virginia,VA,South,38.819251,-77.08367
+Bristol city,Virginia,VA,South,36.616954,-82.157564
+Buena Vista city,Virginia,VA,South,37.729345,-79.358134
+Charlottesville city,Virginia,VA,South,38.037658,-78.485381
+Chesapeake city,Virginia,VA,South,36.679376,-76.301788
+Colonial Heights city,Virginia,VA,South,37.261685,-77.396804
+Covington city,Virginia,VA,South,37.78106,-79.985434
+Danville city,Virginia,VA,South,36.583334,-79.408071
+Emporia city,Virginia,VA,South,36.696182,-77.535975
+Fairfax city,Virginia,VA,South,38.853183,-77.299025
+Falls Church city,Virginia,VA,South,38.884722,-77.175603
+Franklin city,Virginia,VA,South,36.684014,-76.941396
+Fredericksburg city,Virginia,VA,South,38.299272,-77.486658
+Galax city,Virginia,VA,South,36.66564,-80.914308
+Hampton city,Virginia,VA,South,37.047961,-76.297293
+Harrisonburg city,Virginia,VA,South,38.436255,-78.873303
+Hopewell city,Virginia,VA,South,37.29101,-77.298944
+Lexington city,Virginia,VA,South,37.782332,-79.44432
+Lynchburg city,Virginia,VA,South,37.399016,-79.195458
+Manassas city,Virginia,VA,South,38.746808,-77.482633
+Manassas Park city,Virginia,VA,South,38.769398,-77.442323
+Martinsville city,Virginia,VA,South,36.683527,-79.863647
+Newport News city,Virginia,VA,South,37.076136,-76.52198
+Norfolk city,Virginia,VA,South,36.923015,-76.244641
+Norton city,Virginia,VA,South,36.931549,-82.625996
+Petersburg city,Virginia,VA,South,37.20473,-77.392368
+Poquoson city,Virginia,VA,South,37.12836,-76.303534
+Portsmouth city,Virginia,VA,South,36.859339,-76.356973
+Radford city,Virginia,VA,South,37.120119,-80.559147
+Richmond city,Virginia,VA,South,37.531399,-77.476009
+Roanoke city,Virginia,VA,South,37.278458,-79.958174
+Salem city,Virginia,VA,South,37.285333,-80.055241
+Staunton city,Virginia,VA,South,38.157978,-79.061876
+Suffolk city,Virginia,VA,South,36.697157,-76.634781
+Virginia Beach city,Virginia,VA,South,36.779525,-76.029142
+Waynesboro city,Virginia,VA,South,38.067157,-78.90142
+Williamsburg city,Virginia,VA,South,37.269481,-76.708193
+Winchester city,Virginia,VA,South,39.173869,-78.176356
+Adams County,Washington,WA,West,47.011238,-118.512861
+Asotin County,Washington,WA,West,46.181861,-117.227781
+Benton County,Washington,WA,West,46.228125,-119.516659
+Chelan County,Washington,WA,West,47.860974,-120.619041
+Clallam County,Washington,WA,West,48.110903,-123.88986
+Clark County,Washington,WA,West,45.77173,-122.485953
+Columbia County,Washington,WA,West,46.29285,-117.911634
+Cowlitz County,Washington,WA,West,46.196785,-122.67846
+Douglas County,Washington,WA,West,47.741763,-119.694622
+Ferry County,Washington,WA,West,48.473256,-118.533589
+Franklin County,Washington,WA,West,46.537502,-118.903891
+Garfield County,Washington,WA,West,46.429318,-117.536705
+Grant County,Washington,WA,West,47.213633,-119.467788
+Grays Harbor County,Washington,WA,West,47.113732,-123.826735
+Island County,Washington,WA,West,48.158554,-122.670649
+Jefferson County,Washington,WA,West,47.805708,-123.527057
+King County,Washington,WA,West,47.490552,-121.833977
+Kitsap County,Washington,WA,West,47.639595,-122.649634
+Kittitas County,Washington,WA,West,47.124441,-120.676709
+Klickitat County,Washington,WA,West,45.870446,-120.779305
+Lewis County,Washington,WA,West,46.580071,-122.377444
+Lincoln County,Washington,WA,West,47.582743,-118.417692
+Mason County,Washington,WA,West,47.350832,-123.173103
+Okanogan County,Washington,WA,West,48.548453,-119.742235
+Pacific County,Washington,WA,West,46.556587,-123.782419
+Pend Oreille County,Washington,WA,West,48.543825,-117.232191
+Pierce County,Washington,WA,West,47.051413,-122.15324
+San Juan County,Washington,WA,West,48.50719,-123.103769
+Skagit County,Washington,WA,West,48.493292,-121.81577
+Skamania County,Washington,WA,West,46.024785,-121.953232
+Snohomish County,Washington,WA,West,48.054913,-121.765038
+Spokane County,Washington,WA,West,47.620375,-117.403371
+Stevens County,Washington,WA,West,48.388728,-117.854455
+Thurston County,Washington,WA,West,46.935822,-122.830152
+Wahkiakum County,Washington,WA,West,46.294638,-123.424458
+Walla Walla County,Washington,WA,West,46.254606,-118.48037
+Whatcom County,Washington,WA,West,48.842653,-121.836432
+Whitman County,Washington,WA,West,46.905944,-117.53539
+Yakima County,Washington,WA,West,46.456558,-120.740145
+Barbour County,West Virginia,WV,South,39.139725,-79.996947
+Berkeley County,West Virginia,WV,South,39.447938,-78.037754
+Boone County,West Virginia,WV,South,38.022814,-81.713538
+Braxton County,West Virginia,WV,South,38.69933,-80.73166
+Brooke County,West Virginia,WV,South,40.272645,-80.578691
+Cabell County,West Virginia,WV,South,38.419578,-82.243397
+Calhoun County,West Virginia,WV,South,38.844159,-81.115478
+Clay County,West Virginia,WV,South,38.459826,-81.081866
+Doddridge County,West Virginia,WV,South,39.264307,-80.711498
+Fayette County,West Virginia,WV,South,38.030948,-81.08607
+Gilmer County,West Virginia,WV,South,38.915867,-80.849413
+Grant County,West Virginia,WV,South,39.105988,-79.195064
+Greenbrier County,West Virginia,WV,South,37.924418,-80.45059
+Hampshire County,West Virginia,WV,South,39.312139,-78.611989
+Hancock County,West Virginia,WV,South,40.516958,-80.570164
+Hardy County,West Virginia,WV,South,39.011361,-78.841729
+Harrison County,West Virginia,WV,South,39.279182,-80.386498
+Jackson County,West Virginia,WV,South,38.834234,-81.677717
+Jefferson County,West Virginia,WV,South,39.307398,-77.86322
+Kanawha County,West Virginia,WV,South,38.328068,-81.523516
+Lewis County,West Virginia,WV,South,38.988877,-80.495477
+Lincoln County,West Virginia,WV,South,38.17177,-82.077623
+Logan County,West Virginia,WV,South,37.830591,-81.940853
+McDowell County,West Virginia,WV,South,37.38276,-81.658204
+Marion County,West Virginia,WV,South,39.505839,-80.243402
+Marshall County,West Virginia,WV,South,39.854426,-80.671794
+Mason County,West Virginia,WV,South,38.770914,-82.029007
+Mercer County,West Virginia,WV,South,37.403448,-81.106456
+Mineral County,West Virginia,WV,South,39.404781,-78.95669
+Mingo County,West Virginia,WV,South,37.721161,-82.158989
+Monongalia County,West Virginia,WV,South,39.633645,-80.059074
+Monroe County,West Virginia,WV,South,37.554062,-80.550329
+Morgan County,West Virginia,WV,South,39.557345,-78.256517
+Nicholas County,West Virginia,WV,South,38.291432,-80.797515
+Ohio County,West Virginia,WV,South,40.100323,-80.6199
+Pendleton County,West Virginia,WV,South,38.67445,-79.340617
+Pleasants County,West Virginia,WV,South,39.368133,-81.161172
+Pocahontas County,West Virginia,WV,South,38.332606,-80.010121
+Preston County,West Virginia,WV,South,39.46903,-79.668865
+Putnam County,West Virginia,WV,South,38.510518,-81.906109
+Raleigh County,West Virginia,WV,South,37.762469,-81.264672
+Randolph County,West Virginia,WV,South,38.781095,-79.867788
+Ritchie County,West Virginia,WV,South,39.177112,-81.066317
+Roane County,West Virginia,WV,South,38.74295,-81.354494
+Summers County,West Virginia,WV,South,37.655999,-80.856325
+Taylor County,West Virginia,WV,South,39.332478,-80.046554
+Tucker County,West Virginia,WV,South,39.111175,-79.559968
+Tyler County,West Virginia,WV,South,39.465634,-80.877219
+Upshur County,West Virginia,WV,South,38.90253,-80.231606
+Wayne County,West Virginia,WV,South,38.143642,-82.422666
+Webster County,West Virginia,WV,South,38.483459,-80.449052
+Wetzel County,West Virginia,WV,South,39.59818,-80.635399
+Wirt County,West Virginia,WV,South,39.020034,-81.382975
+Wood County,West Virginia,WV,South,39.211602,-81.516234
+Wyoming County,West Virginia,WV,South,37.60366,-81.549032
+Adams County,Wisconsin,WI,Midwest,43.973757,-89.767228
+Ashland County,Wisconsin,WI,Midwest,46.544424,-90.679691
+Barron County,Wisconsin,WI,Midwest,45.437192,-91.852892
+Bayfield County,Wisconsin,WI,Midwest,46.634199,-91.177282
+Brown County,Wisconsin,WI,Midwest,44.474024,-87.99613
+Buffalo County,Wisconsin,WI,Midwest,44.385633,-91.761294
+Burnett County,Wisconsin,WI,Midwest,45.866897,-92.37573
+Calumet County,Wisconsin,WI,Midwest,44.07841,-88.212132
+Chippewa County,Wisconsin,WI,Midwest,45.069092,-91.283505
+Clark County,Wisconsin,WI,Midwest,44.739346,-90.609953
+Columbia County,Wisconsin,WI,Midwest,43.471882,-89.330472
+Crawford County,Wisconsin,WI,Midwest,43.242768,-90.935185
+Dane County,Wisconsin,WI,Midwest,43.067468,-89.417852
+Dodge County,Wisconsin,WI,Midwest,43.429628,-88.701939
+Door County,Wisconsin,WI,Midwest,45.093417,-87.048683
+Douglas County,Wisconsin,WI,Midwest,46.463218,-91.892477
+Dunn County,Wisconsin,WI,Midwest,44.947751,-91.897645
+Eau Claire County,Wisconsin,WI,Midwest,44.726355,-91.286414
+Florence County,Wisconsin,WI,Midwest,45.871828,-88.406988
+Fond du Lac County,Wisconsin,WI,Midwest,43.754722,-88.493284
+Forest County,Wisconsin,WI,Midwest,45.666881,-88.773326
+Grant County,Wisconsin,WI,Midwest,42.870028,-90.694229
+Green County,Wisconsin,WI,Midwest,42.675522,-89.605074
+Green Lake County,Wisconsin,WI,Midwest,43.780247,-88.97038
+Iowa County,Wisconsin,WI,Midwest,43.001021,-90.133691
+Iron County,Wisconsin,WI,Midwest,46.32655,-90.261298
+Jackson County,Wisconsin,WI,Midwest,44.32459,-90.79951
+Jefferson County,Wisconsin,WI,Midwest,43.013804,-88.773985
+Juneau County,Wisconsin,WI,Midwest,43.932836,-90.113984
+Kenosha County,Wisconsin,WI,Midwest,42.587526,-87.879996
+Kewaunee County,Wisconsin,WI,Midwest,44.605677,-87.448008
+La Crosse County,Wisconsin,WI,Midwest,43.908222,-91.111758
+Lafayette County,Wisconsin,WI,Midwest,42.655578,-90.130292
+Langlade County,Wisconsin,WI,Midwest,45.254863,-89.06707
+Lincoln County,Wisconsin,WI,Midwest,45.333148,-89.73224
+Manitowoc County,Wisconsin,WI,Midwest,44.156137,-87.577352
+Marathon County,Wisconsin,WI,Midwest,44.898036,-89.757823
+Marinette County,Wisconsin,WI,Midwest,45.346899,-87.991198
+Marquette County,Wisconsin,WI,Midwest,43.826053,-89.409095
+Menominee County,Wisconsin,WI,Midwest,44.991304,-88.669251
+Milwaukee County,Wisconsin,WI,Midwest,42.912643,-87.862312
+Monroe County,Wisconsin,WI,Midwest,43.945175,-90.619969
+Oconto County,Wisconsin,WI,Midwest,44.996575,-88.206516
+Oneida County,Wisconsin,WI,Midwest,45.716176,-89.534533
+Outagamie County,Wisconsin,WI,Midwest,44.418226,-88.464988
+Ozaukee County,Wisconsin,WI,Midwest,43.501807,-87.847551
+Pepin County,Wisconsin,WI,Midwest,44.627436,-91.83489
+Pierce County,Wisconsin,WI,Midwest,44.725336,-92.426279
+Polk County,Wisconsin,WI,Midwest,45.462041,-92.447066
+Portage County,Wisconsin,WI,Midwest,44.476246,-89.49807
+Price County,Wisconsin,WI,Midwest,45.679072,-90.35965
+Racine County,Wisconsin,WI,Midwest,42.780392,-87.771599
+Richland County,Wisconsin,WI,Midwest,43.376199,-90.435693
+Rock County,Wisconsin,WI,Midwest,42.66988,-89.075284
+Rusk County,Wisconsin,WI,Midwest,45.472734,-91.136745
+St. Croix County,Wisconsin,WI,Midwest,45.028959,-92.447284
+Sauk County,Wisconsin,WI,Midwest,43.428001,-89.943318
+Sawyer County,Wisconsin,WI,Midwest,45.864999,-91.147063
+Shawano County,Wisconsin,WI,Midwest,44.789641,-88.755813
+Sheboygan County,Wisconsin,WI,Midwest,43.738713,-87.731531
+Taylor County,Wisconsin,WI,Midwest,45.211656,-90.504853
+Trempealeau County,Wisconsin,WI,Midwest,44.30305,-91.358867
+Vernon County,Wisconsin,WI,Midwest,43.599366,-90.821983
+Vilas County,Wisconsin,WI,Midwest,46.049848,-89.501254
+Walworth County,Wisconsin,WI,Midwest,42.66811,-88.541731
+Washburn County,Wisconsin,WI,Midwest,45.892489,-91.796422
+Washington County,Wisconsin,WI,Midwest,43.391156,-88.232917
+Waukesha County,Wisconsin,WI,Midwest,43.018368,-88.30424
+Waupaca County,Wisconsin,WI,Midwest,44.478004,-88.967005
+Waushara County,Wisconsin,WI,Midwest,44.112823,-89.239786
+Winnebago County,Wisconsin,WI,Midwest,44.085707,-88.668149
+Wood County,Wisconsin,WI,Midwest,44.461413,-90.038825
+Albany County,Wyoming,WY,West,41.665514,-105.721883
+Big Horn County,Wyoming,WY,West,44.525117,-107.994848
+Campbell County,Wyoming,WY,West,44.191999,-105.517014
+Carbon County,Wyoming,WY,West,41.70359,-106.933153
+Converse County,Wyoming,WY,West,42.984623,-105.524752
+Crook County,Wyoming,WY,West,44.589266,-104.567298
+Fremont County,Wyoming,WY,West,43.054831,-108.608935
+Goshen County,Wyoming,WY,West,42.089455,-104.35354
+Hot Springs County,Wyoming,WY,West,43.720209,-108.435076
+Johnson County,Wyoming,WY,West,44.044048,-106.588541
+Laramie County,Wyoming,WY,West,41.29283,-104.660395
+Lincoln County,Wyoming,WY,West,42.229993,-110.682961
+Natrona County,Wyoming,WY,West,42.977645,-106.768219
+Niobrara County,Wyoming,WY,West,43.062159,-104.468373
+Park County,Wyoming,WY,West,44.492387,-109.593597
+Platte County,Wyoming,WY,West,42.131593,-104.953963
+Sheridan County,Wyoming,WY,West,44.781369,-106.881211
+Sublette County,Wyoming,WY,West,42.767928,-109.91617
+Sweetwater County,Wyoming,WY,West,41.660328,-108.875677
+Teton County,Wyoming,WY,West,44.048662,-110.426087
+Uinta County,Wyoming,WY,West,41.284726,-110.558947
+Washakie County,Wyoming,WY,West,43.878831,-107.669052
+Weston County,Wyoming,WY,West,43.846213,-104.57002
