@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: mireye-risk-app
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.10
+      - key: MIREYE_BEARER_TOKEN
+        sync: false
+      - key: GFW_API_KEY
+        sync: false
