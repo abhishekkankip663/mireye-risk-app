@@ -136,6 +136,21 @@ class TestRunConcurrent:
 
 
 class TestMain:
+    def test_default_top_n_keeps_every_successful_county(self, counties_csv, patch_fallbacks, tmp_path):
+        # The production workflow calls main() without --top at all, relying
+        # on this default. Must keep every county, not silently cap them --
+        # otherwise state/region filters on /api/rankings can go empty for
+        # states whose worst county didn't crack some arbitrary top N.
+        out_file = tmp_path / "out.json"
+
+        with patch.object(main, "fetch_mireye_hazard_data", return_value={"fields": {}}), \
+             patch.object(main, "score_erosion_risk", return_value={"score": 1, "level": "low", "factors": [], "rusle_lite": None}):
+            pr.main(counties_csv, out_file, top_n=pr.DEFAULT_TOP_N, workers=5)
+
+        payload = json.loads(out_file.read_text())
+        assert payload["county_count"] == 10
+        assert "all successfully-computed counties" in payload["method"]
+
     def test_keeps_only_top_n_sorted_by_score(self, counties_csv, patch_fallbacks, tmp_path):
         out_file = tmp_path / "out.json"
 

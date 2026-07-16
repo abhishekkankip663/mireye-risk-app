@@ -35,7 +35,7 @@ jobs:
         env:
           MIREYE_BEARER_TOKEN: ${{ secrets.MIREYE_BEARER_TOKEN }}
           GFW_API_KEY: ${{ secrets.GFW_API_KEY }}
-        run: python3 precompute_rankings.py --counties-file counties_full.csv --out rankings_cache.json --top 100 --workers 10
+        run: python3 precompute_rankings.py --counties-file counties_full.csv --out rankings_cache.json --workers 10
 
       - name: Commit and push if changed
         run: |

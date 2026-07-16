@@ -16,24 +16,31 @@ list of counties and caches the results to rankings_cache.json, which
 periodically (e.g. a weekly cron job) to keep the cache fresh — it is
 NOT invoked automatically by the web app.
 
-ONLY THE TOP N SURVIVE IN THE OUTPUT, BUT EVERY COUNTY STILL GETS CHECKED
-----------------------------------------------------------------------------
-The final cache keeps only the worst --top counties (default 100), but
-there's no way to know in advance which ones those are — some pass over
-every county is unavoidable to find them correctly. An earlier version of
-this script tried to dodge that by screening all counties with a cheap
-1-call pass and only fully computing a smaller candidate pool. That
-turned out not to help: Mireye's own /v1/fetch call is the dominant cost
-(~5s) regardless of how many fallback calls follow it, so the "cheap"
-screening pass took about as long as just computing everything properly
-would have — while also being less accurate (a county whose risk-relevant
-fields are null in Mireye's raw data, recoverable only via a fallback,
-would score artificially low in a screening-only pass).
+EVERY SUCCESSFULLY-COMPUTED COUNTY IS KEPT BY DEFAULT
+--------------------------------------------------------
+By default the cache holds every county that computed successfully (up to
+all 3,144) — not just a pre-selected top N. That matters for filtering:
+/api/rankings lets you filter by state or region, and if the cache only
+held a nationwide top 100, a state whose worst county still didn't crack
+the *national* top 100 would show zero results for that filter, even
+though it has real data. --top N is still available if you want a
+smaller cache for some other reason, but the default is "keep everything
+that succeeded."
+
+An earlier version of this script tried to speed things up by screening
+all counties with a cheap 1-call pass and only fully computing a smaller
+candidate pool. That turned out not to help: Mireye's own /v1/fetch call
+is the dominant cost (~5s) regardless of how many fallback calls follow
+it, so the "cheap" screening pass took about as long as just computing
+everything properly would have — while also being less accurate (a county
+whose risk-relevant fields are null in Mireye's raw data, recoverable
+only via a fallback, would score artificially low in a screening-only
+pass).
 
 The actual fix for "3,144 slow sequential network calls" is concurrency,
-not trimming which calls happen — see WORKERS below. This script now runs
-the full accurate pipeline (all fallbacks + GFW) on every county, just
-with many requests in flight at once, and keeps the top N at the end.
+not trimming which calls happen or which counties get kept — see WORKERS
+below. This script runs the full accurate pipeline (all fallbacks + GFW)
+on every county, with many requests in flight at once.
 
 CONCURRENCY (WORKERS)
 -----------------------
@@ -60,7 +67,10 @@ USAGE
 ------
     cd backend
     python3 precompute_rankings.py [--counties-file counties_full.csv] [--out rankings_cache.json] \\
-        [--top 100] [--workers 10]
+        [--top N] [--workers 10]
+
+    --top is optional and unset by default (keeps every successfully
+    computed county). Pass e.g. --top 100 to cap the output instead.
 
 Requires the same environment as running the server itself: a Mireye
 token (MIREYE_BEARER_TOKEN or ~/.config/mireye-mcp/credentials.json) and
@@ -82,7 +92,7 @@ import main as app  # reuse the exact same fetch/fallback/scoring logic as /api/
 
 DEFAULT_COUNTIES_FILE = Path(__file__).parent / "counties_full.csv"
 DEFAULT_OUT_FILE = Path(__file__).parent / "rankings_cache.json"
-DEFAULT_TOP_N = 100
+DEFAULT_TOP_N = None  # None = keep every successfully-computed county
 DEFAULT_WORKERS = 10  # concurrent counties; each county's own calls are still sequential
 
 _print_lock = threading.Lock()
@@ -187,9 +197,10 @@ def main(counties_file: Path, out_file: Path, top_n: int, workers: int) -> None:
             print(f"  - {err}", file=sys.stderr)
         sys.exit(1)
 
+    kept_desc = f"top {len(top_results)} by score" if top_n is not None else "all successfully-computed counties"
     payload = {
         "computed_at": datetime.now(timezone.utc).isoformat(),
-        "method": f"full pipeline on all {len(counties)} counties, kept the top {len(top_results)} by score",
+        "method": f"full pipeline on all {len(counties)} counties, kept {kept_desc}",
         "counties_computed": len(counties),
         "county_count": len(top_results),
         "failed_count": len(failed),
@@ -198,7 +209,7 @@ def main(counties_file: Path, out_file: Path, top_n: int, workers: int) -> None:
     }
     out_file.write_text(json.dumps(payload, indent=2))
     print(
-        f"Wrote top {len(top_results)} of {len(counties)} computed counties "
+        f"Wrote {len(top_results)} of {len(counties)} computed counties ({kept_desc}) "
         f"({len(failed)} failed) to {out_file}",
         file=sys.stderr,
     )
@@ -209,7 +220,7 @@ if __name__ == "__main__":
     parser.add_argument("--counties-file", type=Path, default=DEFAULT_COUNTIES_FILE)
     parser.add_argument("--out", type=Path, default=DEFAULT_OUT_FILE)
     parser.add_argument("--top", type=int, default=DEFAULT_TOP_N,
-                         help="how many counties to keep in the final output")
+                         help="cap the output to this many counties (default: keep all that succeeded)")
     parser.add_argument("--workers", type=int, default=DEFAULT_WORKERS,
                          help="how many counties to process concurrently")
     args = parser.parse_args()
