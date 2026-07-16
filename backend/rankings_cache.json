@@ -1,8 +1,1489 @@
 {
-  "computed_at": "2026-07-16T00:21:12.785732+00:00",
-  "method": "full pipeline on all 3144 counties, kept the top 0 by score",
+  "computed_at": "2026-07-15T07:18:18.785266+00:00",
+  "method": "full pipeline on all 3144 counties, kept the top 100 by score",
   "counties_computed": 3144,
-  "county_count": 0,
-  "failed_count": 3144,
-  "results": []
+  "county_count": 100,
+  "failed_count": 1,
+  "results": [
+    {
+      "county": "Lake County",
+      "state": "California",
+      "state_abbr": "CA",
+      "region": "West",
+      "lat": 39.108009,
+      "lng": -122.745217,
+      "score": 8,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Franklin County",
+      "state": "Arkansas",
+      "state_abbr": "AR",
+      "region": "South",
+      "lat": 35.508558,
+      "lng": -93.887665,
+      "score": 7,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Napa County",
+      "state": "California",
+      "state_abbr": "CA",
+      "region": "West",
+      "lat": 38.5071,
+      "lng": -122.325904,
+      "score": 7,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Recent deforestation (GFW, year-level)"
+      ]
+    },
+    {
+      "county": "Placer County",
+      "state": "California",
+      "state_abbr": "CA",
+      "region": "West",
+      "lat": 39.062032,
+      "lng": -120.722718,
+      "score": 7,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Recent deforestation (GFW, year-level)"
+      ]
+    },
+    {
+      "county": "Floyd County",
+      "state": "Indiana",
+      "state_abbr": "IN",
+      "region": "Midwest",
+      "lat": 38.318081,
+      "lng": -85.911847,
+      "score": 7,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Recent deforestation (GFW, year-level)"
+      ]
+    },
+    {
+      "county": "Decatur County",
+      "state": "Iowa",
+      "state_abbr": "IA",
+      "region": "Midwest",
+      "lat": 40.736379,
+      "lng": -93.78458,
+      "score": 7,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Recent deforestation (GFW, year-level)"
+      ]
+    },
+    {
+      "county": "Laurel County",
+      "state": "Kentucky",
+      "state_abbr": "KY",
+      "region": "South",
+      "lat": 37.113268,
+      "lng": -84.119395,
+      "score": 7,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Franklin County",
+      "state": "Mississippi",
+      "state_abbr": "MS",
+      "region": "South",
+      "lat": 31.477773,
+      "lng": -90.895457,
+      "score": 7,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Recent deforestation (GFW, year-level)"
+      ]
+    },
+    {
+      "county": "Mora County",
+      "state": "New Mexico",
+      "state_abbr": "NM",
+      "region": "West",
+      "lat": 35.982841,
+      "lng": -104.921898,
+      "score": 7,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Clackamas County",
+      "state": "Oregon",
+      "state_abbr": "OR",
+      "region": "West",
+      "lat": 45.160493,
+      "lng": -122.195127,
+      "score": 7,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Recent deforestation (GFW, year-level)"
+      ]
+    },
+    {
+      "county": "Benton County",
+      "state": "Oregon",
+      "state_abbr": "OR",
+      "region": "West",
+      "lat": 44.493882,
+      "lng": -123.424664,
+      "score": 7,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Recent deforestation (GFW, year-level)"
+      ]
+    },
+    {
+      "county": "Anderson County",
+      "state": "Tennessee",
+      "state_abbr": "TN",
+      "region": "South",
+      "lat": 36.116731,
+      "lng": -84.195418,
+      "score": 7,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Recent deforestation (GFW, year-level)"
+      ]
+    },
+    {
+      "county": "Grays Harbor County",
+      "state": "Washington",
+      "state_abbr": "WA",
+      "region": "West",
+      "lat": 47.113732,
+      "lng": -123.826735,
+      "score": 7,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Recent deforestation (GFW, year-level)"
+      ]
+    },
+    {
+      "county": "Pierce County",
+      "state": "Washington",
+      "state_abbr": "WA",
+      "region": "West",
+      "lat": 47.051413,
+      "lng": -122.15324,
+      "score": 7,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Recent deforestation (GFW, year-level)"
+      ]
+    },
+    {
+      "county": "Pima County",
+      "state": "Arizona",
+      "state_abbr": "AZ",
+      "region": "West",
+      "lat": 32.128038,
+      "lng": -111.783657,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Del Norte County",
+      "state": "California",
+      "state_abbr": "CA",
+      "region": "West",
+      "lat": 41.749903,
+      "lng": -123.980998,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Humboldt County",
+      "state": "California",
+      "state_abbr": "CA",
+      "region": "West",
+      "lat": 40.706655,
+      "lng": -123.926176,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Inyo County",
+      "state": "California",
+      "state_abbr": "CA",
+      "region": "West",
+      "lat": 36.56216,
+      "lng": -117.404209,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "San Diego County",
+      "state": "California",
+      "state_abbr": "CA",
+      "region": "West",
+      "lat": 33.023604,
+      "lng": -116.776117,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "San Luis Obispo County",
+      "state": "California",
+      "state_abbr": "CA",
+      "region": "West",
+      "lat": 35.388189,
+      "lng": -120.448897,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "San Benito County",
+      "state": "California",
+      "state_abbr": "CA",
+      "region": "West",
+      "lat": 36.611651,
+      "lng": -121.085811,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "La Plata County",
+      "state": "Colorado",
+      "state_abbr": "CO",
+      "region": "West",
+      "lat": 37.287367,
+      "lng": -107.839718,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Moffat County",
+      "state": "Colorado",
+      "state_abbr": "CO",
+      "region": "West",
+      "lat": 40.610864,
+      "lng": -108.217154,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Rio Blanco County",
+      "state": "Colorado",
+      "state_abbr": "CO",
+      "region": "West",
+      "lat": 39.972622,
+      "lng": -108.200716,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Morgan County",
+      "state": "Indiana",
+      "state_abbr": "IN",
+      "region": "Midwest",
+      "lat": 39.482646,
+      "lng": -86.447457,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Recent deforestation (GFW, year-level)"
+      ]
+    },
+    {
+      "county": "Barren County",
+      "state": "Kentucky",
+      "state_abbr": "KY",
+      "region": "South",
+      "lat": 36.962805,
+      "lng": -85.932108,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Recent deforestation (GFW, year-level)"
+      ]
+    },
+    {
+      "county": "Boyd County",
+      "state": "Kentucky",
+      "state_abbr": "KY",
+      "region": "South",
+      "lat": 38.360003,
+      "lng": -82.681406,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Campbell County",
+      "state": "Kentucky",
+      "state_abbr": "KY",
+      "region": "South",
+      "lat": 38.946981,
+      "lng": -84.379583,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Grant County",
+      "state": "Kentucky",
+      "state_abbr": "KY",
+      "region": "South",
+      "lat": 38.649167,
+      "lng": -84.625924,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Owen County",
+      "state": "Kentucky",
+      "state_abbr": "KY",
+      "region": "South",
+      "lat": 38.499395,
+      "lng": -84.84159,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Adams County",
+      "state": "Mississippi",
+      "state_abbr": "MS",
+      "region": "South",
+      "lat": 31.486224,
+      "lng": -91.351797,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Recent deforestation (GFW, year-level)"
+      ]
+    },
+    {
+      "county": "Kemper County",
+      "state": "Mississippi",
+      "state_abbr": "MS",
+      "region": "South",
+      "lat": 32.750136,
+      "lng": -88.625631,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Recent deforestation (GFW, year-level)"
+      ]
+    },
+    {
+      "county": "Lafayette County",
+      "state": "Mississippi",
+      "state_abbr": "MS",
+      "region": "South",
+      "lat": 34.353078,
+      "lng": -89.485385,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Recent deforestation (GFW, year-level)"
+      ]
+    },
+    {
+      "county": "Powder River County",
+      "state": "Montana",
+      "state_abbr": "MT",
+      "region": "West",
+      "lat": 45.408926,
+      "lng": -105.555344,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Rosebud County",
+      "state": "Montana",
+      "state_abbr": "MT",
+      "region": "West",
+      "lat": 46.173206,
+      "lng": -106.666792,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Treasure County",
+      "state": "Montana",
+      "state_abbr": "MT",
+      "region": "West",
+      "lat": 46.227113,
+      "lng": -107.275296,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Knox County",
+      "state": "Nebraska",
+      "state_abbr": "NE",
+      "region": "Midwest",
+      "lat": 42.634404,
+      "lng": -97.891349,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "FEMA flood zone"
+      ]
+    },
+    {
+      "county": "Churchill County",
+      "state": "Nevada",
+      "state_abbr": "NV",
+      "region": "West",
+      "lat": 39.53771,
+      "lng": -118.264166,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Douglas County",
+      "state": "Nevada",
+      "state_abbr": "NV",
+      "region": "West",
+      "lat": 38.905129,
+      "lng": -119.609019,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Mineral County",
+      "state": "Nevada",
+      "state_abbr": "NV",
+      "region": "West",
+      "lat": 38.516647,
+      "lng": -118.416279,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "White Pine County",
+      "state": "Nevada",
+      "state_abbr": "NV",
+      "region": "West",
+      "lat": 39.418176,
+      "lng": -114.900565,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Merrimack County",
+      "state": "New Hampshire",
+      "state_abbr": "NH",
+      "region": "Northeast",
+      "lat": 43.299579,
+      "lng": -71.680041,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index",
+        "Landslide susceptibility",
+        "Soil ponding frequency"
+      ]
+    },
+    {
+      "county": "Otero County",
+      "state": "New Mexico",
+      "state_abbr": "NM",
+      "region": "West",
+      "lat": 32.615599,
+      "lng": -105.751308,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Taos County",
+      "state": "New Mexico",
+      "state_abbr": "NM",
+      "region": "West",
+      "lat": 36.577183,
+      "lng": -105.638878,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Recent deforestation (GFW, year-level)"
+      ]
+    },
+    {
+      "county": "Rensselaer County",
+      "state": "New York",
+      "state_abbr": "NY",
+      "region": "Northeast",
+      "lat": 42.710421,
+      "lng": -73.513845,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "Landslide susceptibility",
+        "FEMA flood zone",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Cabarrus County",
+      "state": "North Carolina",
+      "state_abbr": "NC",
+      "region": "South",
+      "lat": 35.388346,
+      "lng": -80.552728,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Recent deforestation (GFW, year-level)"
+      ]
+    },
+    {
+      "county": "Wilkes County",
+      "state": "North Carolina",
+      "state_abbr": "NC",
+      "region": "South",
+      "lat": 36.208883,
+      "lng": -81.166095,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Recent deforestation (GFW, year-level)"
+      ]
+    },
+    {
+      "county": "Noble County",
+      "state": "Ohio",
+      "state_abbr": "OH",
+      "region": "Midwest",
+      "lat": 39.767232,
+      "lng": -81.452493,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Crook County",
+      "state": "Oregon",
+      "state_abbr": "OR",
+      "region": "West",
+      "lat": 44.163054,
+      "lng": -120.371585,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Grant County",
+      "state": "Oregon",
+      "state_abbr": "OR",
+      "region": "West",
+      "lat": 44.496326,
+      "lng": -119.014057,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Douglas County",
+      "state": "Oregon",
+      "state_abbr": "OR",
+      "region": "West",
+      "lat": 43.286328,
+      "lng": -123.154476,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Jackson County",
+      "state": "Oregon",
+      "state_abbr": "OR",
+      "region": "West",
+      "lat": 42.411621,
+      "lng": -122.675611,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Morrow County",
+      "state": "Oregon",
+      "state_abbr": "OR",
+      "region": "West",
+      "lat": 45.425496,
+      "lng": -119.602311,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Yamhill County",
+      "state": "Oregon",
+      "state_abbr": "OR",
+      "region": "West",
+      "lat": 45.247827,
+      "lng": -123.316399,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Cannon County",
+      "state": "Tennessee",
+      "state_abbr": "TN",
+      "region": "South",
+      "lat": 35.808394,
+      "lng": -86.062404,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Lauderdale County",
+      "state": "Tennessee",
+      "state_abbr": "TN",
+      "region": "South",
+      "lat": 35.762951,
+      "lng": -89.627732,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Montgomery County",
+      "state": "Tennessee",
+      "state_abbr": "TN",
+      "region": "South",
+      "lat": 36.500354,
+      "lng": -87.380887,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "FEMA flood zone"
+      ]
+    },
+    {
+      "county": "Monroe County",
+      "state": "Tennessee",
+      "state_abbr": "TN",
+      "region": "South",
+      "lat": 35.447818,
+      "lng": -84.249705,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Recent deforestation (GFW, year-level)"
+      ]
+    },
+    {
+      "county": "Scott County",
+      "state": "Tennessee",
+      "state_abbr": "TN",
+      "region": "South",
+      "lat": 36.430592,
+      "lng": -84.504091,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Recent deforestation (GFW, year-level)"
+      ]
+    },
+    {
+      "county": "Wilson County",
+      "state": "Tennessee",
+      "state_abbr": "TN",
+      "region": "South",
+      "lat": 36.149431,
+      "lng": -86.291181,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Emery County",
+      "state": "Utah",
+      "state_abbr": "UT",
+      "region": "West",
+      "lat": 39.009025,
+      "lng": -110.7211,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Kane County",
+      "state": "Utah",
+      "state_abbr": "UT",
+      "region": "West",
+      "lat": 37.275089,
+      "lng": -111.815329,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "San Juan County",
+      "state": "Utah",
+      "state_abbr": "UT",
+      "region": "West",
+      "lat": 37.602633,
+      "lng": -109.791574,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Roanoke County",
+      "state": "Virginia",
+      "state_abbr": "VA",
+      "region": "South",
+      "lat": 37.330792,
+      "lng": -80.191237,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Park County",
+      "state": "Wyoming",
+      "state_abbr": "WY",
+      "region": "West",
+      "lat": 44.492387,
+      "lng": -109.593597,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Sweetwater County",
+      "state": "Wyoming",
+      "state_abbr": "WY",
+      "region": "West",
+      "lat": 41.660328,
+      "lng": -108.875677,
+      "score": 6,
+      "level": "high",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Choctaw County",
+      "state": "Alabama",
+      "state_abbr": "AL",
+      "region": "South",
+      "lat": 31.990954,
+      "lng": -88.248889,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Madison County",
+      "state": "Alabama",
+      "state_abbr": "AL",
+      "region": "South",
+      "lat": 34.764238,
+      "lng": -86.55108,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Winston County",
+      "state": "Alabama",
+      "state_abbr": "AL",
+      "region": "South",
+      "lat": 34.154566,
+      "lng": -87.365346,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Gila County",
+      "state": "Arizona",
+      "state_abbr": "AZ",
+      "region": "West",
+      "lat": 33.789618,
+      "lng": -110.81187,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility"
+      ]
+    },
+    {
+      "county": "La Paz County",
+      "state": "Arizona",
+      "state_abbr": "AZ",
+      "region": "West",
+      "lat": 33.72761,
+      "lng": -114.038806,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility"
+      ]
+    },
+    {
+      "county": "Greenlee County",
+      "state": "Arizona",
+      "state_abbr": "AZ",
+      "region": "West",
+      "lat": 33.238872,
+      "lng": -109.242323,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility"
+      ]
+    },
+    {
+      "county": "Mohave County",
+      "state": "Arizona",
+      "state_abbr": "AZ",
+      "region": "West",
+      "lat": 35.717705,
+      "lng": -113.749689,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Santa Cruz County",
+      "state": "Arizona",
+      "state_abbr": "AZ",
+      "region": "West",
+      "lat": 31.525733,
+      "lng": -110.845228,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Johnson County",
+      "state": "Arkansas",
+      "state_abbr": "AR",
+      "region": "South",
+      "lat": 35.573359,
+      "lng": -93.466322,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Pope County",
+      "state": "Arkansas",
+      "state_abbr": "AR",
+      "region": "South",
+      "lat": 35.456557,
+      "lng": -93.026818,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Alameda County",
+      "state": "California",
+      "state_abbr": "CA",
+      "region": "West",
+      "lat": 37.647139,
+      "lng": -121.912488,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility"
+      ]
+    },
+    {
+      "county": "Butte County",
+      "state": "California",
+      "state_abbr": "CA",
+      "region": "West",
+      "lat": 39.665336,
+      "lng": -121.603209,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Calaveras County",
+      "state": "California",
+      "state_abbr": "CA",
+      "region": "West",
+      "lat": 38.191068,
+      "lng": -120.554107,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility"
+      ]
+    },
+    {
+      "county": "El Dorado County",
+      "state": "California",
+      "state_abbr": "CA",
+      "region": "West",
+      "lat": 38.785612,
+      "lng": -120.534225,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility"
+      ]
+    },
+    {
+      "county": "Kern County",
+      "state": "California",
+      "state_abbr": "CA",
+      "region": "West",
+      "lat": 35.346629,
+      "lng": -118.729506,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility"
+      ]
+    },
+    {
+      "county": "Los Angeles County",
+      "state": "California",
+      "state_abbr": "CA",
+      "region": "West",
+      "lat": 34.196398,
+      "lng": -118.261862,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility"
+      ]
+    },
+    {
+      "county": "Mariposa County",
+      "state": "California",
+      "state_abbr": "CA",
+      "region": "West",
+      "lat": 37.574343,
+      "lng": -119.911721,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "San Mateo County",
+      "state": "California",
+      "state_abbr": "CA",
+      "region": "West",
+      "lat": 37.414672,
+      "lng": -122.371546,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility"
+      ]
+    },
+    {
+      "county": "Santa Clara County",
+      "state": "California",
+      "state_abbr": "CA",
+      "region": "West",
+      "lat": 37.221614,
+      "lng": -121.68954,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility"
+      ]
+    },
+    {
+      "county": "Santa Barbara County",
+      "state": "California",
+      "state_abbr": "CA",
+      "region": "West",
+      "lat": 34.536677,
+      "lng": -120.038364,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Shasta County",
+      "state": "California",
+      "state_abbr": "CA",
+      "region": "West",
+      "lat": 40.760514,
+      "lng": -122.043556,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility"
+      ]
+    },
+    {
+      "county": "Yuba County",
+      "state": "California",
+      "state_abbr": "CA",
+      "region": "West",
+      "lat": 39.27013,
+      "lng": -121.344259,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility"
+      ]
+    },
+    {
+      "county": "Tuolumne County",
+      "state": "California",
+      "state_abbr": "CA",
+      "region": "West",
+      "lat": 38.021434,
+      "lng": -119.964733,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Archuleta County",
+      "state": "Colorado",
+      "state_abbr": "CO",
+      "region": "West",
+      "lat": 37.202395,
+      "lng": -107.050863,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility"
+      ]
+    },
+    {
+      "county": "Ventura County",
+      "state": "California",
+      "state_abbr": "CA",
+      "region": "West",
+      "lat": 34.358748,
+      "lng": -119.133145,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility"
+      ]
+    },
+    {
+      "county": "Boulder County",
+      "state": "Colorado",
+      "state_abbr": "CO",
+      "region": "West",
+      "lat": 40.094966,
+      "lng": -105.397702,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Chaffee County",
+      "state": "Colorado",
+      "state_abbr": "CO",
+      "region": "West",
+      "lat": 38.734599,
+      "lng": -106.300025,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility"
+      ]
+    },
+    {
+      "county": "Delta County",
+      "state": "Colorado",
+      "state_abbr": "CO",
+      "region": "West",
+      "lat": 38.861423,
+      "lng": -107.865043,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility"
+      ]
+    },
+    {
+      "county": "Fremont County",
+      "state": "Colorado",
+      "state_abbr": "CO",
+      "region": "West",
+      "lat": 38.45517,
+      "lng": -105.424958,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Gunnison County",
+      "state": "Colorado",
+      "state_abbr": "CO",
+      "region": "West",
+      "lat": 38.670499,
+      "lng": -107.05688,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility"
+      ]
+    },
+    {
+      "county": "Jefferson County",
+      "state": "Colorado",
+      "state_abbr": "CO",
+      "region": "West",
+      "lat": 39.579511,
+      "lng": -105.245462,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility",
+        "Soil hydrologic group"
+      ]
+    },
+    {
+      "county": "Mineral County",
+      "state": "Colorado",
+      "state_abbr": "CO",
+      "region": "West",
+      "lat": 37.549067,
+      "lng": -107.003236,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility"
+      ]
+    },
+    {
+      "county": "Pitkin County",
+      "state": "Colorado",
+      "state_abbr": "CO",
+      "region": "West",
+      "lat": 39.217541,
+      "lng": -106.916162,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility"
+      ]
+    },
+    {
+      "county": "San Miguel County",
+      "state": "Colorado",
+      "state_abbr": "CO",
+      "region": "West",
+      "lat": 38.009319,
+      "lng": -108.427263,
+      "score": 5,
+      "level": "moderate",
+      "top_factors": [
+        "RUSLE-lite erosion index (K\u00d7LS\u00d7C)",
+        "Landslide susceptibility"
+      ]
+    }
+  ]
 }
