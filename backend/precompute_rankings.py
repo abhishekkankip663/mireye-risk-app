@@ -155,6 +155,9 @@ def run_concurrent(counties: list, workers: int) -> list:
     return results
 
 
+MAX_FAILURE_RATE = 0.2  # refuse to publish if more than 20% of counties failed
+
+
 def main(counties_file: Path, out_file: Path, top_n: int, workers: int) -> None:
     counties = load_counties(counties_file)
     print(f"Computing risk for {len(counties)} counties with {workers} concurrent workers...", file=sys.stderr)
@@ -165,12 +168,32 @@ def main(counties_file: Path, out_file: Path, top_n: int, workers: int) -> None:
     failed = [r for r in results if "score" not in r]
     top_results = ranked[:top_n]
 
+    failure_rate = len(failed) / len(counties) if counties else 0
+    if failure_rate > MAX_FAILURE_RATE:
+        # A high failure rate almost always means something systemic broke
+        # (bad/missing credentials, an API outage) rather than normal
+        # per-county flakiness. Refuse to overwrite a good cache with a
+        # mostly-empty one -- fail loudly instead, so CI shows red and a
+        # human notices, rather than silently publishing garbage.
+        sample_errors = list({r.get("error", "") for r in failed if r.get("error")})[:5]
+        print(
+            f"ABORTING: {len(failed)}/{len(counties)} counties failed "
+            f"({failure_rate:.0%}, over the {MAX_FAILURE_RATE:.0%} threshold). "
+            f"Not writing {out_file} -- leaving any existing cache untouched.",
+            file=sys.stderr,
+        )
+        print("Sample errors:", file=sys.stderr)
+        for err in sample_errors:
+            print(f"  - {err}", file=sys.stderr)
+        sys.exit(1)
+
     payload = {
         "computed_at": datetime.now(timezone.utc).isoformat(),
         "method": f"full pipeline on all {len(counties)} counties, kept the top {len(top_results)} by score",
         "counties_computed": len(counties),
         "county_count": len(top_results),
         "failed_count": len(failed),
+        "failed_sample_errors": list({r.get("error", "") for r in failed if r.get("error")})[:5],
         "results": top_results,
     }
     out_file.write_text(json.dumps(payload, indent=2))

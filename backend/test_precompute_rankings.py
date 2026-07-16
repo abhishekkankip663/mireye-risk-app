@@ -154,16 +154,39 @@ class TestMain:
         assert "computed_at" in payload
         assert payload["counties_computed"] == 10
 
-    def test_failed_counties_counted_but_excluded_from_results(self, counties_csv, tmp_path):
+    def test_high_failure_rate_aborts_without_writing(self, counties_csv, tmp_path):
+        # Regression test: a systemic failure (e.g. a missing/bad credential)
+        # must not overwrite a good cache with an empty/mostly-empty one.
+        # Real incident: every county failed instantly in production because
+        # a GitHub Actions secret wasn't set, and the script silently wrote
+        # (and committed) a 0-county result over real data.
+        out_file = tmp_path / "out.json"
+        out_file.write_text('{"sentinel": "pre-existing cache, must survive"}')
+
+        with patch.object(main, "fetch_mireye_hazard_data", side_effect=RuntimeError("No Mireye token found.")):
+            with pytest.raises(SystemExit) as exc_info:
+                pr.main(counties_csv, out_file, top_n=5, workers=5)
+
+        assert exc_info.value.code != 0
+        # must not have touched the existing file
+        assert json.loads(out_file.read_text()) == {"sentinel": "pre-existing cache, must survive"}
+
+    def test_failure_rate_under_threshold_still_writes(self, counties_csv, patch_fallbacks, tmp_path):
         out_file = tmp_path / "out.json"
 
-        with patch.object(main, "fetch_mireye_hazard_data", side_effect=RuntimeError("down")):
+        def flaky(lat, lng):
+            if int(lat) == 40:  # only 1 of 10 counties fails -> 10%, under the 20% threshold
+                raise RuntimeError("transient failure")
+            return {"fields": {}}
+
+        with patch.object(main, "fetch_mireye_hazard_data", side_effect=flaky), \
+             patch.object(main, "score_erosion_risk", return_value={"score": 1, "level": "low", "factors": [], "rusle_lite": None}):
             pr.main(counties_csv, out_file, top_n=5, workers=5)
 
         payload = json.loads(out_file.read_text())
-        assert payload["county_count"] == 0
-        assert payload["failed_count"] == 10
-        assert payload["results"] == []
+        assert payload["failed_count"] == 1
+        assert payload["county_count"] == 5
+        assert "failed_sample_errors" in payload
 
     def test_top_n_larger_than_available_is_harmless(self, counties_csv, patch_fallbacks, tmp_path):
         out_file = tmp_path / "out.json"
