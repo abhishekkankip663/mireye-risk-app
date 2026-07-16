@@ -4,15 +4,19 @@
 
 An end-to-end web app that combines **Mireye Earth** (cited, current-state
 terrain/hazard data) with **Global Forest Watch** (historical tree-cover-loss
-time series) into a single erosion + deforestation risk assessment for any
-U.S. coordinate.
+time series) into a single erosion + deforestation risk assessment — either
+for one coordinate, or ranked across the entire United States.
 
 This exists to demonstrate a real-world use case built on top of Mireye's
 API: point-in-time hazard data alone can't tell you a hillside is
 destabilizing — you need to know it *also* lost its vegetation cover
-recently. This app makes that connection automatically.
+recently. This app makes that connection automatically, and does it at two
+scales: a single-point report for one location, and a nationwide ranking
+for "where should we even be looking."
 
 ## What it does
+
+**Point lookup:**
 
 1. You enter a coordinate (or click a preset location).
 2. The backend calls Mireye's `natural_hazard` preset (slope, landslide
@@ -23,6 +27,10 @@ recently. This app makes that connection automatically.
 4. It combines both into a risk score and renders a report: a visual
    "core sample" of risk factors, a cited data table, and a tree-cover-loss
    chart.
+
+**Most At-Risk Areas:** the same risk model, run automatically across all
+3,144 US counties and kept fresh on a weekly schedule — filterable by
+state, region, or nationwide. See below for how it's kept current.
 
 ## Setup
 
@@ -35,11 +43,11 @@ pip install -r requirements.txt --break-system-packages
 
 ### 2. Mireye authentication
 
-You should already be logged in from earlier (`uvx mireye-mcp login`).
-This app reads the same credential file it created
-(`~/.config/mireye-mcp/credentials.json`).
+If you don't already have a Mireye token, run `uvx mireye-mcp login` —
+this app reads the credential file that creates
+(`~/.config/mireye-mcp/credentials.json`) automatically.
 
-If it can't find the token automatically, set it directly:
+If it can't find the token that way, set it directly:
 
 ```bash
 export MIREYE_BEARER_TOKEN="your_token_here"
@@ -89,8 +97,9 @@ python3 precompute_rankings.py
 
 This scores all 3,144 US counties (`backend/counties_full.csv`, from the
 official US Census Gazetteer file) using 10 concurrent workers and keeps
-every county that computed successfully (currently 3,143 of 3,144 — pass
-`--top N` to cap the output instead). Takes roughly 30-90 minutes depending
+every county that computed successfully — typically nearly all 3,144, since
+a >20% failure rate aborts the run rather than publishing a partial result
+(pass `--top N` to cap the output instead). Takes roughly 30-90 minutes depending
 on how responsive the external APIs are that day, and needs the same Mireye
 token + `GFW_API_KEY` as the main app. See the script's own docstring for
 more detail (why it's a separate script, why concurrency instead of
