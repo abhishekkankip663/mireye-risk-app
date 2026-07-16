@@ -7,3 +7,7 @@ __pycache__/
 
 # Claude Code local settings (contains machine-local secrets / permissions)
 .claude/settings.local.json
+
+# Personal submission prep — not for the public repo
+CALL_PREP.md
+SUBMISSION_EMAIL_DRAFT.md
