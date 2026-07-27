@@ -254,7 +254,10 @@ def fetch_ssurgo_live_fallback(lat: float, lng: float) -> dict:
         ORDER BY co.comppct_r DESC, ch.hzdept_r ASC
     """
     resp = requests.post(SDA_URL, json={"query": sql, "format": "JSON"}, timeout=30)
-    resp.raise_for_status()
+    try:
+        resp.raise_for_status()
+    except requests.exceptions.HTTPError as e:
+        raise RuntimeError(f"{e} -- response body: {resp.text[:300]!r}") from e
     data = resp.json()
     table = data.get("Table")
     if not table:
