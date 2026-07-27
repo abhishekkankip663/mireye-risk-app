@@ -244,7 +244,7 @@ def fetch_ssurgo_live_fallback(lat: float, lng: float) -> dict:
     point_wkt = f"point({lng} {lat})"
     sql = f"""
         SELECT TOP 1 co.hydgrp, ch.kwfact, ch.lep_r, mu.muname, ma.pondfreqprs,
-               co.farmlndcl, cr.reskind, cr.resdept_r
+               mu.farmlndcl, cr.reskind, cr.resdept_r
         FROM mapunit mu
         INNER JOIN component co ON co.mukey = mu.mukey AND co.majcompflag = 'Yes'
         INNER JOIN chorizon ch ON ch.cokey = co.cokey
