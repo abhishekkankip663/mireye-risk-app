@@ -787,15 +787,28 @@
 
     // Data completeness / confidence -- a "low risk" verdict built on mostly
     // missing data must not read the same as one confirmed against real data.
+    const FACTOR_LABELS = {
+      rusle_erosion_index: 'RUSLE erosion index',
+      landslide_susceptibility: 'Landslide susceptibility',
+      fema_flood_zone: 'FEMA flood zone',
+      wetland_fraction: 'Wetland share',
+      soil_ponding_frequency: 'Soil ponding frequency',
+      soil_hydrologic_group: 'Soil hydrologic group',
+      recent_deforestation: 'Recent deforestation',
+    };
     const confidence = data.risk.confidence;
     const completeness = data.risk.data_completeness;
     const confEl = $('confidenceLine');
     if (confidence && completeness) {
       confEl.className = 'confidence-line ' + confidence;
       const base = `confidence: ${confidence} (${completeness.factors_evaluated}/${completeness.factors_total} risk factors available)`;
+      const missingNames = (completeness.unavailable_factors || []).map(k => FACTOR_LABELS[k] || k);
+      const missingClause = missingNames.length
+        ? ` — missing: ${missingNames.join(', ')}`
+        : '';
       confEl.textContent = confidence === 'low'
-        ? `⚠ ${base} — this level reflects limited data, not a confirmed assessment`
-        : base;
+        ? `⚠ ${base}${missingClause} — this level reflects limited data, not a confirmed assessment`
+        : `${base}${missingClause}`;
     } else {
       confEl.textContent = '';
     }
