@@ -486,7 +486,7 @@ def patch_null_slope_with_dem(lat: float, lng: float, fields: dict) -> dict:
 # for "not applicable"; that's converted to None rather than reported as
 # a real elevation.
 
-FEMA_NFHL_FLOOD_ZONES_URL = "https://hazards.fema.gov/gis/nfhl/rest/services/public/NFHL/MapServer/28/query"
+FEMA_NFHL_FLOOD_ZONES_URL = "https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query"
 
 
 def fetch_fema_flood_zone(lat: float, lng: float) -> dict:
@@ -613,7 +613,7 @@ def patch_nulls_with_fema_nfhl(lat: float, lng: float, fields: dict) -> dict:
 # network allowlist doesn't include the NWI host, so this is built from
 # USFWS's documented NWI REST service conventions, not verified end-to-end.
 
-NWI_WETLANDS_URL = "https://fwsprimary.wim.usgs.gov/server/rest/services/Wetlands/MapServer/0/query"
+NWI_WETLANDS_URL = "https://fwspublicservices.wim.usgs.gov/wetlandsmapservice/rest/services/Wetlands/MapServer/0/query"
 WETLAND_BUFFER_DEG = 0.001  # small stand-in for "parcel" — no real parcel geometry available
 
 
@@ -635,7 +635,7 @@ def fetch_nwi_wetlands(lat: float, lng: float) -> list:
             "geometryType": "esriGeometryPolygon",
             "inSR": 4326,
             "spatialRel": "esriSpatialRelIntersects",
-            "outFields": "WETLAND_TYPE,ACRES",
+            "outFields": "Wetlands.WETLAND_TYPE,Wetlands.ACRES",
             "returnGeometry": "false",
             "f": "json",
         },
@@ -649,10 +649,10 @@ def fetch_nwi_wetlands(lat: float, lng: float) -> list:
     for feat in data.get("features") or []:
         attrs = feat.get("attributes", {})
         try:
-            acres = float(attrs["ACRES"]) if attrs.get("ACRES") is not None else None
+            acres = float(attrs["Wetlands.ACRES"]) if attrs.get("Wetlands.ACRES") is not None else None
         except (TypeError, ValueError):
             acres = None
-        out.append({"wetland_type": attrs.get("WETLAND_TYPE"), "acres": acres})
+        out.append({"wetland_type": attrs.get("Wetlands.WETLAND_TYPE"), "acres": acres})
     return out
 
 
@@ -722,7 +722,9 @@ def patch_nulls_with_nwi_wetlands(lat: float, lng: float, fields: dict) -> dict:
 # NOT report a wrong canopy value silently.
 
 MRLC_WMS_URL = "https://www.mrlc.gov/geoserver/mrlc_display/wms"
-NLCD_CANOPY_LAYER = "NLCD_2021_Tree_Canopy_L48"
+# MRLC retired the year-suffixed NLCD_YYYY_Tree_Canopy_L48 layers in favor of
+# this single continuously-updated CONUS layer -- no year to go stale on.
+NLCD_CANOPY_LAYER = "CONUS_Canopy"
 
 
 def fetch_nlcd_tree_canopy_pct(lat: float, lng: float) -> float:
@@ -752,9 +754,9 @@ def fetch_nlcd_tree_canopy_pct(lat: float, lng: float) -> float:
     if not features:
         raise RuntimeError(f"NLCD WMS GetFeatureInfo returned no features: {data}")
     props = features[0].get("properties", {})
-    value = props.get("GRAY_INDEX")
+    value = props.get("PALETTE_INDEX")
     if value is None:
-        raise RuntimeError(f"NLCD WMS GetFeatureInfo response missing GRAY_INDEX: {props}")
+        raise RuntimeError(f"NLCD WMS GetFeatureInfo response missing PALETTE_INDEX: {props}")
     value = float(value)
     if value >= 254:  # common raster no-data / water sentinel values
         raise RuntimeError(f"NLCD returned a no-data sentinel value ({value})")

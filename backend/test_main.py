@@ -388,8 +388,8 @@ class TestNwiFallback:
     def test_parses_acres(self, mock_get):
         mock_get.return_value = mock_response({
             "features": [
-                {"attributes": {"WETLAND_TYPE": "Freshwater Emergent Wetland", "ACRES": "1.5"}},
-                {"attributes": {"WETLAND_TYPE": "Freshwater Pond", "ACRES": "0.5"}},
+                {"attributes": {"Wetlands.WETLAND_TYPE": "Freshwater Emergent Wetland", "Wetlands.ACRES": "1.5"}},
+                {"attributes": {"Wetlands.WETLAND_TYPE": "Freshwater Pond", "Wetlands.ACRES": "0.5"}},
             ]
         })
         result = main.fetch_nwi_wetlands(40.0, -100.0)
@@ -405,7 +405,7 @@ class TestNwiFallback:
     @patch("main.requests.get")
     def test_non_numeric_acres_becomes_none(self, mock_get):
         mock_get.return_value = mock_response({
-            "features": [{"attributes": {"WETLAND_TYPE": "X", "ACRES": "n/a"}}]
+            "features": [{"attributes": {"Wetlands.WETLAND_TYPE": "X", "Wetlands.ACRES": "n/a"}}]
         })
         result = main.fetch_nwi_wetlands(40.0, -100.0)
         assert result[0]["acres"] is None
@@ -442,13 +442,13 @@ class TestNwiFallback:
 
 class TestNlcdFallback:
     @patch("main.requests.get")
-    def test_parses_gray_index(self, mock_get):
-        mock_get.return_value = mock_response({"features": [{"properties": {"GRAY_INDEX": 42}}]})
+    def test_parses_palette_index(self, mock_get):
+        mock_get.return_value = mock_response({"features": [{"properties": {"PALETTE_INDEX": 42}}]})
         assert main.fetch_nlcd_tree_canopy_pct(40.0, -100.0) == 42.0
 
     @patch("main.requests.get")
     def test_nodata_sentinel_raises(self, mock_get):
-        mock_get.return_value = mock_response({"features": [{"properties": {"GRAY_INDEX": 255}}]})
+        mock_get.return_value = mock_response({"features": [{"properties": {"PALETTE_INDEX": 255}}]})
         with pytest.raises(RuntimeError):
             main.fetch_nlcd_tree_canopy_pct(40.0, -100.0)
 
