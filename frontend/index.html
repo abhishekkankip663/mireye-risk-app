@@ -239,6 +239,7 @@
   .core-band.high { background: rgba(166, 61, 31, 0.55); }
   .core-band.moderate { background: rgba(201, 138, 44, 0.5); }
   .core-band.low { background: rgba(92, 122, 82, 0.35); }
+  .core-band.unknown { background: repeating-linear-gradient(45deg, rgba(120,120,120,0.25), rgba(120,120,120,0.25) 4px, rgba(120,120,120,0.1) 4px, rgba(120,120,120,0.1) 8px); }
 
   .verdict {
     display: flex;
@@ -263,6 +264,15 @@
     color: var(--ink-soft);
   }
 
+  .confidence-line {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    margin-top: 2px;
+  }
+  .confidence-line.high { color: var(--ink-soft); }
+  .confidence-line.moderate { color: var(--amber); }
+  .confidence-line.low { color: var(--rust); font-weight: 600; }
+
   .factors { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
   .factor-row {
     display: flex;
@@ -274,6 +284,8 @@
   .dot.low { background: var(--moss); }
   .dot.moderate { background: var(--amber); }
   .dot.high { background: var(--rust); }
+  .dot.unknown { background: var(--ink-soft); opacity: 0.5; }
+  .factor-row.unknown .fdetail { font-style: italic; }
   .factor-row .fname { font-weight: 500; }
   .factor-row .fdetail { color: var(--ink-soft); font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; }
 
@@ -455,6 +467,7 @@
         <div class="verdict">
           <div class="level" id="level">—</div>
           <div class="score-line" id="scoreLine"></div>
+          <div class="confidence-line" id="confidenceLine"></div>
           <div class="factors" id="factors"></div>
         </div>
       </div>
@@ -772,6 +785,21 @@
     levelEl.className = 'level ' + level;
     $('scoreLine').textContent = `composite score: ${data.risk.score}`;
 
+    // Data completeness / confidence -- a "low risk" verdict built on mostly
+    // missing data must not read the same as one confirmed against real data.
+    const confidence = data.risk.confidence;
+    const completeness = data.risk.data_completeness;
+    const confEl = $('confidenceLine');
+    if (confidence && completeness) {
+      confEl.className = 'confidence-line ' + confidence;
+      const base = `confidence: ${confidence} (${completeness.factors_evaluated}/${completeness.factors_total} risk factors available)`;
+      confEl.textContent = confidence === 'low'
+        ? `⚠ ${base} — this level reflects limited data, not a confirmed assessment`
+        : base;
+    } else {
+      confEl.textContent = '';
+    }
+
     // RUSLE-lite breakdown
     const rusleEl = $('ruslePanel');
     const r = data.risk.rusle_lite;
@@ -801,8 +829,9 @@
       $('rusleSectionLabel').style.display = '';
       rusleEl.style.display = '';
     } else {
-      $('rusleSectionLabel').style.display = 'none';
-      rusleEl.style.display = 'none';
+      rusleEl.innerHTML = `<div class="rusle-note">Erosion index unavailable — no data at this point (missing slope or soil K-factor). Not counted toward the composite score.</div>`;
+      $('rusleSectionLabel').style.display = '';
+      rusleEl.style.display = '';
     }
 
     // Core sample visual
@@ -823,7 +852,7 @@
     factorsEl.innerHTML = '';
     factors.forEach(f => {
       const row = document.createElement('div');
-      row.className = 'factor-row';
+      row.className = 'factor-row' + (f.severity === 'unknown' ? ' unknown' : '');
       row.innerHTML = `<span class="dot ${f.severity}"></span>
         <span class="fname">${f.label}</span>
         <span class="fdetail">${f.detail}</span>`;

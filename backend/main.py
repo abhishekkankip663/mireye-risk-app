@@ -926,8 +926,11 @@ def score_erosion_risk(fields: dict, loss_years: list, lat: float, lng: float) -
 
     factors = []
     score = 0
+    factors_total = 0
+    factors_unavailable = []
 
     rusle = None
+    factors_total += 1
     if slope is not None and k_factor is not None:
         ls, slope_length_m = compute_ls_factor(slope, tree_canopy)
         c = compute_c_factor(tree_canopy, ndvi_change_5y)
@@ -975,16 +978,22 @@ def score_erosion_risk(fields: dict, loss_years: list, lat: float, lng: float) -
         else:
             factors.append({"label": "RUSLE-lite erosion index (K×LS×C)", "detail": f"{relative_index} — low{abs_suffix}", "severity": "low"})
     else:
-        factors.append({"label": "RUSLE-lite erosion index", "detail": "unavailable (missing slope or K-factor at this point)", "severity": "moderate"})
+        factors.append({"label": "RUSLE-lite erosion index", "detail": "unknown — no data available (missing slope or K-factor at this point)", "severity": "unknown"})
+        factors_unavailable.append("rusle_erosion_index")
 
+    factors_total += 1
     if landslide_idx is not None:
         if landslide_idx > 50:
             score += 2
             factors.append({"label": "Landslide susceptibility", "detail": str(landslide_idx), "severity": "high"})
         else:
             factors.append({"label": "Landslide susceptibility", "detail": str(landslide_idx), "severity": "low"})
+    else:
+        factors.append({"label": "Landslide susceptibility", "detail": "unknown — no data available at this point", "severity": "unknown"})
+        factors_unavailable.append("landslide_susceptibility")
 
     # Flood: prefer the real zone code, fall back to the plain boolean
+    factors_total += 1
     if fema_zone is not None:
         severity = "high" if coastal_hazard else ("moderate" if str(fema_zone).upper().startswith(("A", "V")) else "low")
         if severity != "low":
@@ -996,26 +1005,62 @@ def score_erosion_risk(fields: dict, loss_years: list, lat: float, lng: float) -
             factors.append({"label": "Floodplain", "detail": "Within FEMA-mapped floodplain", "severity": "moderate"})
         else:
             factors.append({"label": "Floodplain", "detail": "Outside mapped floodplain", "severity": "low"})
+    else:
+        factors.append({"label": "FEMA flood zone", "detail": "unknown — no data available at this point", "severity": "unknown"})
+        factors_unavailable.append("fema_flood_zone")
 
     # Leaching-relevant: parcel-level wetland share + ponding + hydrologic group
-    if wetland_frac is not None and wetland_frac > 0:
-        score += 1
-        factors.append({"label": "Wetland share of parcel", "detail": f"{wetland_frac*100:.1f}% of parcel", "severity": "moderate"})
-    if ponding is not None and str(ponding).lower() not in ("none", "unknown"):
-        score += 1
-        factors.append({"label": "Soil ponding frequency", "detail": str(ponding), "severity": "moderate"})
+    factors_total += 1
+    if wetland_frac is not None:
+        if wetland_frac > 0:
+            score += 1
+            factors.append({"label": "Wetland share of parcel", "detail": f"{wetland_frac*100:.1f}% of parcel", "severity": "moderate"})
+        else:
+            factors.append({"label": "Wetland share of parcel", "detail": "0% — none present", "severity": "low"})
+    else:
+        factors.append({"label": "Wetland share of parcel", "detail": "unknown — no data available at this point", "severity": "unknown"})
+        factors_unavailable.append("wetland_fraction")
+
+    factors_total += 1
+    if ponding is not None:
+        if str(ponding).lower() not in ("none", "unknown"):
+            score += 1
+            factors.append({"label": "Soil ponding frequency", "detail": str(ponding), "severity": "moderate"})
+        else:
+            factors.append({"label": "Soil ponding frequency", "detail": str(ponding), "severity": "low"})
+    else:
+        factors.append({"label": "Soil ponding frequency", "detail": "unknown — no data available at this point", "severity": "unknown"})
+        factors_unavailable.append("soil_ponding_frequency")
+
+    factors_total += 1
     if hydro_group is not None:
         severity = "high" if "D" in str(hydro_group) else "low"
         if severity == "high":
             score += 1
         factors.append({"label": "Soil hydrologic group", "detail": f"Group {hydro_group}", "severity": severity})
+    else:
+        factors.append({"label": "Soil hydrologic group", "detail": "unknown — no data available at this point", "severity": "unknown"})
+        factors_unavailable.append("soil_hydrologic_group")
 
+    factors_total += 1
     total_recent_loss_ha = sum(row.get("area_ha", 0) for row in loss_years if row.get("umd_tree_cover_loss__year", 0) >= 2018)
     if total_recent_loss_ha > 0:
         score += 2
         factors.append({"label": "Recent deforestation (GFW, year-level)", "detail": f"{total_recent_loss_ha:.2f} ha lost since 2018", "severity": "high"})
     elif loss_years:
         factors.append({"label": "Recent deforestation (GFW, year-level)", "detail": "None detected since 2018", "severity": "low"})
+    else:
+        factors.append({"label": "Recent deforestation (GFW, year-level)", "detail": "unknown — no data available at this point", "severity": "unknown"})
+        factors_unavailable.append("recent_deforestation")
+
+    factors_evaluated = factors_total - len(factors_unavailable)
+    completeness_ratio = factors_evaluated / factors_total
+    if completeness_ratio >= 0.85:
+        confidence = "high"
+    elif completeness_ratio >= 0.5:
+        confidence = "moderate"
+    else:
+        confidence = "low"
 
     level = "low"
     if score >= 6:
@@ -1023,7 +1068,18 @@ def score_erosion_risk(fields: dict, loss_years: list, lat: float, lng: float) -
     elif score >= 3:
         level = "moderate"
 
-    return {"score": score, "level": level, "factors": factors, "rusle_lite": rusle}
+    return {
+        "score": score,
+        "level": level,
+        "factors": factors,
+        "rusle_lite": rusle,
+        "confidence": confidence,
+        "data_completeness": {
+            "factors_evaluated": factors_evaluated,
+            "factors_total": factors_total,
+            "unavailable_factors": factors_unavailable,
+        },
+    }
 
 
 # ---------------------------------------------------------------------------

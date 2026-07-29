@@ -527,10 +527,19 @@ class TestScoreErosionRisk:
         flood_factor = next(f for f in risk["factors"] if "flood" in f["label"].lower())
         assert flood_factor["severity"] == "high"
 
-    def test_wetland_zero_fraction_adds_no_factor(self):
+    def test_wetland_zero_fraction_adds_confirmed_no_risk_factor(self):
+        # a confirmed 0% (real data) must read differently from missing data
         fields = {"wetland_fraction_of_parcel": {"status": "ok", "value": 0.0}}
         risk = main.score_erosion_risk(fields, [], 40.0, -100.0)
-        assert not any("wetland" in f["label"].lower() for f in risk["factors"])
+        wetland_factor = next(f for f in risk["factors"] if "wetland" in f["label"].lower())
+        assert wetland_factor["severity"] == "low"
+        assert "unknown" not in wetland_factor["detail"].lower()
+
+    def test_missing_wetland_data_marked_unknown_not_silently_dropped(self):
+        risk = main.score_erosion_risk({}, [], 40.0, -100.0)
+        wetland_factor = next(f for f in risk["factors"] if "wetland" in f["label"].lower())
+        assert wetland_factor["severity"] == "unknown"
+        assert "wetland_fraction" in risk["data_completeness"]["unavailable_factors"]
 
     def test_wetland_positive_fraction_adds_factor(self):
         fields = {"wetland_fraction_of_parcel": {"status": "ok", "value": 0.3}}
@@ -568,6 +577,31 @@ class TestScoreErosionRisk:
         # falsy/empty rather than a populated list
         risk = main.score_erosion_risk({}, [], 40.0, -100.0)
         assert risk is not None
+
+    def test_no_data_at_all_reports_low_confidence(self):
+        # a "low risk" verdict built on zero real signals must not look the
+        # same as one that's actually been confirmed low -- confidence must
+        # say so explicitly.
+        risk = main.score_erosion_risk({}, [], 40.0, -100.0)
+        assert risk["level"] == "low"
+        assert risk["confidence"] == "low"
+        assert risk["data_completeness"]["factors_evaluated"] == 0
+        assert len(risk["data_completeness"]["unavailable_factors"]) == risk["data_completeness"]["factors_total"]
+
+    def test_full_data_reports_high_confidence(self):
+        fields = {
+            "slope_degrees": {"status": "ok", "value": 10},
+            "soil_erodibility_k_factor": {"status": "ok", "value": 0.3},
+            "landslide_susceptibility_index": {"status": "ok", "value": 10},
+            "fema_flood_zone": {"status": "ok", "value": "X"},
+            "wetland_fraction_of_parcel": {"status": "ok", "value": 0.0},
+            "soil_ponding_frequency_class": {"status": "ok", "value": "None"},
+            "soil_hydrologic_group": {"status": "ok", "value": "B"},
+        }
+        loss_years = [{"umd_tree_cover_loss__year": 2019, "area_ha": 0.0}]
+        risk = main.score_erosion_risk(fields, loss_years, 40.0, -100.0)
+        assert risk["confidence"] == "high"
+        assert risk["data_completeness"]["unavailable_factors"] == []
 
 
 # ---------------------------------------------------------------------------
