@@ -551,7 +551,7 @@
           <p>Two numbers come out of this: the <span class="mw">relative index</span> (K × LS × C only — the number the composite score actually reads) and, only when R successfully resolves, the <span class="mw">absolute estimate</span> (R × K × LS × C × P, in tons/acre/yr). The absolute figure is informational — it is <em>not</em> what drives the composite score's RUSLE contribution. RUSLE requires both slope and K-factor to be non-null; if either is missing, <code>rusle_lite</code> is entirely <code>null</code> — no relative index, no absolute figure, no default substituted.</p>
 
           <h4>Composite risk score</h4>
-          <p>A point-based heuristic screening score — not derived from or calibrated against any published industry risk standard. Seven independent signals, each contributing points only when real data resolves a non-trivial risk:</p>
+          <p>A point-based heuristic screening score — not derived from or calibrated against any published industry risk standard. Seven independent signals each contribute points based on their finding:</p>
           <table>
             <thead><tr><th>Signal</th><th>Max pts</th><th>Rule</th></tr></thead>
             <tbody>
@@ -565,9 +565,10 @@
             </tbody>
           </table>
           <p>Max possible score: <span class="mw">12</span>. Level thresholds: score ≥6 → <span class="mw">high</span>; ≥3 → <span class="mw">moderate</span>; else <span class="mw">low</span>.</p>
+          <p><span class="mw">Missing data is never scored as 0.</span> 0 is indistinguishable from a confirmed no-risk finding — a specific claim the data doesn't actually support. A signal with no data available instead contributes a moderate/half-of-max value (each signal's own coded moderate tier where one exists, otherwise half its max points): RUSLE +2, landslide +1, flood +1, deforestation +1, wetland/ponding/hydrologic-group +0.5 each. The exact value substituted per missing signal is reported in <code>data_completeness.imputed_points</code> and stated inline in that factor's row. This is capped, not open-ended: if more than 3 of the 7 signals are unavailable, the composite score is withheld entirely (<code>score: null</code>, <code>level: "insufficient_data"</code>) rather than presenting a number built mostly out of assumptions.</p>
 
           <h4>Confidence &amp; data completeness</h4>
-          <p>Each of the 7 signals above resolves to exactly one of three states — real risk data, confirmed no-risk (a genuine reading, e.g. an actual 0% wetland fraction), or unknown/unavailable — never a fabricated default. Confidence is a weighted completeness ratio using the <em>same</em> point weights as the score table above (so losing the 3-point RUSLE signal hurts confidence more than losing a 1-point signal like ponding):</p>
+          <p>Each of the 7 signals above resolves to exactly one of three states — real risk data, confirmed no-risk (a genuine reading, e.g. an actual 0% wetland fraction), or unknown/unavailable. Confidence is a separate signal from the score-imputation above — it measures how much of the score is real vs. assumed, using a weighted completeness ratio with the <em>same</em> point weights as the score table (so losing the 3-point RUSLE signal hurts confidence more than losing a 1-point signal like ponding):</p>
           <p><code>confidence = (12 − Σ weights of unavailable signals) / 12</code> → high ≥0.85, moderate ≥0.5, low &lt;0.5.</p>
           <p>A "low risk" verdict built on very little available data will show low confidence rather than reading identically to one confirmed against complete data.</p>
 
@@ -943,7 +944,8 @@
       $('rusleSectionLabel').style.display = '';
       rusleEl.style.display = '';
     } else {
-      rusleEl.innerHTML = `<div class="rusle-note">Erosion index unavailable — no data at this point (missing slope or soil K-factor). Not counted toward the composite score.</div>`;
+      const reason = data.risk.rusle_unavailable_reason || 'missing slope or soil K-factor';
+      rusleEl.innerHTML = `<div class="rusle-note">Erosion index unavailable — no data at this point (${reason}). The composite score assumes a moderate contribution (+2 pts) for this signal rather than 0, since 0 would imply confirmed low risk — see the factor list below.</div>`;
       $('rusleSectionLabel').style.display = '';
       rusleEl.style.display = '';
     }

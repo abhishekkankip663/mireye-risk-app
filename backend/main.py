@@ -949,7 +949,7 @@ def score_erosion_risk(fields: dict, loss_years: list, lat: float, lng: float) -
     factors_unavailable = []
     factors_imputed_points = {}
 
-    def _impute(key: str, label: str) -> None:
+    def _impute(key: str, label: str, reason: str = "no data available at this point") -> None:
         """Missing data contributes a moderate value, not 0 -- 0 would be
         indistinguishable from a confirmed no-risk finding, which is a
         specific claim we haven't actually verified."""
@@ -958,13 +958,14 @@ def score_erosion_risk(fields: dict, loss_years: list, lat: float, lng: float) -
         score += pts
         factors.append({
             "label": label,
-            "detail": f"no data available at this point — assumed moderate (+{pts} pts, not 0, since 0 would mean confirmed no-risk)",
+            "detail": f"{reason} — assumed moderate (+{pts} pts, not 0, since 0 would mean confirmed no-risk)",
             "severity": "unknown",
         })
         factors_unavailable.append(key)
         factors_imputed_points[key] = pts
 
     rusle = None
+    rusle_unavailable_reason = None
     factors_total += 1
     if slope is not None and k_factor is not None:
         ls, slope_length_m = compute_ls_factor(slope, tree_canopy)
@@ -1030,7 +1031,9 @@ def score_erosion_risk(fields: dict, loss_years: list, lat: float, lng: float) -
         else:
             factors.append({"label": "RUSLE-lite erosion index (K×LS×C)", "detail": f"{relative_index} — low{abs_suffix}", "severity": "low"})
     else:
-        _impute("rusle_erosion_index", "RUSLE-lite erosion index")
+        missing_parts = [name for present, name in [(slope is not None, "slope"), (k_factor is not None, "soil K-factor")] if not present]
+        rusle_unavailable_reason = f"missing {' and '.join(missing_parts)}"
+        _impute("rusle_erosion_index", "RUSLE-lite erosion index", reason=f"no data available at this point ({rusle_unavailable_reason})")
 
     factors_total += 1
     if landslide_idx is not None:
@@ -1144,6 +1147,7 @@ def score_erosion_risk(fields: dict, loss_years: list, lat: float, lng: float) -
         "level": level,
         "factors": factors,
         "rusle_lite": rusle,
+        "rusle_unavailable_reason": rusle_unavailable_reason,
         "confidence": confidence,
         "data_completeness": {
             "factors_evaluated": factors_evaluated,

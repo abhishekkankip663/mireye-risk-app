@@ -516,6 +516,27 @@ class TestScoreErosionRisk:
         fields = {"slope_degrees": {"status": "ok", "value": 10}}
         risk = main.score_erosion_risk(fields, [], 40.0, -100.0)
         assert risk["rusle_lite"] is None
+        assert risk["rusle_unavailable_reason"] == "missing soil K-factor"
+
+    def test_rusle_unavailable_reason_names_whichever_field_is_missing(self):
+        # only K-factor present -> slope is the one missing
+        risk = main.score_erosion_risk(
+            {"soil_erodibility_k_factor": {"status": "ok", "value": 0.3}}, [], 40.0, -100.0
+        )
+        assert risk["rusle_unavailable_reason"] == "missing slope"
+
+        # neither present -> both named
+        risk = main.score_erosion_risk({}, [], 40.0, -100.0)
+        assert risk["rusle_unavailable_reason"] == "missing slope and soil K-factor"
+
+    @patch("main.fetch_mean_annual_precip_mm", return_value=900.0)
+    def test_rusle_unavailable_reason_is_none_when_rusle_computes(self, _mock):
+        fields = {
+            "slope_degrees": {"status": "ok", "value": 15},
+            "soil_erodibility_k_factor": {"status": "ok", "value": 0.3},
+        }
+        risk = main.score_erosion_risk(fields, [], 40.0, -100.0)
+        assert risk["rusle_unavailable_reason"] is None
 
     @patch("main.fetch_mean_annual_precip_mm", side_effect=RuntimeError("no network"))
     def test_rusle_computed_relative_index_when_r_unavailable(self, _mock):
