@@ -557,6 +557,20 @@ class TestScoreErosionRisk:
         }
         risk = main.score_erosion_risk(fields, [], 40.0, -100.0)
         assert "annual_soil_loss_tons_per_acre" in risk["rusle_lite"]
+        # the label must credit R×P too once the tons/acre/yr figure is
+        # shown, not just claim K×LS×C for a line that includes more
+        rusle_factor = next(f for f in risk["factors"] if "RUSLE" in f["label"])
+        assert "R×K×LS×C×P" in rusle_factor["label"]
+
+    @patch("main.fetch_mean_annual_precip_mm", side_effect=RuntimeError("no network"))
+    def test_rusle_label_stays_lite_only_when_r_unavailable(self, _mock):
+        fields = {
+            "slope_degrees": {"status": "ok", "value": 15},
+            "soil_erodibility_k_factor": {"status": "ok", "value": 0.3},
+        }
+        risk = main.score_erosion_risk(fields, [], 40.0, -100.0)
+        rusle_factor = next(f for f in risk["factors"] if "RUSLE" in f["label"])
+        assert rusle_factor["label"] == "RUSLE-lite erosion index (K×LS×C)"
 
     @patch("main.fetch_mean_annual_precip_mm", return_value=900.0)
     def test_steep_slope_suppresses_absolute_estimate_not_just_caveats_it(self, _mock):

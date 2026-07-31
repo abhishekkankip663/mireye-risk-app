@@ -1022,14 +1022,24 @@ def score_erosion_risk(fields: dict, loss_years: list, lat: float, lng: float) -
                 abs_suffix = f" (≈{soil_loss} tons/acre/yr est.)"
             except Exception as e:
                 rusle["r_factor_error"] = str(e)
+        # The label must credit whichever formula(s) actually produced the
+        # number(s) on this line -- the relative index is always K×LS×C only,
+        # but when abs_suffix is also present, that parenthetical figure used
+        # R and P too. A static "(K×LS×C)" label would misrepresent the line
+        # once the tons/acre/yr estimate is tacked on.
+        rusle_label = (
+            "RUSLE erosion index — K×LS×C (index) & R×K×LS×C×P (tons/acre/yr est.)"
+            if abs_suffix else
+            "RUSLE-lite erosion index (K×LS×C)"
+        )
         if relative_index > 1.5:
             score += 3
-            factors.append({"label": "RUSLE-lite erosion index (K×LS×C)", "detail": f"{relative_index} — high{abs_suffix}", "severity": "high"})
+            factors.append({"label": rusle_label, "detail": f"{relative_index} — high{abs_suffix}", "severity": "high"})
         elif relative_index > 0.5:
             score += 2
-            factors.append({"label": "RUSLE-lite erosion index (K×LS×C)", "detail": f"{relative_index} — moderate{abs_suffix}", "severity": "moderate"})
+            factors.append({"label": rusle_label, "detail": f"{relative_index} — moderate{abs_suffix}", "severity": "moderate"})
         else:
-            factors.append({"label": "RUSLE-lite erosion index (K×LS×C)", "detail": f"{relative_index} — low{abs_suffix}", "severity": "low"})
+            factors.append({"label": rusle_label, "detail": f"{relative_index} — low{abs_suffix}", "severity": "low"})
     else:
         missing_parts = [name for present, name in [(slope is not None, "slope"), (k_factor is not None, "soil K-factor")] if not present]
         rusle_unavailable_reason = f"missing {' and '.join(missing_parts)}"
