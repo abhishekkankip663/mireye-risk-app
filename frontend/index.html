@@ -801,7 +801,7 @@
     const confEl = $('confidenceLine');
     if (confidence && completeness) {
       confEl.className = 'confidence-line ' + confidence;
-      const base = `confidence: ${confidence} (${completeness.factors_evaluated}/${completeness.factors_total} risk factors available)`;
+      const base = `confidence: ${confidence}`;
       const missingNames = (completeness.unavailable_factors || []).map(k => FACTOR_LABELS[k] || k);
       const missingClause = missingNames.length
         ? ` — missing: ${missingNames.join(', ')}`
