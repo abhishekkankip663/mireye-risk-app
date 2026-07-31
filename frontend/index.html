@@ -344,6 +344,63 @@
   .rusle-term .tval { font-family: 'IBM Plex Mono', monospace; font-size: 16px; font-weight: 500; }
   .rusle-note { font-size: 12px; color: var(--rust); margin-top: 12px; font-style: italic; }
 
+  .methodology {
+    margin-top: 32px;
+    border: 1px solid var(--rule);
+    background: var(--paper-dark);
+    border-radius: 2px;
+  }
+  .methodology summary {
+    cursor: pointer;
+    padding: 14px 16px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    list-style: none;
+  }
+  .methodology summary::-webkit-details-marker { display: none; }
+  .methodology summary::before { content: "▸ "; }
+  .methodology[open] summary::before { content: "▾ "; }
+  .methodology-body { padding: 0 20px 24px; font-size: 14px; line-height: 1.65; }
+  .methodology-body h4 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink);
+    margin: 26px 0 8px;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 6px;
+  }
+  .methodology-body h4:first-child { margin-top: 4px; }
+  .methodology-body p { margin: 8px 0; color: var(--ink-soft); }
+  .methodology-body code {
+    font-family: 'IBM Plex Mono', monospace;
+    background: rgba(43,36,28,0.07);
+    padding: 1px 5px;
+    border-radius: 2px;
+    font-size: 0.92em;
+    color: var(--ink);
+  }
+  .methodology-body table { width: 100%; border-collapse: collapse; margin: 10px 0 14px; font-size: 13px; }
+  .methodology-body table th, .methodology-body table td {
+    text-align: left;
+    padding: 6px 8px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .methodology-body table th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--ink-soft);
+  }
+  .methodology-body ul { margin: 8px 0; padding-left: 20px; }
+  .methodology-body li { margin: 5px 0; color: var(--ink-soft); }
+  .methodology-body .mw { font-weight: 600; color: var(--ink); }
+
   table.fields {
     width: 100%;
     border-collapse: collapse;
@@ -488,6 +545,60 @@
       <div class="chart-wrap" id="gfwChartWrap">
         <canvas id="lossChart" height="90"></canvas>
       </div>
+
+      <details class="methodology">
+        <summary>Methodology — how the erosion index, composite score, and confidence are calculated</summary>
+        <div class="methodology-body">
+
+          <h4>RUSLE-lite erosion model</h4>
+          <p><code>A = R × K × LS × C × P</code> — the standard USLE/RUSLE soil-loss equation. Each factor:</p>
+          <ul>
+            <li><span class="mw">K — soil erodibility.</span> A real published K-factor. Primary source: Mireye's <code>soil_erodibility_k_factor</code> (NRCS gNATSGO). If null, backfilled live from USDA Soil Data Access (SSURGO tabular database) via a spatial mukey lookup at the exact point.</li>
+            <li><span class="mw">LS — slope length-steepness.</span> McCool et al. approximation: <code>LS = (L / 22.13)^m × (65.41·sin²θ + 4.56·sinθ + 0.065)</code>, where θ is slope in radians and the exponent <code>m</code> is 0.5 (slope ≥5%), 0.4 (3–5%), 0.3 (1–3%), or 0.2 (&lt;1%). <code>L</code> (slope length, meters) is not published anywhere as point-queryable data — real RUSLE derives it by tracing flow paths across a DEM, which this app does not do. Instead <code>L</code> is estimated from canopy density and steepness: base length 40m (canopy ≥60%), 70m (≥30%), 130m (&lt;30%), or 100m if canopy is unknown — then scaled ×0.7 if slope &gt;15% or ×1.3 if slope &lt;3%. Flagged explicitly via <code>slope_length_estimated_from_canopy</code> in the raw response, never presented as measured.</li>
+            <li><span class="mw">C — cover-management.</span> Not a certified USDA C-factor table lookup (those require exact crop/cover-type classification). Proxy: <code>C = 1 − (canopy% / 100) × 0.96</code>, pushed toward the bare-soil value if the 5-year NDVI trend is negative. Canopy defaults to a neutral 20% if Mireye and its canopy backup (MRLC NLCD) both return null.</li>
+            <li><span class="mw">R — rainfall erosivity.</span> Not available from Mireye at all, under any circumstance. Computed independently from Open-Meteo's ERA5 archive: mean annual precipitation averaged over the most recent 10 complete calendar years, run through the Renard &amp; Freimund (1994) empirical relationship — <code>R = 0.0483·P^1.610</code> (P ≤ 850mm) or <code>R = 587.8 − 1.219P + 0.004105P²</code> (P &gt; 850mm) — then divided by 17.02 to convert SI units to the US-customary units SSURGO's K-factor uses. A screening estimate, not a measured isoerodent value.</li>
+            <li><span class="mw">P — support practice.</span> Not modeled. Assumed 1 (no terracing/contouring data source exists for this).</li>
+          </ul>
+          <p>Two numbers come out of this: the <span class="mw">relative index</span> (K × LS × C only — the number the composite score actually reads) and, only when R successfully resolves, the <span class="mw">absolute estimate</span> (R × K × LS × C × P, in tons/acre/yr). The absolute figure is informational — it is <em>not</em> what drives the composite score's RUSLE contribution. RUSLE requires both slope and K-factor to be non-null; if either is missing, <code>rusle_lite</code> is entirely <code>null</code> — no relative index, no absolute figure, no default substituted.</p>
+
+          <h4>Composite risk score</h4>
+          <p>A point-based heuristic screening score — not derived from or calibrated against any published industry risk standard. Seven independent signals, each contributing points only when real data resolves a non-trivial risk:</p>
+          <table>
+            <thead><tr><th>Signal</th><th>Max pts</th><th>Rule</th></tr></thead>
+            <tbody>
+              <tr><td>RUSLE relative index</td><td>3</td><td>&gt;1.5 → 3 (high); &gt;0.5 → 2 (moderate); else 0</td></tr>
+              <tr><td>Landslide susceptibility</td><td>2</td><td>index &gt;50 → 2 (high); else 0</td></tr>
+              <tr><td>FEMA flood zone</td><td>2</td><td>coastal high-hazard (V-zone) → 2; A/V-prefixed zone → 1; else 0 — falls back to the plain in-floodplain boolean (0 or 1) if the zone code itself is unavailable</td></tr>
+              <tr><td>Recent deforestation (GFW)</td><td>2</td><td>&gt;0 ha lost since 2018 → 2; else 0</td></tr>
+              <tr><td>Wetland share of parcel</td><td>1</td><td>fraction &gt;0% → 1; else 0</td></tr>
+              <tr><td>Soil ponding frequency</td><td>1</td><td>anything but "none"/"unknown" → 1; else 0</td></tr>
+              <tr><td>Soil hydrologic group</td><td>1</td><td>group contains "D" → 1; else 0</td></tr>
+            </tbody>
+          </table>
+          <p>Max possible score: <span class="mw">12</span>. Level thresholds: score ≥6 → <span class="mw">high</span>; ≥3 → <span class="mw">moderate</span>; else <span class="mw">low</span>.</p>
+
+          <h4>Confidence &amp; data completeness</h4>
+          <p>Each of the 7 signals above resolves to exactly one of three states — real risk data, confirmed no-risk (a genuine reading, e.g. an actual 0% wetland fraction), or unknown/unavailable — never a fabricated default. Confidence is a weighted completeness ratio using the <em>same</em> point weights as the score table above (so losing the 3-point RUSLE signal hurts confidence more than losing a 1-point signal like ponding):</p>
+          <p><code>confidence = (12 − Σ weights of unavailable signals) / 12</code> → high ≥0.85, moderate ≥0.5, low &lt;0.5.</p>
+          <p>A "low risk" verdict built on very little available data will show low confidence rather than reading identically to one confirmed against complete data.</p>
+
+          <h4>Data sources &amp; fallback strategy</h4>
+          <p>Primary source: the Mireye Earth API (<code>natural_hazard</code> preset plus 13 explicitly requested extra fields). When a specific field comes back null from Mireye, a live backup is queried directly against the same origin government dataset Mireye itself draws from — never a different or lower-quality substitute:</p>
+          <table>
+            <thead><tr><th>Field(s)</th><th>Live backup source</th></tr></thead>
+            <tbody>
+              <tr><td>K-factor, hydrologic group, shrink-swell class, ponding frequency, farmland classification, restrictive layer</td><td>USDA Soil Data Access (live SSURGO tabular query)</td></tr>
+              <tr><td>Slope</td><td>USGS 3DEP Elevation Point Query Service</td></tr>
+              <tr><td>Flood zone, coastal hazard flag, base flood elevation</td><td>FEMA National Flood Hazard Layer (live ArcGIS REST query)</td></tr>
+              <tr><td>Wetland fraction &amp; acreage</td><td>USFWS National Wetlands Inventory (live ArcGIS REST query against a small point-buffer stand-in for the parcel — no real parcel geometry is available)</td></tr>
+              <tr><td>Tree canopy %</td><td>MRLC NLCD Tree Canopy Cover (live WMS query)</td></tr>
+            </tbody>
+          </table>
+          <p><span class="mw">No fallback exists</span> for landslide susceptibility index or 5-year NDVI change — no free, no-auth, nationwide, point-queryable equivalent dataset exists for either, so these are left as genuine gaps rather than backed by a mismatched proxy. Recent deforestation comes from Global Forest Watch, a supplementary layer entirely separate from Mireye, not a fallback for a Mireye field.</p>
+          <p>Governing principle throughout: a value is either real (with its source cited), confirmed-absent (a genuine reading that this legitimately doesn't apply here), or explicitly left unavailable — never guessed or interpolated to fill a gap.</p>
+
+        </div>
+      </details>
 
       <footer>
         Elevation, slope, seismic, wildfire, flood, landslide, soil, and
@@ -883,15 +994,29 @@
       $('askPanel').style.display = 'none';
     }
 
-    // Field data table — only render fields with actual values
+    // Field data table — every requested field is shown, including ones
+    // that came back null from Mireye and its live backups, so a GIS
+    // analyst can see exactly what was and wasn't resolved, not just the
+    // fields that happened to succeed.
     const tbody = $('fieldsBody');
     tbody.innerHTML = '';
     Object.entries(data.mireye_fields).forEach(([key, f]) => {
-      if (f.status === 'failed' || f.value == null) return;
+      if (key.startsWith('_')) return; // internal diagnostic entries, not real fields
       const tr = document.createElement('tr');
-      const val = f.unit ? `${f.value} ${f.unit}` : `${f.value}`;
+      let val, valClass = 'val';
+      if (f.status === 'failed') {
+        tr.className = 'failed';
+        val = 'unavailable — fetch failed';
+      } else if (f.value == null) {
+        valClass = 'val na';
+        val = f.status === 'absent'
+          ? 'not applicable at this location'
+          : 'no data available';
+      } else {
+        val = f.unit ? `${f.value} ${f.unit}` : `${f.value}`;
+      }
       tr.innerHTML = `<td>${key.replace(/_/g, ' ')}</td>
-        <td class="val">${val}</td>
+        <td class="${valClass}">${val}</td>
         <td>${f.source_url ? `<a href="${f.source_url}" target="_blank" rel="noopener">${f.source}</a>` : (f.source || '—')}</td>`;
       tbody.appendChild(tr);
     });
