@@ -1054,10 +1054,27 @@ def score_erosion_risk(fields: dict, loss_years: list, lat: float, lng: float) -
         factors_unavailable.append("recent_deforestation")
 
     factors_evaluated = factors_total - len(factors_unavailable)
-    completeness_ratio = factors_evaluated / factors_total
-    if completeness_ratio >= 0.85:
+
+    # Confidence is weighted by how much each signal actually matters to the
+    # score itself (same point values used above) -- missing the erosion
+    # index (worth up to 3) should hurt confidence more than missing, say,
+    # ponding frequency (worth up to 1). A flat per-signal count would treat
+    # those as equally important, which they aren't.
+    FACTOR_WEIGHTS = {
+        "rusle_erosion_index": 3,
+        "landslide_susceptibility": 2,
+        "fema_flood_zone": 2,
+        "recent_deforestation": 2,
+        "wetland_fraction": 1,
+        "soil_ponding_frequency": 1,
+        "soil_hydrologic_group": 1,
+    }
+    total_weight = sum(FACTOR_WEIGHTS.values())
+    unavailable_weight = sum(FACTOR_WEIGHTS[k] for k in factors_unavailable)
+    weighted_ratio = (total_weight - unavailable_weight) / total_weight
+    if weighted_ratio >= 0.85:
         confidence = "high"
-    elif completeness_ratio >= 0.5:
+    elif weighted_ratio >= 0.5:
         confidence = "moderate"
     else:
         confidence = "low"

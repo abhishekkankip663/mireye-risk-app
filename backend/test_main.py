@@ -603,6 +603,39 @@ class TestScoreErosionRisk:
         assert risk["confidence"] == "high"
         assert risk["data_completeness"]["unavailable_factors"] == []
 
+    def test_missing_only_rusle_downgrades_confidence_despite_high_raw_count(self):
+        # RUSLE is worth 3 of the 12 weighted points -- losing it alone (with
+        # everything else present, 6/7 by raw count) must not still read as
+        # "high" confidence the way a flat per-signal count would suggest.
+        fields = {
+            "landslide_susceptibility_index": {"status": "ok", "value": 10},
+            "fema_flood_zone": {"status": "ok", "value": "X"},
+            "wetland_fraction_of_parcel": {"status": "ok", "value": 0.0},
+            "soil_ponding_frequency_class": {"status": "ok", "value": "None"},
+            "soil_hydrologic_group": {"status": "ok", "value": "B"},
+        }
+        loss_years = [{"umd_tree_cover_loss__year": 2019, "area_ha": 0.0}]
+        risk = main.score_erosion_risk(fields, loss_years, 40.0, -100.0)
+        assert risk["data_completeness"]["factors_evaluated"] == 6
+        assert risk["data_completeness"]["factors_total"] == 7
+        assert risk["confidence"] == "moderate"
+
+    def test_missing_only_ponding_keeps_high_confidence(self):
+        # ponding is only worth 1 of 12 weighted points -- losing just that
+        # one lightweight signal should not meaningfully dent confidence.
+        fields = {
+            "slope_degrees": {"status": "ok", "value": 10},
+            "soil_erodibility_k_factor": {"status": "ok", "value": 0.3},
+            "landslide_susceptibility_index": {"status": "ok", "value": 10},
+            "fema_flood_zone": {"status": "ok", "value": "X"},
+            "wetland_fraction_of_parcel": {"status": "ok", "value": 0.0},
+            "soil_hydrologic_group": {"status": "ok", "value": "B"},
+        }
+        loss_years = [{"umd_tree_cover_loss__year": 2019, "area_ha": 0.0}]
+        risk = main.score_erosion_risk(fields, loss_years, 40.0, -100.0)
+        assert risk["data_completeness"]["unavailable_factors"] == ["soil_ponding_frequency"]
+        assert risk["confidence"] == "high"
+
 
 # ---------------------------------------------------------------------------
 # get_mireye_token
