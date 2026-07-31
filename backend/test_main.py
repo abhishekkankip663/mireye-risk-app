@@ -476,10 +476,41 @@ class TestNlcdFallback:
 # ---------------------------------------------------------------------------
 
 class TestScoreErosionRisk:
-    def test_no_data_at_all_gives_low_risk_no_rusle(self):
+    def test_no_data_at_all_gives_insufficient_data_no_rusle(self):
         risk = main.score_erosion_risk({}, [], 40.0, -100.0)
-        assert risk["level"] == "low"
+        assert risk["level"] == "insufficient_data"
+        assert risk["score"] is None
         assert risk["rusle_lite"] is None
+
+    def test_exactly_three_missing_still_gets_imputed_score(self):
+        # 4 of 7 signal-slots present (RUSLE needs both slope + K-factor to
+        # count as one slot), 3 missing -- right at the boundary, should
+        # still compute a real score using imputed values for the 3 gaps
+        fields = {
+            "slope_degrees": {"status": "ok", "value": 5},
+            "soil_erodibility_k_factor": {"status": "ok", "value": 0.1},
+            "fema_flood_zone": {"status": "ok", "value": "X"},
+            "soil_hydrologic_group": {"status": "ok", "value": "B"},
+            "soil_ponding_frequency_class": {"status": "ok", "value": "None"},
+        }
+        risk = main.score_erosion_risk(fields, [], 40.0, -100.0)
+        assert len(risk["data_completeness"]["unavailable_factors"]) == 3
+        assert risk["score"] is not None
+        assert risk["level"] != "insufficient_data"
+
+    def test_four_missing_withholds_score(self):
+        # one more gap than the boundary case above -- score must be
+        # withheld entirely rather than built mostly out of assumptions
+        fields = {
+            "slope_degrees": {"status": "ok", "value": 5},
+            "soil_erodibility_k_factor": {"status": "ok", "value": 0.1},
+            "fema_flood_zone": {"status": "ok", "value": "X"},
+            "soil_hydrologic_group": {"status": "ok", "value": "B"},
+        }
+        risk = main.score_erosion_risk(fields, [], 40.0, -100.0)
+        assert len(risk["data_completeness"]["unavailable_factors"]) == 4
+        assert risk["score"] is None
+        assert risk["level"] == "insufficient_data"
 
     def test_rusle_requires_both_slope_and_k_factor(self):
         fields = {"slope_degrees": {"status": "ok", "value": 10}}
@@ -506,9 +537,47 @@ class TestScoreErosionRisk:
         risk = main.score_erosion_risk(fields, [], 40.0, -100.0)
         assert "annual_soil_loss_tons_per_acre" in risk["rusle_lite"]
 
+    @patch("main.fetch_mean_annual_precip_mm", return_value=900.0)
+    def test_steep_slope_suppresses_absolute_estimate_not_just_caveats_it(self, _mock):
+        # RUSLE's LS formula is unreliable well outside its calibration
+        # range -- rather than compute a specific tons/acre/yr number and
+        # then say it's unreliable, don't compute it at all. The relative
+        # index (what the score actually uses) is still reported.
+        fields = {
+            "slope_degrees": {"status": "ok", "value": 32},
+            "soil_erodibility_k_factor": {"status": "ok", "value": 0.2},
+        }
+        risk = main.score_erosion_risk(fields, [], 40.0, -100.0)
+        assert "annual_soil_loss_tons_per_acre" not in risk["rusle_lite"]
+        assert "r_factor" not in risk["rusle_lite"]
+        assert risk["rusle_lite"]["relative_index"] is not None
+        assert risk["rusle_lite"]["absolute_estimate_status"] == "not_computed_steep_slope"
+        assert "steep_slope_caveat" in risk["rusle_lite"]
+        assert "32" in risk["rusle_lite"]["steep_slope_caveat"]
+        # fetch_mean_annual_precip_mm must not even be called -- no point
+        # spending the API call if the result will never be used
+        _mock.assert_not_called()
+
+    @patch("main.fetch_mean_annual_precip_mm", return_value=900.0)
+    def test_gentle_slope_gets_no_caveat(self, _mock):
+        fields = {
+            "slope_degrees": {"status": "ok", "value": 10},
+            "soil_erodibility_k_factor": {"status": "ok", "value": 0.3},
+        }
+        risk = main.score_erosion_risk(fields, [], 40.0, -100.0)
+        assert "steep_slope_caveat" not in risk["rusle_lite"]
+
     def test_high_landslide_index_raises_score(self):
-        low = main.score_erosion_risk({"landslide_susceptibility_index": {"status": "ok", "value": 10}}, [], 40.0, -100.0)
-        high = main.score_erosion_risk({"landslide_susceptibility_index": {"status": "ok", "value": 90}}, [], 40.0, -100.0)
+        # enough other fields present (4 of 7) to stay under the
+        # insufficient-data threshold and get a real, comparable score
+        base = {
+            "fema_flood_zone": {"status": "ok", "value": "X"},
+            "wetland_fraction_of_parcel": {"status": "ok", "value": 0.0},
+            "soil_ponding_frequency_class": {"status": "ok", "value": "None"},
+        }
+        low = main.score_erosion_risk(dict(base, landslide_susceptibility_index={"status": "ok", "value": 10}), [], 40.0, -100.0)
+        high = main.score_erosion_risk(dict(base, landslide_susceptibility_index={"status": "ok", "value": 90}), [], 40.0, -100.0)
+        assert high["score"] is not None and low["score"] is not None
         assert high["score"] > low["score"]
 
     def test_fema_zone_preferred_over_boolean_floodplain(self):
@@ -563,14 +632,25 @@ class TestScoreErosionRisk:
         assert not any("high" == f["severity"] and "deforestation" in f["label"].lower() for f in risk["factors"])
 
     def test_score_thresholds_produce_expected_levels(self):
-        # 0 factors -> low
-        assert main.score_erosion_risk({}, [], 40.0, -100.0)["level"] == "low"
-        # landslide (2) + hydro group D (1) = 3 -> moderate
-        fields = {
+        # all 7 signals present and low-risk -> low (fully known, no imputation involved)
+        all_low = {
+            "slope_degrees": {"status": "ok", "value": 5},
+            "soil_erodibility_k_factor": {"status": "ok", "value": 0.1},
+            "landslide_susceptibility_index": {"status": "ok", "value": 5},
+            "fema_flood_zone": {"status": "ok", "value": "X"},
+            "wetland_fraction_of_parcel": {"status": "ok", "value": 0.0},
+            "soil_ponding_frequency_class": {"status": "ok", "value": "None"},
+            "soil_hydrologic_group": {"status": "ok", "value": "B"},
+        }
+        loss_years = [{"umd_tree_cover_loss__year": 2019, "area_ha": 0.0}]
+        assert main.score_erosion_risk(all_low, loss_years, 40.0, -100.0)["level"] == "low"
+
+        # all 7 present, landslide (2) + hydro group D (1) = 3 -> moderate
+        moderate_fields = dict(all_low, **{
             "landslide_susceptibility_index": {"status": "ok", "value": 90},
             "soil_hydrologic_group": {"status": "ok", "value": "D"},
-        }
-        assert main.score_erosion_risk(fields, [], 40.0, -100.0)["level"] == "moderate"
+        })
+        assert main.score_erosion_risk(moderate_fields, loss_years, 40.0, -100.0)["level"] == "moderate"
 
     def test_missing_loss_years_list_handled(self):
         # regression: score_erosion_risk must not crash if loss_years is
@@ -579,11 +659,12 @@ class TestScoreErosionRisk:
         assert risk is not None
 
     def test_no_data_at_all_reports_low_confidence(self):
-        # a "low risk" verdict built on zero real signals must not look the
-        # same as one that's actually been confirmed low -- confidence must
-        # say so explicitly.
+        # zero real signals must not produce a confident-looking verdict at
+        # all -- confidence must say so, and (separately) the score itself
+        # is withheld once too much is missing.
         risk = main.score_erosion_risk({}, [], 40.0, -100.0)
-        assert risk["level"] == "low"
+        assert risk["level"] == "insufficient_data"
+        assert risk["score"] is None
         assert risk["confidence"] == "low"
         assert risk["data_completeness"]["factors_evaluated"] == 0
         assert len(risk["data_completeness"]["unavailable_factors"]) == risk["data_completeness"]["factors_total"]

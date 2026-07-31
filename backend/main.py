@@ -798,6 +798,25 @@ def patch_null_canopy_with_nlcd(lat: float, lng: float, fields: dict) -> dict:
 # ---------------------------------------------------------------------------
 
 DEFAULT_SLOPE_LENGTH_M = 100.0  # used only when tree_canopy_pct is unavailable
+STEEP_SLOPE_CAVEAT_DEGREES = 25.0  # RUSLE's LS formula is unreliable beyond this
+
+# When a composite-score signal has no data at all, contributing 0 points is
+# not neutral -- 0 is the same number a confirmed "no risk" reading would
+# produce, so a missing signal would silently read as a confirmed-safe
+# finding. Instead, missing signals contribute a moderate/half-of-max value:
+# each signal's own coded "moderate" tier where one exists (RUSLE, FEMA
+# flood), otherwise half of that signal's max points, rounded to the
+# nearest sensible value for binary (present/absent) signals.
+MISSING_SIGNAL_IMPUTED_POINTS = {
+    "rusle_erosion_index": 2,       # matches RUSLE's own coded "moderate" tier
+    "landslide_susceptibility": 1,  # half of max (2); no coded moderate tier
+    "fema_flood_zone": 1,           # matches FEMA's own coded "moderate" tier
+    "wetland_fraction": 0.5,        # half of max (1); binary signal
+    "soil_ponding_frequency": 0.5,  # half of max (1); binary signal
+    "soil_hydrologic_group": 0.5,   # half of max (1); binary signal
+    "recent_deforestation": 1,      # half of max (2); binary signal
+}
+MAX_UNAVAILABLE_FACTORS_FOR_SCORE = 3  # beyond this, refuse to score at all
 
 
 def field_value(fields: dict, name: str):
@@ -928,6 +947,22 @@ def score_erosion_risk(fields: dict, loss_years: list, lat: float, lng: float) -
     score = 0
     factors_total = 0
     factors_unavailable = []
+    factors_imputed_points = {}
+
+    def _impute(key: str, label: str) -> None:
+        """Missing data contributes a moderate value, not 0 -- 0 would be
+        indistinguishable from a confirmed no-risk finding, which is a
+        specific claim we haven't actually verified."""
+        nonlocal score
+        pts = MISSING_SIGNAL_IMPUTED_POINTS[key]
+        score += pts
+        factors.append({
+            "label": label,
+            "detail": f"no data available at this point — assumed moderate (+{pts} pts, not 0, since 0 would mean confirmed no-risk)",
+            "severity": "unknown",
+        })
+        factors_unavailable.append(key)
+        factors_imputed_points[key] = pts
 
     rusle = None
     factors_total += 1
@@ -945,30 +980,47 @@ def score_erosion_risk(fields: dict, loss_years: list, lat: float, lng: float) -
             "slope_length_estimated_from_canopy": tree_canopy is not None,
             "note": "K x LS x C only — R (rainfall erosivity) not yet resolved; relative screening index, not tons/acre/year.",
         }
-        # Upgrade to an absolute A = R x K x LS x C (tons/acre/yr) with a live
-        # R-factor estimated from mean annual precipitation. Screening-grade.
+        # RUSLE's LS-factor formula (McCool et al.) was built and calibrated
+        # against agricultural/rangeland slopes, roughly up to ~25 degrees
+        # (~47% grade). Beyond that it extrapolates poorly -- LS grows very
+        # large very fast -- and the resulting tons/acre/yr figure stops
+        # being a trustworthy real-world estimate. Rather than compute and
+        # display a specific number and then caveat it as unreliable, don't
+        # compute the absolute estimate at all in that case -- only the
+        # relative index (which the score actually uses) is reported.
         abs_suffix = ""
-        try:
-            map_mm = fetch_mean_annual_precip_mm(lat, lng)
-            r_us = compute_r_factor_us(map_mm)
-            soil_loss = round(r_us * k_factor * ls * c, 2)  # P assumed 1
-            rusle.update({
-                "r_factor": round(r_us, 2),
-                "mean_annual_precip_mm": round(map_mm, 1),
-                "r_factor_source": (
-                    "estimated: Renard & Freimund (1994) R from mean annual precipitation; "
-                    "precip = Open-Meteo ERA5 10-yr mean (no measured isoerodent value available)"
-                ),
-                "annual_soil_loss_tons_per_acre": soil_loss,
-                "note": (
-                    "A = R x K x LS x C (P assumed 1). R is ESTIMATED from mean annual "
-                    "precipitation, not a measured isoerodent value — screening-grade, "
-                    "not a certified engineering figure."
-                ),
-            })
-            abs_suffix = f" (≈{soil_loss} tons/acre/yr est.)"
-        except Exception as e:
-            rusle["r_factor_error"] = str(e)
+        if slope > STEEP_SLOPE_CAVEAT_DEGREES:
+            rusle["absolute_estimate_status"] = "not_computed_steep_slope"
+            rusle["steep_slope_caveat"] = (
+                f"Slope is {round(slope, 1)}° — beyond RUSLE's typical validated range "
+                f"(roughly ≤25°/47% grade). The LS-factor formula extrapolates poorly this "
+                "steep, so no absolute tons/acre/yr estimate is given here — only the "
+                "relative index below is reported."
+            )
+        else:
+            # Upgrade to an absolute A = R x K x LS x C (tons/acre/yr) with a
+            # live R-factor estimated from mean annual precipitation.
+            try:
+                map_mm = fetch_mean_annual_precip_mm(lat, lng)
+                r_us = compute_r_factor_us(map_mm)
+                soil_loss = round(r_us * k_factor * ls * c, 2)  # P assumed 1
+                rusle.update({
+                    "r_factor": round(r_us, 2),
+                    "mean_annual_precip_mm": round(map_mm, 1),
+                    "r_factor_source": (
+                        "estimated: Renard & Freimund (1994) R from mean annual precipitation; "
+                        "precip = Open-Meteo ERA5 10-yr mean (no measured isoerodent value available)"
+                    ),
+                    "annual_soil_loss_tons_per_acre": soil_loss,
+                    "note": (
+                        "A = R x K x LS x C (P assumed 1). R is ESTIMATED from mean annual "
+                        "precipitation, not a measured isoerodent value — screening-grade, "
+                        "not a certified engineering figure."
+                    ),
+                })
+                abs_suffix = f" (≈{soil_loss} tons/acre/yr est.)"
+            except Exception as e:
+                rusle["r_factor_error"] = str(e)
         if relative_index > 1.5:
             score += 3
             factors.append({"label": "RUSLE-lite erosion index (K×LS×C)", "detail": f"{relative_index} — high{abs_suffix}", "severity": "high"})
@@ -978,8 +1030,7 @@ def score_erosion_risk(fields: dict, loss_years: list, lat: float, lng: float) -
         else:
             factors.append({"label": "RUSLE-lite erosion index (K×LS×C)", "detail": f"{relative_index} — low{abs_suffix}", "severity": "low"})
     else:
-        factors.append({"label": "RUSLE-lite erosion index", "detail": "unknown — no data available (missing slope or K-factor at this point)", "severity": "unknown"})
-        factors_unavailable.append("rusle_erosion_index")
+        _impute("rusle_erosion_index", "RUSLE-lite erosion index")
 
     factors_total += 1
     if landslide_idx is not None:
@@ -989,8 +1040,7 @@ def score_erosion_risk(fields: dict, loss_years: list, lat: float, lng: float) -
         else:
             factors.append({"label": "Landslide susceptibility", "detail": str(landslide_idx), "severity": "low"})
     else:
-        factors.append({"label": "Landslide susceptibility", "detail": "unknown — no data available at this point", "severity": "unknown"})
-        factors_unavailable.append("landslide_susceptibility")
+        _impute("landslide_susceptibility", "Landslide susceptibility")
 
     # Flood: prefer the real zone code, fall back to the plain boolean
     factors_total += 1
@@ -1006,8 +1056,7 @@ def score_erosion_risk(fields: dict, loss_years: list, lat: float, lng: float) -
         else:
             factors.append({"label": "Floodplain", "detail": "Outside mapped floodplain", "severity": "low"})
     else:
-        factors.append({"label": "FEMA flood zone", "detail": "unknown — no data available at this point", "severity": "unknown"})
-        factors_unavailable.append("fema_flood_zone")
+        _impute("fema_flood_zone", "FEMA flood zone")
 
     # Leaching-relevant: parcel-level wetland share + ponding + hydrologic group
     factors_total += 1
@@ -1018,8 +1067,7 @@ def score_erosion_risk(fields: dict, loss_years: list, lat: float, lng: float) -
         else:
             factors.append({"label": "Wetland share of parcel", "detail": "0% — none present", "severity": "low"})
     else:
-        factors.append({"label": "Wetland share of parcel", "detail": "unknown — no data available at this point", "severity": "unknown"})
-        factors_unavailable.append("wetland_fraction")
+        _impute("wetland_fraction", "Wetland share of parcel")
 
     factors_total += 1
     if ponding is not None:
@@ -1029,8 +1077,7 @@ def score_erosion_risk(fields: dict, loss_years: list, lat: float, lng: float) -
         else:
             factors.append({"label": "Soil ponding frequency", "detail": str(ponding), "severity": "low"})
     else:
-        factors.append({"label": "Soil ponding frequency", "detail": "unknown — no data available at this point", "severity": "unknown"})
-        factors_unavailable.append("soil_ponding_frequency")
+        _impute("soil_ponding_frequency", "Soil ponding frequency")
 
     factors_total += 1
     if hydro_group is not None:
@@ -1039,8 +1086,7 @@ def score_erosion_risk(fields: dict, loss_years: list, lat: float, lng: float) -
             score += 1
         factors.append({"label": "Soil hydrologic group", "detail": f"Group {hydro_group}", "severity": severity})
     else:
-        factors.append({"label": "Soil hydrologic group", "detail": "unknown — no data available at this point", "severity": "unknown"})
-        factors_unavailable.append("soil_hydrologic_group")
+        _impute("soil_hydrologic_group", "Soil hydrologic group")
 
     factors_total += 1
     total_recent_loss_ha = sum(row.get("area_ha", 0) for row in loss_years if row.get("umd_tree_cover_loss__year", 0) >= 2018)
@@ -1050,8 +1096,7 @@ def score_erosion_risk(fields: dict, loss_years: list, lat: float, lng: float) -
     elif loss_years:
         factors.append({"label": "Recent deforestation (GFW, year-level)", "detail": "None detected since 2018", "severity": "low"})
     else:
-        factors.append({"label": "Recent deforestation (GFW, year-level)", "detail": "unknown — no data available at this point", "severity": "unknown"})
-        factors_unavailable.append("recent_deforestation")
+        _impute("recent_deforestation", "Recent deforestation (GFW, year-level)")
 
     factors_evaluated = factors_total - len(factors_unavailable)
 
@@ -1085,6 +1130,15 @@ def score_erosion_risk(fields: dict, loss_years: list, lat: float, lng: float) -
     elif score >= 3:
         level = "moderate"
 
+    # Imputing a moderate value for one or two missing signals is a
+    # defensible hedge. Doing it for most of the 7 signals at once stops
+    # being a hedge and starts being a guess dressed up as a score --
+    # refuse to give one rather than presenting a number built mostly out
+    # of assumptions.
+    if len(factors_unavailable) > MAX_UNAVAILABLE_FACTORS_FOR_SCORE:
+        score = None
+        level = "insufficient_data"
+
     return {
         "score": score,
         "level": level,
@@ -1095,6 +1149,7 @@ def score_erosion_risk(fields: dict, loss_years: list, lat: float, lng: float) -
             "factors_evaluated": factors_evaluated,
             "factors_total": factors_total,
             "unavailable_factors": factors_unavailable,
+            "imputed_points": factors_imputed_points,
         },
     }
 
